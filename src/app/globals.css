@@ -13,35 +13,99 @@ padding:0 ;
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+   
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+background: #000;
+color: white;
+padding: 0;
+margin: 0;
+overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+h1{
+  font-family: 'Neue Machina', sans-serif;
+  font-weight: normal;
 
+}
 .radialshadow::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: -0;
-  width:50px;
-  height: 50px;
-  background: radial-gradient(circle, #7D40FF, transparent 70%);
-  box-shadow: 0px 0px 100.7px #7c40ff5b;
+  top: 50%;
+  left:0% ;
+  width:300px;
+  height: 600px;
+  background: radial-gradient(circle, #24cfa79a, transparent 40%);
+  box-shadow: 0px 0px 100.7px #24CFA6;
   filter: blur(70px);
-  border-radius: 0px 0px 0px 40px;
+  border-radius: 0px 0px 0px 100px;
   z-index: 0;
-  transform: translate(50%, 50%);
+  transform: translate(-50%, -50%);
   
 }
+.aboutusShadow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left:50% ;
+  width:200px;
+  height: 200px;
+  background: radial-gradient(circle, #24cfa7ce, transparent 60%);
+  box-shadow: 0px 0px 100.7px #24CFA6;
+  filter: blur(70px);
+  border-radius: 0px 0px 0px 100px;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  
+}
+.radialsshadow::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right:-10% ;
+  width:300px;
+  height: 800px;
+  background: radial-gradient(circle, #24cfa741, transparent 70%);
+  box-shadow: 0px 0px 200.7px #24cfa783;
+  filter: blur(70px);
+  border-radius: 0px 0px 0px 50px;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  
+}
+
+
+/* fonts setup */
+@font-face {
+  font-family: 'Juana Alt';
+  src: url('/fonts/juanaalt-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Juana';
+  src: url('/fonts/juana-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('/fonts/NeueMachina-Ultrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('/fonts/NeueMachina-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;}

@@ -14,7 +14,11 @@ module.exports = {
        '2xl': '1536px'
      },
     extend: {
-     
+      fontFamily: {
+        juanaAlt: ['"Juana Alt"', 'sans-serif'],
+        juana: ['"Juana"', 'serif'],
+        neueMachina: ['"Neue Machina"', 'sans-serif'],
+      },
     },
   },
   plugins: [],
