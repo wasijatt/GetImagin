@@ -1,6 +1,7 @@
 "use client"
 import useCustomCursor from "../hooks/Customcursor";
 import { useState } from "react";
+import Image from "next/image";
 const Impact = () => {
 
 

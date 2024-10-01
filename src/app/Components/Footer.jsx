@@ -8,8 +8,8 @@ import { lazy } from "react";
 
 const Footer = () => {
   const socialMedia = [
-    { icon: "Instagram", link: "https://www.instagram.com/imaginmaker/" },
-    { icon: "Facebook", link: "https://www.facebook.com/profile.php?id=61551109724275" },
+    { icon: "Instagram", link: "https://www.instagram.com/getimagin/" },
+    { icon: "Facebook", link: "https://web.facebook.com/profile.php?id=61565487723248" },
     { icon: "FaLinkedin ", link: "https://www.linkedin.com/company/imagin-maker/" },
 
   ];
