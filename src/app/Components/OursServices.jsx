@@ -124,15 +124,15 @@
 //             gsap.to(".arrow-icon", {
 //               rotation: -45,
 //               duration: 1,
-              
+
 //               ease: "power2.out"
 //             });
 //           }
 
-    
+
 //         },
 //         onLeaveBack: () => {
-       
+
 //           if (index === 0 && arrowRotated) {
 //             setArrowRotated(false);
 //             gsap.to(".arrow-icon", {
@@ -141,8 +141,8 @@
 //               ease: "power2.out"
 //             });
 //           }
-     
-        
+
+
 //           if (index > 0) {
 //             const previousDiv = serviceDivs[index - 1];
 //             gsap.to(previousDiv, {
@@ -161,7 +161,7 @@
 
 //   return (
 //     <div className="w-full bg-black text-[#E9E9E9]">
-    
+
 //       <div className="  z-50 bg-black w-full">
 //         <div className="flex items-center justify-between w-[70%] m-auto py-4">
 //           <h1 className="text-base md:text-[40px] lg:text-[70px] leading-none">
@@ -169,13 +169,13 @@
 //           </h1>
 //           <div className="relative">
 //             <div className="radialshadow"></div>
-          
+
 //             <FaArrowLeft className={`arrow-icon text-base md:text-[40px] lg:text-[100px] z-50  ${arrowRotated ? "rotate-45" : ""}`} />
 //           </div>
 //         </div>
 //       </div>
 
-     
+
 //       <div ref={servicesRef} className=" overflow-hidden w-full m-auto h-[100vh] bg-black">
 //         {Services.map((service, index) => (
 //           <div
@@ -311,10 +311,10 @@
 //       buton: "Find out more",
 //       Img: "/public/HeaderLogo/Getimagin.png",
 //     },
- 
+
 //   ];
 
- 
+
 
 //   return (
 //     <div className="w-full bg-black text-[#E9E9E9]">
@@ -406,7 +406,7 @@
 //           end: "bottom -100%", // The point at which the animation should end (adjust if needed)
 //           scrub: true, // Sync animation with scroll progress
 //           pin: true, // Pin the section in place while scrolling
-        
+
 //         },
 //       });
 
@@ -551,52 +551,522 @@
 // export default ServicesComponent;
 
 
+// "use client";
+
+// import { useEffect } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { FaArrowLeft } from "react-icons/fa";
+// import Heading from "./Heading";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const ServicesComponent = () => {
+//   useEffect(() => {
+//     // Initialize ScrollTrigger
+//     ScrollTrigger.refresh();
+
+//     // Create scrollTrigger animations for each service section
+//     gsap.to(".service-1", {
+//       scrollTrigger: {
+//         trigger: ".service-section",
+//         start: "top top",
+//         pin:true,
+//         end: "bottom -100%",
+//         scrub: 1, // Adjust the scrub value as needed for smoother scrolling
+//       },
+//       pin: true, // Pin the element to the viewport
+//       top: 0, // Position the element at the top of the viewport
+//     });
+
+//     gsap.to(".service-2", {
+//       scrollTrigger: {
+//         trigger: ".service-2",
+//         start: "top bottom",
+//         end: "bottom bottom",
+//         scrub: 1,
+//         pin:true,
+//       },
+//       scale: 0.8, // Scale down the element
+//       opacity: 0.5, // Reduce opacity
+//     });
+
+//     // ... (similar animations for service-3 and service-4)
+//   }, []);
+//   return (
+//     <div className="w-full bg-black text-[#E9E9E9]">
+//       <div className="z-50 bg-black w-full">
+//         <div className="flex items-center justify-between w-[70%] m-auto py-4">
+//           <Heading mainText={"Our"} subText={"Services"} />
+//           <div className="relative">
+//             <FaArrowLeft className="arrow-icon text-base md:text-[40px] lg:text-[100px] z-50" />
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="service-section overflow-hidden w-full h-auto m-auto">
+//         {/* First Service Section */}
+//         <div className="w-[95%] service-1 m-auto mt-3 h-[100vh] flex bg-white rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               Web design & development
+//             </h2>
+//             <ul className="mb-4">
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Creative web design</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Web development</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Copywriting</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">E-Commerce</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">WordPress</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">SEO</Link>
+//               </li>
+//             </ul>
+//             <p className="mb-4 text-black">
+//               Crafting digital experiences where beauty meets ROI, turning heads and unlocking revenue potential with every click.
+//             </p>
+//             <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
+//               Find out more
+//             </Link>
+//           </div>
+//           <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
+//         </div>
+
+//         {/* Second Service Section */}
+//         <div className="w-[95%] service-2 m-auto mt-3 h-[100vh] flex bg-blue-600 rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce Development
+//             </h2>
+//             <ul className="mb-4">
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Shopify</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Magento</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">WooCommerce</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">BigCommerce</Link>
+//               </li>
+//             </ul>
+//             <p className="mb-4 text-black">
+//               We build scalable e-commerce platforms designed to enhance online shopping experiences and drive conversions.
+//             </p>
+//             <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
+//               Find out more
+//             </Link>
+//           </div>
+//           <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
+//         </div>
+
+//         {/* Third Service Section */}
+//         <div className="w-[95%] service-3 m-auto mt-3 h-[100vh] flex bg-blue-600 rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce Development
+//             </h2>
+//             <ul className="mb-4">
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Shopify</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Magento</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">WooCommerce</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">BigCommerce</Link>
+//               </li>
+//             </ul>
+//             <p className="mb-4 text-black">
+//               We build scalable e-commerce platforms designed to enhance online shopping experiences and drive conversions.
+//             </p>
+//             <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
+//               Find out more
+//             </Link>
+//           </div>
+//           <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
+//         </div>
+
+//         {/* Fourth Service Section */}
+//         <div className="w-[95%] service-4 m-auto mt-3 h-[100vh] flex bg-blue-600 rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce Development
+//             </h2>
+//             <ul className="mb-4">
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Shopify</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">Magento</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">WooCommerce</Link>
+//               </li>
+//               <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
+//                 <Link href="#">BigCommerce</Link>
+//               </li>
+//             </ul>
+//             <p className="mb-4 text-black">
+//               We build scalable e-commerce platforms designed to enhance online shopping experiences and drive conversions.
+//             </p>
+//             <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
+//               Find out more
+//             </Link>
+//           </div>
+//           <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
+//         </div>
+
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ServicesComponent;
+
+
+// "use client";
+
+// import { useEffect } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { FaArrowLeft } from "react-icons/fa";
+// import Heading from "./Heading";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const ServicesComponent = () => {
+//   useEffect(() => {
+//     // Create scroll-triggered animations for each service div
+//     gsap.utils.toArray(".service").forEach((service, i) => {
+
+//       ScrollTrigger.create({
+//         trigger: ".services",
+//         start: "top top",
+//         pin: "true",
+//         pinSpacing: false,
+//       })
+//     });
+//   }, []);
+
+//   return (
+//     <div className="relative w-full h-[400vh] bg-black text-[#E9E9E9]">
+//       <div className="z-50 bg-black w-full ">
+//         <div className="flex items-center justify-between w-[70%] m-auto py-4">
+//           <Heading mainText={"Our"} subText={"Services"} />
+//           <div className="relative">
+//             <FaArrowLeft className="arrow-icon text-base md:text-[40px] lg:text-[100px] z-50" />
+//           </div>
+//         </div>
+//       </div>
+
+//       <div className="  w-full h-[100vh] m-auto services ">
+//         {/* Service 1 */}
+//         <div className="  w-full h-full service bg-white flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               Web design & development
+//             </h2>
+//             {/* Service details */}
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/public/HeaderLogo/Getimagin.png"
+//           />
+//         </div>
+
+//         {/* Service 2 */}
+//         <div className=" w-full h-full service bg-green-50 flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce
+//             </h2>
+//             {/* Service details */}
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/public/HeaderLogo/Getimagin.png"
+//           />
+//         </div>
+
+//         {/* Service 3 */}
+//         <div className=" w-full h-full service bg-yellow-600 flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce
+//             </h2>
+//             {/* Service details */}
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/public/HeaderLogo/Getimagin.png"
+//           />
+//         </div>
+//         {/* Additional service sections can follow the same structure */}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ServicesComponent;
+
+// "use client";
+
+// import { useEffect } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import Image from "next/image";
+// import { FaArrowLeft } from "react-icons/fa";
+// import Heading from "./Heading";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const ServicesComponent = () => {
+//   useEffect(() => {
+//     // Pin each service individually
+//     gsap.utils.toArray(".service").forEach((service, i) => {
+
+//     ScrollTrigger.create({
+
+//       trigger: service, // Pin each .service div
+//       start: "top top", // Start pinning when the top of .service hits the top of the viewport
+
+//       pin: true, // Pin the element
+//       pinSpacing: false, // Don't add extra spacing
+//       anticipatePin: 1,
+//       scrub: true, // Smooth pinning transition
+
+//       });
+//     });
+//   }, []);
+
+//   return (
+//     <div className="relative w-full h-[400vh] bg-black text-[#E9E9E9]">
+//       {/* Sticky heading */}
+//       <div className="z-50 bg-black w-full">
+//         <div className="flex items-center justify-between w-[70%] m-auto py-4">
+//           <Heading mainText={"Our"} subText={"Services"} />
+//           <div className="relative">
+//             <FaArrowLeft className="arrow-icon text-base md:text-[40px] lg:text-[100px] z-50" />
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Service section */}
+//       <div className="w-full m-auto services" id="ser">
+//         {/* Service 1 */}
+//         <div className="w-full h-[100vh] web service bg-white flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               Web design & development
+//             </h2>
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/public/HeaderLogo/Getimagin.png"
+//           />
+//         </div>
+
+//         {/* Service 2 */}
+//         <div className="w-full h-[100vh] ecom service bg-green-50 flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce
+//             </h2>
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/public/HeaderLogo/Getimagin.png"
+//           />
+//         </div>
+
+//         {/* Service 3 */}
+//         <div className="w-full h-[100vh] design service bg-yellow-600 flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce
+//             </h2>
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/public/HeaderLogo/Getimagin.png"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ServicesComponent;
+
+
+
+
+// "use client";
+
+// import { useEffect } from "react";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import Image from "next/image";
+// import { FaArrowLeft } from "react-icons/fa";
+// import Heading from "./Heading";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// const ServicesComponent = () => {
+//   useEffect(() => {
+//     // Pin each service individually
+
+//     gsap.utils.toArray(".service").forEach((service, i) => {
+//       gsap.set(".service", { position: "absolute" })
+//       gsap.to(".service", {
+//         yPercent: -100,
+//         stagger: 0.5,
+//         ScrollTrigger. ({
+//           trigger: ".services",
+//           start: "top top", // Start pinning when the top of .service hits the top of the viewport
+//           pin: true,
+//           pinSpacing: true, // Keep space when pinned
+//           anticipatePin: 1,
+//           scrub: 1, // Smooth pinning transition
+//         })
+//       })
+
+//     });
+//   }, []);
+
+//   return (
+//     <div className="relative w-full h-[400vh] bg-black text-[#E9E9E9]">
+//       {/* Sticky heading */}
+//       <div className="z-50 bg-black w-full">
+//         <div className="flex items-center justify-between w-[70%] m-auto py-4">
+//           <Heading mainText={"Our"} subText={"Services"} />
+//           <div className="relative">
+//             <FaArrowLeft className="arrow-icon text-base md:text-[40px] lg:text-[100px] z-50" />
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Service section */}
+//       <div className="w-full m-auto services" id="ser">
+//         {/* Service 1 */}
+//         <div className="w-full h-[100vh] web service bg-white flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               Web design & development
+//             </h2>
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/HeaderLogo/Getimagin.png" // Adjusted src to remove public from path
+//           />
+//         </div>
+
+//         {/* Service 2 */}
+//         <div className="w-full h-[100vh] ecom service bg-green-50 flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               E-Commerce
+//             </h2>
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/HeaderLogo/Getimagin.png" // Adjusted src to remove public from path
+//           />
+//         </div>
+
+//         {/* Service 3 */}
+//         <div className="w-full h-[100vh] design service bg-yellow-600 flex justify-around items-center">
+//           <div className="w-[60%]">
+//             <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
+//               Graphic Design
+//             </h2>
+//           </div>
+//           <Image
+//             alt="Services Images"
+//             loading="lazy"
+//             quality={75}
+//             width={100}
+//             height={100}
+//             src="/HeaderLogo/Getimagin.png" // Adjusted src to remove public from path
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ServicesComponent;
+
+
+
 "use client";
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import Heading from "./Heading";
-
+import ScrollPinComponent from "./ServicesSection";
+// import Impact from "./Impact";
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesComponent = () => {
-  useEffect(() => {
-    // Initialize ScrollTrigger
-    ScrollTrigger.refresh();
-
-    // Create scrollTrigger animations for each service section
-    gsap.to(".service-1", {
-      scrollTrigger: {
-        trigger: ".service-section",
-        start: "top top",
-        pin:true,
-        end: "bottom -100%",
-        scrub: 1, // Adjust the scrub value as needed for smoother scrolling
-      },
-      pin: true, // Pin the element to the viewport
-      top: 0, // Position the element at the top of the viewport
-    });
-
-    gsap.to(".service-2", {
-      scrollTrigger: {
-        trigger: ".service-2",
-        start: "top bottom",
-        end: "bottom bottom",
-        scrub: 1,
-        pin:true,
-      },
-      scale: 0.8, // Scale down the element
-      opacity: 0.5, // Reduce opacity
-    });
-
-    // ... (similar animations for service-3 and service-4)
-  }, []);
+ 
   return (
-    <div className="w-full bg-black text-[#E9E9E9]">
+    <div className="relative w-full h-[400vh] bg-black text-[#E9E9E9] ">
+      {/* Sticky heading */}
       <div className="z-50 bg-black w-full">
         <div className="flex items-center justify-between w-[70%] m-auto py-4">
           <Heading mainText={"Our"} subText={"Services"} />
@@ -606,134 +1076,9 @@ const ServicesComponent = () => {
         </div>
       </div>
 
-      <div className="service-section overflow-hidden w-full h-auto m-auto">
-        {/* First Service Section */}
-        <div className="w-[95%] service-1 m-auto mt-3 h-[100vh] flex bg-white rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
-          <div className="w-[60%]">
-            <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
-              Web design & development
-            </h2>
-            <ul className="mb-4">
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Creative web design</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Web development</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Copywriting</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">E-Commerce</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">WordPress</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">SEO</Link>
-              </li>
-            </ul>
-            <p className="mb-4 text-black">
-              Crafting digital experiences where beauty meets ROI, turning heads and unlocking revenue potential with every click.
-            </p>
-            <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
-              Find out more
-            </Link>
-          </div>
-          <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
-        </div>
-
-        {/* Second Service Section */}
-        <div className="w-[95%] service-2 m-auto mt-3 h-[100vh] flex bg-blue-600 rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
-          <div className="w-[60%]">
-            <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
-              E-Commerce Development
-            </h2>
-            <ul className="mb-4">
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Shopify</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Magento</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">WooCommerce</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">BigCommerce</Link>
-              </li>
-            </ul>
-            <p className="mb-4 text-black">
-              We build scalable e-commerce platforms designed to enhance online shopping experiences and drive conversions.
-            </p>
-            <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
-              Find out more
-            </Link>
-          </div>
-          <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
-        </div>
-
-        {/* Third Service Section */}
-        <div className="w-[95%] service-3 m-auto mt-3 h-[100vh] flex bg-blue-600 rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
-          <div className="w-[60%]">
-            <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
-              E-Commerce Development
-            </h2>
-            <ul className="mb-4">
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Shopify</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Magento</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">WooCommerce</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">BigCommerce</Link>
-              </li>
-            </ul>
-            <p className="mb-4 text-black">
-              We build scalable e-commerce platforms designed to enhance online shopping experiences and drive conversions.
-            </p>
-            <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
-              Find out more
-            </Link>
-          </div>
-          <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
-        </div>
-
-        {/* Fourth Service Section */}
-        <div className="w-[95%] service-4 m-auto mt-3 h-[100vh] flex bg-blue-600 rounded-3xl shadow-lg justify-around items-center transition-all duration-500 ease-in-out">
-          <div className="w-[60%]">
-            <h2 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
-              E-Commerce Development
-            </h2>
-            <ul className="mb-4">
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Shopify</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">Magento</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">WooCommerce</Link>
-              </li>
-              <li className="px-5 py-2 border-[1px] border-[#24CFA6] rounded-3xl m-2 inline-block">
-                <Link href="#">BigCommerce</Link>
-              </li>
-            </ul>
-            <p className="mb-4 text-black">
-              We build scalable e-commerce platforms designed to enhance online shopping experiences and drive conversions.
-            </p>
-            <Link href="#" className="inline-block border-2 border-black text-[#24CFA6] px-4 py-2 rounded">
-              Find out more
-            </Link>
-          </div>
-          <Image alt="Services Images" loading="lazy" quality={75} width={100} height={100} src="/public/HeaderLogo/Getimagin.png" />
-        </div>
-
-      </div>
+      {/* Service section */}
+    <ScrollPinComponent/>
+    {/* <Impact/> */}
     </div>
   );
 };

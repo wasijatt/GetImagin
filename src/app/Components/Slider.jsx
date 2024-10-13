@@ -690,7 +690,7 @@ const Slider = () => {
   return (
     <div className="relative w-full mx-auto py-8 overflow-hidden">
       {/* Popup */}
-      <div className="absolute top-0 left-0 w-full h-full flex items-center z-50 bg-opacity-40">
+      <div className="absolute top-0 left-0 w-full h-[90vh] flex items-center z-50 bg-opacity-40">
         {/* navigation */}
       <button
             className="absolute left-[40%] text-4xl top-1/2 transform -translate-y-1/2 z-50 p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
@@ -699,12 +699,12 @@ const Slider = () => {
             <FaArrowLeft />
           </button>
           <button
-            className="absolute right-[18%] top-1/2 transform -translate-y-1/2 z-50 text-4xl p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
+            className="absolute right-[16%] top-1/2 transform -translate-y-1/2 z-50 text-4xl p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
             onClick={nextSlide}
           >
             <FaArrowRight />
           </button>
-        <div className="relative w-[28%] left-[47%] h-[500px] border-2 border-[#24CFA6] shadow-lg rounded-tr-[100px] rounded-lg overflow-hidden">
+        <div className="relative w-[30%] left-[47%] h-[90vh] border-2 border-[#24CFA6] shadow-lg rounded-tr-[80px] rounded-lg overflow-hidden">
           {/* static bg Background  */}
           <div className="absolute w-full h-full overflow-hidden ">
             <Image
@@ -714,7 +714,7 @@ const Slider = () => {
               height={600}
               quality={100}
               loading="lazy"
-              className="w-full h-full object-cover rounded-tr-[100px] opacity-90" // Lower opacity for background feel
+              className="w-full h-full object-cover rounded-tr-[50px] opacity-100" 
             />
           </div>
 
@@ -728,7 +728,7 @@ const Slider = () => {
               height={600}
               quality={100}
               loading="lazy"
-              className="w-full h-full object-cover rounded-tr-[100px]"
+              className="w-full h-full object-cover rounded-tr-[50px]"
             />
           </div>
 
@@ -752,7 +752,7 @@ const Slider = () => {
               height={600}
               quality={90}
               loading="lazy"
-              className="w-full h-[400px] object-cover rounded-tr-[100px]"
+              className="w-full h-[400px] object-cover rounded-tr-[10px]"
             />
           </div>
         ))}

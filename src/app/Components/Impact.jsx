@@ -34,7 +34,7 @@ const Impact = () => {
 
 
   return (
-    <section className=" relative py-20 px-6 md:px-12">
+    <section className="  py-20 px-6 md:px-12 bg-black">
       <div className="text-center">
         <h1 className="text-xl md:text-5xl  leading-tight">
           We develop bespoke <br /> websites with{' '}
@@ -57,7 +57,7 @@ const Impact = () => {
               />
             )
           }
-            onMouseLeave={() => setCursorContent(null)} className="flex items-center px-[5%] py-[7%] opacity-50 hover:opacity-100 duration-1000	 text-left border-b-2 border-[#333]" key={thing.id}>
+            onMouseLeave={() => setCursorContent(null)} className="flex items-center px-[5%] py-[9%] opacity-30 hover:opacity-100 duration-1000	 text-left border-b-2 border-[#333]" key={thing.id}>
             <div className="  flex flex-col w-full ">
               <h2 className="text-xl font-bold text-gray-500">{thing.id}/</h2>
               <div>
@@ -65,7 +65,7 @@ const Impact = () => {
               </div>
             </div>
             <div className="w-1/2">
-              <p className="text-gray-300 text-left ">
+              <p className="text-gray-300 text-left  ">
                 {thing.description.split(thing.highlightedText)[0]}
                 <span className="text-teal-400">{thing.highlightedText}</span>
                 {thing.description.split(thing.highlightedText)[1]}

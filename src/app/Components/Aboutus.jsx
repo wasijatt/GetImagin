@@ -2,6 +2,7 @@
 import { FaArrowLeft } from "react-icons/fa";
 import Heading from "./Heading";
 import Slider from "./Slider";
+import Chat from "./Chat";
 const Aboutus = () => {
     return (
         <>
@@ -33,6 +34,13 @@ const Aboutus = () => {
     <div className="w-1/4 text-lg">We will find our team across Creative Web Design, Web Development, Branding, Digital Marketing</div>
     </div>
     <Slider/>
+    <Chat/>
+    <div className=" m-auto">
+<div className="bgcon w-full h-96 flex">
+    <h1>Interested with working with Get Imagin</h1>
+</div>
+</div>
+
     </>
     )
 }
