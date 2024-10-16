@@ -76,7 +76,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton,  }
   
   return (
     <div className="w-full text-center flex flex-col justify-center items-center">
-      <h1 className="text-xl md:text-5xl leading-tight z-30 w-[40%]">
+      <h1 className="text-xl md:text-5xl leading-tight z-30 w-[40%] text-">
         {fhead}
         <span className="text-teal-400">{span}</span> {head}
       </h1>

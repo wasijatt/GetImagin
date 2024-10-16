@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 
 import Image from "next/image";
-import { lazy } from "react";
+
 
 
 const Footer = () => {
@@ -18,7 +18,7 @@ const Footer = () => {
     <div className="lg:p-10 ">
       <div className="  flex w-full lg:w-[90%] justify-around ">
         <div className="  mt-2  p-3 font-neueMachina lg:text-lg">
-          <Image className="lg:w-[250px]" quality={75} loading={"lazy"} src="/Footer/GetImagin-footer-logo.svg" alt="Get-Imagin" width={100} height={100} />
+          <Image className="lg:w-[250px]" quality={75}  loading="lazy" src="/Footer/GetImagin-footer-logo.svg" alt="Get-Imagin" width={100} height={100} />
 
           <div className=" flex  items-center  lg:mt-5 text-lg   pl-20">
             {socialMedia.map((item, index) => (
@@ -28,7 +28,7 @@ const Footer = () => {
                 key={index}
                 className="mr-5 flex items-center"
               >
-                {Object.values(item)[0]} <span className="ml-2"><MdArrowOutward />
+                {Object.values(item)[0]} <span className="ml-2 hover:mb-[2px]"><MdArrowOutward />
                 </span>
 
               </Link>

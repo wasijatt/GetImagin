@@ -130,3 +130,23 @@ h1 {
 .bgcon {
   background: url("../../public/AboutUs/bg-con.jpg");
 }
+
+
+
+.custom-cursor {
+  border: 1px solid #24CFA6; /* Optional: Border for visibility */
+  border-radius: 50%; /* Circular shape */
+  transition: 0.5s ease-out; /* Optional transition */
+  background: #24CFA6;
+  width: 50px;
+  height: 50px;
+}
+
+.custom-cursor.active {
+ border: none;
+ outline: none;
+ transition: 5s ease-in-out ;
+ width: 300;
+ height: 300;
+
+}

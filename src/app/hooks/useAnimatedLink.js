@@ -10,8 +10,8 @@ const useAnimatedLink = () => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setTranslateX(x * 0.3);
-    setTranslateY(y * 0.5);
+    setTranslateX(x * 0.8);
+    setTranslateY(y * 0.8);
   };
 
   const handleMouseLeave = () => {
