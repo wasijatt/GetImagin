@@ -60,7 +60,7 @@ const AnimatedLink = ({ href, children,content, className = "", style = {} }) =>
     >
       <span
         ref={borderRef}
-        className="absolute top-0 right-0 h-full w-full border-[4px] rounded-3xl z-0"
+        className="absolute top-0 right-0 h-full w-full border-[3px] rounded-3xl z-0"
         style={{
           height: "100%",
           borderColor: "#fff", // Adjust color as needed

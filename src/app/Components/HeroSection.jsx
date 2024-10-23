@@ -80,7 +80,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton,  }
         {fhead}
         <span className="text-teal-400">{span}</span> {head}
       </h1>
-      <p className="ml-[700px] text-sm w-[300px] -z-20">{HerosectionPara}</p>
+      <p className="ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara}</p>
       <button className="bg-[#24CFA6] px-10 py-3 rounded-3xl">{HerosectionButton}</button>
 
       <div className="flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[80%] m-auto lg:mt-7">

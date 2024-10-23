@@ -43,6 +43,7 @@ const Header = () => {
       // Show dropdown and animate it
       gsap.set(dropdownRef.current, { display: "block" });
 
+
       gsap.fromTo(
         dropdownRef.current,
         { scale: 0, opacity: 0 },
@@ -109,11 +110,11 @@ const Header = () => {
         </div>
         <div
           ref={dropdownRef}
-          className="absolute -top-[45%] -right-[45%] bg-[#464646] text-white h-[350px] py-10 w-[320px] my-2 -z-10 p-4 opacity-0 hidden rounded-3xl"
+          className="absolute -top-[45%] -right-[45%] bg-white  h-[350px] py-10 w-[320px] my-2 -z-10 p-4 opacity-0 hidden rounded-3xl"
           style={{ display: isDropdownOpen ? "block" : "none" }}
         >
-          <ul className="flex flex-col px-10 text-[#d2d3d3] text-2xl gap-5">
-            <li><Link href="/page3">Our Services</Link></li>
+          <ul className="flex flex-col px-10 text-[#000000] font-semibold text-2xl gap-5 ">
+            <li><Link href="/page3" className="linkhover" >Our Services</Link></li>
             <li><Link href="/AboutUs">About Us</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
             <li><Link href="/page2">Privacy Policy</Link></li>
@@ -128,3 +129,4 @@ const Header = () => {
 };
 
 export default Header;
+

@@ -3,15 +3,32 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { FaArrowLeft } from "react-icons/fa";
+
+import { IoMdArrowBack  } from "react-icons/fa";
 import Heading from "./Heading";
-import ScrollPinComponent from "./ServicesSection";
+import ServicesSection from "./ServicesSection";
 // import Impact from "./Impact";
 gsap.registerPlugin(ScrollTrigger);
 
-const ServicesComponent = () => {
- 
+
+const OurServices = () => {
+
+  useEffect(() => {
+
+    gsap.to(".arrow-icon ", {
+      scrollTrigger: {
+        trigger: ".arrow-icon",
+        start: "top center",
+        end: "top 400px",
+        scrub: 4,
+//  markers:true
+      },
+      rotate: "-45",
+      duration: .5,
+      // ease:none
+    })
+  
+  }, [])
   return (
     <div className="relative w-full h-[400vh] bg-black text-[#E9E9E9] ">
       {/* Sticky heading */}
@@ -19,16 +36,16 @@ const ServicesComponent = () => {
         <div className="flex items-center justify-between w-[70%] m-auto py-4">
           <Heading mainText={"Our"} subText={"Services"} />
           <div className="relative">
-            <FaArrowLeft className="arrow-icon text-base md:text-[40px] lg:text-[100px] z-50" />
+            <IoMdArrowBack  className="arrow-icon text-base md:text-[40px] lg:text-[150px] z-50" />
           </div>
         </div>
       </div>
 
       {/* Service section */}
-    <ScrollPinComponent/>
-    {/* <Impact/> */}
+      <ServicesSection />
+      {/* <Impact/> */}
     </div>
   );
 };
 
-export default ServicesComponent;
+export default OurServices;

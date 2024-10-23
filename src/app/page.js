@@ -3,7 +3,7 @@ import Impact from "./Components/Impact";
 import OurWork from "./Components/OurWork";
 import OurResult from "./Components/OurResult";
 import Faqs from "./Components/Faqs";
-import OurServices from "./Components/OursServices"
+// import OurServices from "./Components/OurServices";
 import OurPartner from "./Components/OurPartner";
 
 export default function Home() {
