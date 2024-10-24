@@ -2,11 +2,11 @@
 import "./globals.css";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-import CustomCursor from "./Components/CursorCustom";
+import CustomCursor from "./Components/CustomCursor";
 
 
 export const metadata = {
-  title: "Get Imagin - Design your Future",
+  title: "Get Imagin - Develop your Future",
   description: "Design And Develop Your Future ",
   
 };

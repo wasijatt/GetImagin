@@ -70,7 +70,7 @@ const Faqs = () => {
           )}
         </div>
         <div
-          className={`transition-opacity duration-500 ${
+          className={`transition-opacity duration-800 ${
             isOpen ? "opacity-100 max-h-full" : "opacity-0 max-h-0 overflow-hidden"
           }`}
         >

@@ -18,6 +18,7 @@ module.exports = {
         juanaAlt: ['"Juana Alt"', 'sans-serif'],
         juana: ['"Juana"', 'serif'],
         neueMachina: ['"Neue Machina"', 'sans-serif'],
+        fontspring :['"Font Spring"' , "serif"]
       },
     },
   },

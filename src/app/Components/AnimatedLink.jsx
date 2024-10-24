@@ -1,3 +1,4 @@
+
 "use client";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
@@ -5,7 +6,7 @@ import useAnimatedLink from "../hooks/useAnimatedLink"; // Import your hook
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
-const AnimatedLink = ({ href, children,content, className = "", style = {} }) => {
+const AnimatedLink = ({ href, children, content, className = "", style = {} }) => {
   const {
     isHovered,
     translateX,
@@ -46,13 +47,16 @@ const AnimatedLink = ({ href, children,content, className = "", style = {} }) =>
     });
   };
 
+  // Extract borderColor from the style prop, or use default value
+  const { borderColor = "#fff", ...restStyles } = style;
+
   return (
     <Link
       href={href}
-      className={`inline-block relative px-4 py-3  rounded-3xl transition-all ease-out duration-1000 ${className}`}
+      className={`inline-block relative px-4 py-3 rounded-3xl transition-all ease-out duration-1000 ${className}`}
       style={{
         transform: `translate(${translateX}px, ${translateY}px)`,
-        ...style,
+        ...restStyles, // Apply other styles except borderColor
       }}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
@@ -60,14 +64,16 @@ const AnimatedLink = ({ href, children,content, className = "", style = {} }) =>
     >
       <span
         ref={borderRef}
-        className="absolute top-0 right-0 h-full w-full border-[3px] rounded-3xl z-0"
+        className="absolute top-0 right-0 h-full w-full border-[2px] rounded-3xl z-0"
         style={{
           height: "100%",
-          borderColor: "#fff", // Adjust color as needed
+          borderColor: borderColor, // Use the extracted borderColor from props
         }}
       ></span>
- <span> {content}</span> 
-      <span className="relative z-10 inline-block ml-5 top-[2px] "><FaArrowRight/></span>
+      <span> {content}</span>
+      <span className="relative z-10 inline-block ml-5 top-[2px]">
+        <FaArrowRight />
+      </span>
     </Link>
   );
 };

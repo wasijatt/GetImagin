@@ -22,12 +22,12 @@ const Header = () => {
       isDropdownOpen &&
       dropdownRef.current &&
       !dropdownRef.current.contains(e.target) &&
-      !toggleRef.current.contains(e.target)
+      !toggleRef.current.contains(e.target) &&
+      !e.target.closest("a") // Prevent closing when clicking on a link inside the dropdown
     ) {
       setIsDropdownOpen(false);
     }
   };
-
   useEffect(() => {
     // Add listener to detect clicks outside
     document.addEventListener("mousedown", handleClickOutside);
@@ -113,8 +113,8 @@ const Header = () => {
           className="absolute -top-[45%] -right-[45%] bg-white  h-[350px] py-10 w-[320px] my-2 -z-10 p-4 opacity-0 hidden rounded-3xl"
           style={{ display: isDropdownOpen ? "block" : "none" }}
         >
-          <ul className="flex flex-col px-10 text-[#000000] font-semibold text-2xl gap-5 ">
-            <li><Link href="/page3" className="linkhover" >Our Services</Link></li>
+          <ul className="flex flex-col px-10 text-[#000000] font-semibold text-2xl gap-5 cursor-pointer ">
+            <li><Link href="/page3" className="linkhover " >Our Services</Link></li>
             <li><Link href="/AboutUs">About Us</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
             <li><Link href="/page2">Privacy Policy</Link></li>
