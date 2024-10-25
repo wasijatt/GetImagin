@@ -63,8 +63,9 @@ const CustomCursor = ({ cursorContent }) => {
         cursor.style.backgroundSize = 'cover';
         cursor.style.width = '250px';
         cursor.style.height = '250px';
-        cursor.style.borderRadius = '10px'; // Remove the circle to display the image properly
-        cursor.style.backgroundColor = 'transparent'; // Remove background color when image is shown
+        cursor.style.transform = 'translate(-50%, -50%)';
+        cursor.style.borderRadius = '10px'; 
+        cursor.style.backgroundColor = 'transparent'; 
       } else {
         cursor.style.backgroundImage = 'none';
         cursor.style.width = '10px';

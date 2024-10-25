@@ -112,6 +112,7 @@ const ScrollSection = () => {
     <div className="flex items-center justify-between w-[70%] m-auto py-4">
       <Heading mainText={"Our"} subText={"Services"} />
       <div className="relative">
+        <div className='aboutusShadow'></div>
         <GoArrowLeft  className="arrow-icon text-base md:text-[40px]  lg:text-[200px] mt-16 z-50" />
       </div>
     </div>

@@ -232,7 +232,7 @@ const OurWork = () => {
   
                 {projectLinks[index].map((link) => (
                   
-                <Link
+                <Link key={index}
                  
                   href={link.href} // Use the href from the object
                   className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
