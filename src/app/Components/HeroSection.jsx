@@ -78,7 +78,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
     <div className="w-full text-center flex flex-col justify-center items-center">
       <h1 className="text-xl md:text-5xl leading-tight z-30 w-[40%] text-">
         {fhead}
-        <span className="text-teal-400">{span}</span> <span>{head}</span> <span>{chfont}</span>{Last}
+        <span className="text-teal-400">{span}</span> <span>{head}</span> <span className="font-fontspring"> {chfont}</span>{Last}
       </h1>
       <p className="ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara}</p>
       <button className="bg-[#24CFA6] px-10 py-3 rounded-3xl">{HerosectionButton}</button>

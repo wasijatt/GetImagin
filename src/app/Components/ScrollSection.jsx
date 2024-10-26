@@ -122,7 +122,7 @@ const ScrollSection = () => {
           key={index}
           className="panel h-screen flex justify-center items-center text-6xl text-white"
         >
-          <div className="w-[80%] rounded-3xl px-[5%] msy-[2%] mx-[4%] h-[100vh] design service flex flex-grow justify-around items-center bg-white">
+          <div className="w-[80%] rounded-[70px] px-[5%] msy-[2%] mx-[4%] h-[100vh] design service flex flex-grow justify-around items-center bg-white">
             <div className="w-[50%]">
               <h1 className="text-[#24CFA6] text-base md:text-[20px] lg:text-[50px] leading-none">
                 {section.title}
@@ -153,13 +153,13 @@ const ScrollSection = () => {
                 </button>
               </div>
             </div>
-            <div>
+            <div className='w-1/2'>
               <Image
                 alt={section.imageAlt}
                 loading="lazy"
                 quality={75}
-                width={600}
-                height={600}
+              width={400}
+              height={700}
                 src={section.imageUrl}
                 className="w-full h-full rounded-tr-[100px]"
               />

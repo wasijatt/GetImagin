@@ -78,12 +78,26 @@ const Header = () => {
 
   return (
     <div className="flex items-center justify-between px-20 pt-4 relative">
+      <div className="absolute left-[10%] -top-[450%] w-[1200px] h-[600px]">
+        <Image
+         alt="Get Imagin Shadow"
+         src={"/HeaderLogo/Container.svg"}
+    layout="fill"
+         loading="lazy"
+         quality={75}
+
+          />
+
+      </div>
       <div>
         <Link href={"/"}>
           <Image
             alt="Get Imagin"
             width={50}
             height={50}
+          
+            loading="lazy"
+            quality={75}
             src="/HeaderLogo/Getimagin.png"
           />
         </Link>
