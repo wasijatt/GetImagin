@@ -123,17 +123,9 @@ h1 {
 }
 
 
-/* styles/globals.css or component-specific CSS */
-
-
 .panel {
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
-}
-
-
-.bgcon {
-  background: url("../../public/AboutUs/bg-con.jpg");
 }
 
 
@@ -157,4 +149,16 @@ h1 {
 }
 
 
+
+input{
+  font-size: 22px;
+  padding: 8px 12px;
+  margin: 10px 20px;
+  background: transparent;
+  border-bottom: 2px solid white;
+}
+input:focus{
+  outline: none ;
+ 
+}
 
