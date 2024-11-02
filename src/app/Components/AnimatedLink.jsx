@@ -19,11 +19,11 @@ const AnimatedLink = ({ href, children, content, className = "", style = {} }) =
   const borderRef = useRef(null);
 
   useEffect(() => {
-    // Set initial border width
+    
     gsap.set(borderRef.current, { width: "100%" });
   }, []);
 
-  // Merge your mouse enter logic with GSAP animation
+  
   const handleMouseEnter = (e) => {
     setIsHovered(true);
     handleMouseMove(e);
@@ -35,7 +35,7 @@ const AnimatedLink = ({ href, children, content, className = "", style = {} }) =
     });
   };
 
-  // Merge your mouse leave logic with GSAP animation
+  // Merge  mouse leave logic with GSAP animation
   const handleMouseLeaveMerged = (e) => {
     setIsHovered(false);
     handleMouseLeave(e);
@@ -47,7 +47,7 @@ const AnimatedLink = ({ href, children, content, className = "", style = {} }) =
     });
   };
 
-  // Extract borderColor from the style prop, or use default value
+  // Extract borderColor from the style prop.
   const { borderColor = "#fff", ...restStyles } = style;
 
   return (
@@ -56,7 +56,7 @@ const AnimatedLink = ({ href, children, content, className = "", style = {} }) =
       className={`inline-block relative px-4 py-3 rounded-3xl transition-all ease-out duration-1000 ${className}`}
       style={{
         transform: `translate(${translateX}px, ${translateY}px)`,
-        ...restStyles, // Apply other styles except borderColor
+        ...restStyles, 
       }}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
@@ -67,7 +67,7 @@ const AnimatedLink = ({ href, children, content, className = "", style = {} }) =
         className="absolute top-0 right-0 h-full w-full border-[2px] rounded-3xl z-0"
         style={{
           height: "100%",
-          borderColor: borderColor, // Use the extracted borderColor from props
+          borderColor: borderColor, 
         }}
       ></span>
       <span> {content}</span>

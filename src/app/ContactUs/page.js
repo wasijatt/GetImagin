@@ -22,8 +22,8 @@ const page = () => {
                 </div>
                <Link href={""}>+923401438235</Link>
                <Link href={""}>+923005452425</Link>
-               <p>Have a quick question you need answering?
-               Check out - FAQ's : Working with Get Imagin</p>
+               <p>{`Have a quick question you need answering?
+               Check out - FAQ's : Working with Get Imagin`}</p>
             </div>
         </div>
       </div>

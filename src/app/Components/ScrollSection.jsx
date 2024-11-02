@@ -43,13 +43,13 @@ const ScrollSection = () => {
       // Scale and fade the section when the next one reaches 20% from the bottom
       ScrollTrigger.create({
         trigger: panel,
-        start: "top top",  // Start when the next section reaches 20% from the bottom
-        end: "bottom top",  // Continue until the current section goes off-screen
+        start: "top top",  
+        end: "bottom top",  
         scrub: true,
         onUpdate: (self) => {
           // Scale down and fade out the current section
-          const scale = 1 - self.progress * 0.2;  // Scale down by 20%
-          const opacity = 1 - self.progress * 1; // Fade out by 50%
+          const scale = 1 - self.progress * 0.2;  
+          const opacity = 1 - self.progress * 1; 
           gsap.to(panel, { scale, opacity, duration: 0.8, ease: "power2.out" });
         }
       });
@@ -108,7 +108,7 @@ const ScrollSection = () => {
 
   return (
     <div>
-      <div className="z-50  w-full panel flex justify-center items-center h-1/2 -mt-[30vh]">
+      <div className="  w-full panel flex justify-center items-center h-1/2 -mt-[30vh]">
     <div className="flex items-center justify-between w-[70%] m-auto py-4">
       <Heading mainText={"Our"} subText={"Services"} />
       <div className="relative">
