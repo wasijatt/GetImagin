@@ -1,9 +1,9 @@
 
 
 "use client";
-import Link from "next/link";
+
 import { useState } from "react";
-import AnimatedLink from "./AnimatedLink";
+
 
 const Login = () => {
     const [selectedItems, setSelectedItems] = useState([]);

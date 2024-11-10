@@ -1,3 +1,4 @@
+"use client"
 import dynamic from 'next/dynamic';
 import { FaArrowLeft } from "react-icons/fa";
 import Image from "next/image";
