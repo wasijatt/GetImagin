@@ -1,4 +1,6 @@
-import Heading from "./Heading"
+"use client"
+import dynamic from "next/dynamic"; 
+const Heading = dynamic(() => import('./Heading'), { ssr: false });
 import { FaArrowLeft } from "react-icons/fa";
 
 const OurPartner = () => {

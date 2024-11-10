@@ -1,14 +1,15 @@
 
 "use client";
-
+import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 import Image from 'next/image';
-import AnimatedLink from './AnimatedLink';
-import Heading from './Heading';
 import { GoArrowLeft } from "react-icons/go";
+const Heading = dynamic(() => import('./Heading'), { ssr: false });
+const AnimatedLink = dynamic(() => import('./AnimatedLink'), { ssr: false });
+
 
 gsap.registerPlugin(ScrollTrigger);
 

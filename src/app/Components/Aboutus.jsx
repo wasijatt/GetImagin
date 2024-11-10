@@ -1,10 +1,12 @@
-
+import dynamic from 'next/dynamic';
 import { FaArrowLeft } from "react-icons/fa";
-import Heading from "./Heading";
-import Slider from "./Slider";
-import Chat from "./Chat";
 import Image from "next/image";
 import Link from "next/link";
+
+const Heading = dynamic(() => import('./Heading'), { ssr: false });
+const Slider = dynamic(() => import('./Slider'), { ssr: false });
+const Chat = dynamic(() => import('./Chat'), { ssr: false });
+
 const Aboutus = () => {
     return (
         <>

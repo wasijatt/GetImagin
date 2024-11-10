@@ -1,4 +1,3 @@
-// src/models/FormSubmission.js
 import mongoose from 'mongoose';
 
 const FormSubmissionSchema = new mongoose.Schema({

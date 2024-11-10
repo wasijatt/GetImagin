@@ -1,4 +1,3 @@
-// src/app/api/formSubmit/route.js
 import dbConnect from '../../utils/dbConnect';
 import FormSubmission from '../../models/FormSubmission';
 import sendEmail from '../../utils/sendEmail';
