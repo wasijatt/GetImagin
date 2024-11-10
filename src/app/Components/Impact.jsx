@@ -34,7 +34,7 @@ const Impact = () => {
 
   return (
     <section className="py-20 px-6 md:px-12 bg-black mt-[50%] relative">
-      {/* Render the custom cursor */}
+      
       <CustomCursor cursorContent={cursorContent} />
 
       <div className="text-center">
@@ -43,6 +43,7 @@ const Impact = () => {
           <span className="text-teal-400">three</span> <br /> things in mind
         </h1>
       </div>
+      <div className="radialshadow  w-[300px] overflow-hidden"></div>
 
       <div>
         {thingsData.map((thing) => (

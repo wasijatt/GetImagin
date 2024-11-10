@@ -30,7 +30,7 @@ const ScrollSection = () => {
       },
       rotate: "-45",
       duration: .3,
-     
+
     })
     panels.forEach((panel, index) => {
       // Pin the current section
@@ -44,13 +44,13 @@ const ScrollSection = () => {
       // Scale and fade the section when the next one reaches 20% from the bottom
       ScrollTrigger.create({
         trigger: panel,
-        start: "top top",  
-        end: "bottom top",  
+        start: "top top",
+        end: "bottom top",
         scrub: true,
         onUpdate: (self) => {
           // Scale down and fade out the current section
-          const scale = 1 - self.progress * 0.2;  
-          const opacity = 1 - self.progress * 1; 
+          const scale = 1 - self.progress * 0.2;
+          const opacity = 1 - self.progress * 1;
           gsap.to(panel, { scale, opacity, duration: 0.8, ease: "power2.out" });
         }
       });
@@ -76,8 +76,8 @@ const ScrollSection = () => {
       para: "Crafting digital experiences where beauty meets ROI, turning heads and ",
       spanpara: "unlocking",
       lastpara: " revenue potential with every click.",
-      imageAlt: "cvgbh",
-      imageUrl: "/OurWork/Link (1).png",
+      imageAlt: "Get-imagin Web Development and Design Agency ",
+      imageUrl: "/Animation .mp4",
       findmorebuton: "Find Our More "
     },
     {
@@ -89,8 +89,8 @@ const ScrollSection = () => {
       para: "It all starts with your brand. We use sound strategic thinking to create or elevate your ",
       spanpara: "brand identity, ",
       lastpara: " from your visuals to your voice.",
-      imageAlt: "gfdsds",
-      imageUrl: "/OurWork/Link (1).png",
+      imageAlt: "Get-Imagin Branding",
+      imageUrl: "/Poster.mp4",
       findmorebuton: "Find Our More "
     },
     {
@@ -101,8 +101,8 @@ const ScrollSection = () => {
         { buton: "Marketing support", href: "#" },
       ],
       para: "Delivering motion graphics and campaigns that earn attention, spark emotion and increase conversions.",
-      imageAlt: "uytbvre",
-      imageUrl: "/OurWork/Link (1).png",
+      imageAlt: "Get Imagin Marketing",
+      imageUrl: "/Dranding About Main Pictures.mp4",
       findmorebuton: "Find Our More "
     }
   ];
@@ -110,14 +110,14 @@ const ScrollSection = () => {
   return (
     <div>
       <div className="  w-full panel flex justify-center items-center h-1/2 -mt-[30vh]">
-    <div className="flex items-center justify-between w-[70%] m-auto py-4">
-      <Heading mainText={"Our"} subText={"Services"} />
-      <div className="relative">
-        <div className='aboutusShadow'></div>
-        <GoArrowLeft  className="arrow-icon text-base md:text-[40px]  lg:text-[200px] mt-16 z-50" />
+        <div className="flex items-center justify-between w-[70%] m-auto py-4">
+          <Heading mainText={"Our"} subText={"Services"} />
+          <div className="relative">
+            <div className='aboutusShadow'></div>
+            <GoArrowLeft className="arrow-icon text-base md:text-[40px]  lg:text-[200px] mt-16 z-50" />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
       {sections.map((section, index) => (
         <section
           key={index}
@@ -138,32 +138,27 @@ const ScrollSection = () => {
                     {button.buton}
                   </Link>
                 ))}
-                <p className="text-lg">
+                <p className="text-lg ">
                   {section.para} <br />
                   <span className="text-bold text-[#24CFA6] font-juanaAlt">
                     {section.spanpara}
                   </span>
                   {section.lastpara}
                 </p>
-                <button className="text-xl rounded-5xl">
+              </div>
+                <button className="text-xl rounded-5xl text-black ">
                   <AnimatedLink
                     style={{ borderColor: "#303030" }}
                     content="Find Our More"
                     href="#"
                   />
                 </button>
-              </div>
             </div>
             <div className='w-1/2'>
-              <Image
-                alt={section.imageAlt}
-                loading="lazy"
-                quality={75}
-              width={400}
-              height={700}
-                src={section.imageUrl}
-                className="w-full h-full rounded-tr-[100px]"
-              />
+              <video loop muted  autoPlay
+                className="w-full h-full rounded-tr-[100px]"> 
+                <source src={section.imageUrl} type="video/mp4"  />
+              </video>
             </div>
           </div>
         </section>
