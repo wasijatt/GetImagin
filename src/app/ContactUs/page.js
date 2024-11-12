@@ -53,7 +53,12 @@ const page = () => {
               <p className="text-sm md:text-[16px]"> {item.text}</p>
               <h1 className="text-xl md:text-3xl">{item.mail}</h1>
             </div>
+            
           )}
+          <div >
+            <h2>Follow us </h2>
+            <Link></Link>
+          </div>
         </div>
       </div>
 

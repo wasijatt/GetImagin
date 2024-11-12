@@ -79,8 +79,8 @@ const Header = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="flex items-center justify-between px-20 pt-4 relative">
-      <div className="absolute left-[10%] -z-30 -top-[450%] w-[1200px] h-[600px]">
+    <div className="flex items-center justify-between px-4 md:px-20 pt-4 relative">
+      <div className="absolute left-[20%] md:left-[10%] -z-30 -top-[550%] md:-top-[450%] w-[250px] md:w-[1200px]  h-[600px]">
         <Image
           alt="Get Imagin Shadow"
           src={"/HeaderLogo/Container.svg"}
@@ -92,9 +92,10 @@ const Header = () => {
       <div>
         <Link href={"/"}>
           <Image
+          className="w-[40px] md:w-[50px] 2xl:w-[60px]"
             alt="Get Imagin"
-            width={50}
-            height={50}
+            width={70}
+            height={70}
             loading="lazy"
             quality={75}
             src="/HeaderLogo/Getimagin.png"
@@ -102,8 +103,8 @@ const Header = () => {
         </Link>
       </div>
       <div className="relative z-50" ref={toggleRef} onClick={toggleDropdown}>
-        <div className="dropdown flex flex-col items-center justify-center rounded-full border-[3px] border-[#24CFA6] w-[50px] h-[50px]">
-          <div className={`${style.Logo} upper`}></div>
+        <div className="dropdown flex flex-col items-center justify-center rounded-full border-[3px] border-[#24CFA6] w-[40px] md:w-[50px] 2xl:w-[60px]  h-[40px] md:h-[50px] 2xl:h-[60px] ">
+          <div className={`${style.Logo} upper  `}></div>
           <div className={`${style.Logo} lower mt-2`}></div>
         </div>
         <div

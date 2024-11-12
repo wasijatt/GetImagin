@@ -91,9 +91,9 @@ const OurWork = () => {
 
   return (
     <div>
-      <div className="flex px-[10%] justify-between items-center py-[7vh] my-8">
+      <div className="flex flex-col-reverse md:flex-row px-[10%] justify-between md:items-center py-[7vh] my-8">
         <Heading mainText="Our" subText="Work" />
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <h1 className="text-lg lg:text-4xl ">
             Making brands a damn site better.
           </h1>
@@ -109,7 +109,7 @@ const OurWork = () => {
       {/* Work Gallery */}
       <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 px-[5%]">
         {workgallery.map((img, index) => (
-          <div key={index} className={`relative group ${index === 0 ? "w-[90%]" : "w-[45%]"}`} >
+          <div key={index} className={`relative group ${index === 0 ? "w-[90%]" : " w-[90%] md:w-[45%]"} `} >
             <Image
               //  className={`${index === 0 ? "w-[90%]" : "w-[45%]"}`}
               style={"width:45%"}
