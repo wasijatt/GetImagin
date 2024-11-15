@@ -46,28 +46,35 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+    
+        // Prepare form data and selected interests
         const interests = selectedItems.map(index => UserInterest[index].buton);
-
-        const formDataToSend = {
-            ...formData,
-            interests,
-        };
-
+    
+        const formDataToSend = new FormData();
+        formDataToSend.append('firstName', formData.firstName);
+        formDataToSend.append('lastName', formData.lastName);
+        formDataToSend.append('email', formData.email);
+        formDataToSend.append('budget', formData.budget);
+        formDataToSend.append('message', formData.message);
+        formDataToSend.append('interests', JSON.stringify(interests));
+    
+        // Attach file if present
+        if (formData.attachments) {
+            formDataToSend.append('attachments', formData.attachments);
+        }
+    
         const res = await fetch('/api/formSubmit', {
             method: 'POST',
-            body: JSON.stringify(formDataToSend),
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            body: formDataToSend,
         });
-
+    
         if (res.ok) {
             alert('Form submitted successfully!');
-            // Reset the form or handle success
         } else {
             alert('There was an error submitting the form.');
         }
     };
+    
 
     return (
         <div className="w-full p-[8%]">
@@ -98,7 +105,7 @@ const Login = () => {
                 <input className="w-[20%]" type="text" placeholder="Last Name*" name="lastName" required onChange={handleChange} />
                 <input className="w-[40%]" type="email" placeholder="Email*" name="email" required onChange={handleChange} />
                 <input className="w-[45%]" type="number" name="budget" placeholder="Budget($)" required onChange={handleChange} />
-                {/* <input className="w-[40%]" type="file" placeholder="Attachments" name="attachments" accept=".doc,.docx,.pdf,image/*" onChange={handleChange} /> */}
+                <input className="w-[40%]" type="file" placeholder="Attachments" name="attachments" accept=".doc,.docx,.pdf,image/*" onChange={handleChange} />
                 <input className="w-[90%]" type="text" name="message" placeholder="Message" onChange={handleChange} />
                 <label className="block mt-5" htmlFor="">
                     <input className="accent-[#24CFA6]" type="checkbox" name="gmailNotification" id="gmailNotification" />

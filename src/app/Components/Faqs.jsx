@@ -60,13 +60,13 @@ const Faqs = () => {
           className="flex items-center justify-between relative cursor-pointer"
           onClick={toggle}
         >
-          <h3 className=" pl-20 text-white text-base md:text-lg lg:text-xl mxl:text-2xl py-4 w-full ">
+          <h3 className=" pl-12 md:pl-20 text-white text-base md:text-lg lg:text-xl mxl:text-2xl py-4 w-full ">
             {question}
           </h3>
           {isOpen ? (
-            <FaMinus className="absolute left-4 text-gray-400 w-5 h-5" />
+            <FaMinus className="absolute left-2 md:left-4 text-gray-400 w-5 h-5" />
           ) : (
-            <FaPlus className="absolute left-4 text-gray-400 w-5 h-5" />
+            <FaPlus className="absolute left-2 md:left-4 text-gray-400 w-5 h-5" />
           )}
         </div>
         <div

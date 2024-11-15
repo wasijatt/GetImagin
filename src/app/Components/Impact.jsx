@@ -41,12 +41,12 @@ const Impact = () => {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-black mt-[50%] relative">
+    <section className="py-8 md:py-20 px-1 md:px-12 bg-black md:mt-[50%] relative">
 
       <CustomCursor cursorContent={cursorContent} />
 
       <div className="text-center">
-        <h1 className="text-xl md:text-5xl leading-tight">
+        <h1 className="text-2xl md:text-5xl leading-tight">
           We develop bespoke <br /> websites with{' '}
           <span className="text-teal-400">three</span> <br /> things in mind
         </h1>

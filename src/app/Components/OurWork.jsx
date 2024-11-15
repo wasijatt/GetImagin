@@ -91,13 +91,13 @@ const OurWork = () => {
 
   return (
     <div>
-      <div className="flex flex-col-reverse md:flex-row px-[10%] justify-between md:items-center py-[7vh] my-8">
+      <div className="flex flex-col-reverse md:flex-row px-[10%] justify-between md:items-center md:py-[7vh] my-8">
         <Heading mainText="Our" subText="Work" />
         <div className="md:w-1/2">
-          <h1 className="text-lg lg:text-4xl ">
+          <h1 className="text-xl lg:text-4xl ">
             Making brands a damn site better.
           </h1>
-          <p className="text-[12px] mt-4 w-3/4">
+          <p className="text-[14px] mt-4 md:w-3/4">
             Let’s face it, first impressions matter. Your website’s an
             opportunity to wow your audience, so why choose bad design? Brands
             win over fans when they’re brave enough to go beyond their creative
@@ -109,9 +109,9 @@ const OurWork = () => {
       {/* Work Gallery */}
       <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 px-[5%]">
         {workgallery.map((img, index) => (
-          <div key={index} className={`relative group ${index === 0 ? "w-[90%]" : " w-[90%] md:w-[45%]"} `} >
+          <div key={index} className={`relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
             <Image
-              //  className={`${index === 0 ? "w-[90%]" : "w-[45%]"}`}
+             className='rounded-xl '
               style={"width:45%"}
               src={img}
               alt={`Gallery image ${index + 1}`}

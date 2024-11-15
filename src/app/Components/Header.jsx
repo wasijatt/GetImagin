@@ -79,7 +79,7 @@ const Header = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="flex items-center justify-between px-4 md:px-20 pt-4 relative">
+    <div className="flex items-center justify-between px-4 md:px-20 pt-4 relative bg-transparent">
       <div className="absolute left-[20%] md:left-[10%] -z-30 -top-[550%] md:-top-[450%] w-[250px] md:w-[1200px]  h-[600px]">
         <Image
           alt="Get Imagin Shadow"
@@ -118,8 +118,13 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services" >
+              <Link href="/Services" >
                 Services
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs" >
+                Blogs
               </Link>
             </li>
             <li>
