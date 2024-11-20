@@ -2,6 +2,8 @@ import MiniHeroSection from "../Components/MiniHeroSection"
 import Space from "../Components/Space"
 import Services from "../Components/Services"
 import Headline from "../Components/Headline"
+import Chat from "../Components/Chat"
+import ServicesnextGen from "../Components/ServicesnextGen"
 const page = () => {
   return (
     <div>
@@ -10,6 +12,9 @@ const page = () => {
 <Space/>
 <Services/>
 <Headline/>
+<ServicesnextGen/>
+
+<Chat/>
 
 
       </>

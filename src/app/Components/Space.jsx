@@ -11,7 +11,7 @@ const Space = () => {
   useEffect(() => {
     if (videoRef.current) {
       // Set the initial scale to 0.3
-      gsap.set(videoRef.current, { scale: 0.1 });
+      gsap.set(videoRef.current, { scale: 0 });
 
       // Animate to full scale on scroll trigger
       gsap.to(videoRef.current, {

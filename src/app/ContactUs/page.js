@@ -82,7 +82,7 @@ const page = () => {
     </div>
     <Link href={"#"} className="text-base md:text-2xl font-semibold font-neueMachina block mb-2">+923401438235</Link>
     <Link href={"#"} className="text-base md:text-2xl font-semibold font-neueMachina block mb-6">+923005452425</Link>
-    <p className="text-sm md:text-base">Have a quick question you need answering? Check out - FAQ's : Working with Get Imagin</p>
+    <p className="text-sm md:text-base">{`Have a quick question you need answering? Check out - FAQ's : Working with Get Imagin`}</p>
   </div>
   <div className="md:w-[40%] text-white">
     {mailsarray.map((item, index) => (
