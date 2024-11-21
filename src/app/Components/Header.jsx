@@ -84,7 +84,7 @@ const Header = () => {
         <Image
           alt="Get Imagin Shadow"
           src={"/HeaderLogo/Container.svg"}
-          layout="fill"
+          fill
           loading="lazy"
           quality={75}
         />
