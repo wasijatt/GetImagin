@@ -16,8 +16,8 @@ export default function Home() {
    
     <Impact/>
     <OurWork/>
-    {/* <OurResult/>
-     */}
+    <OurResult/>
+    
     <OurPartner/>
     <Faqs/>
   

@@ -100,7 +100,7 @@ const Page = () => {
   }, []);
 
   return (
-    <main className="fixed w-full h-screen bg-black text-white overflow-hidden">
+    <main className="fixed w-full h-screen bg-white text-[#1b1b1b] overflow-hidden">
       <div 
         ref={containerRef} 
         className="relative flex flex-col"
@@ -123,7 +123,7 @@ const Page = () => {
               }}
             >
               <div className="text-2xl mb-4 opacity-50">0{index + 1}</div>
-              <div className="text-[8vw] font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
+              <div className="text-[8vw]  font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
                 {item}
               </div>
             </div>

@@ -67,9 +67,9 @@ const page = () => {
 
 
 <div className="flex flex-col md:flex-row justify-around opacity-60 space-y-8 md:space-y-0 md:space-x-8 p-4 md:p-8">
-  <div className="bg-[#e7e7e7] md:w-[40%] rounded-tr-[150px] text-black p-6 md:p-10">
+  <div className="bg-[#e7e7e7] 2xl:w-[35%] md:w-[40%] rounded-tr-[150px] text-black p-6 md:p-10">
     <div className="flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 mb-6">
-      <div className="w-full md:w-[45%]">
+      <div className="w-full md:w-[45%] ">
         <h2 className="text-lg font-bold md:text-2xl">Mutan</h2>
         <Link href={"https://getimagin.com"} className="cursor-pointer text-sm md:text-base">Getimagin</Link>
         <p className="cursor-pointer text-sm md:text-base">Gulgasht Kalooni Multan</p>

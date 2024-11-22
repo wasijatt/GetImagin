@@ -1,5 +1,5 @@
 import Image from "next/image"
-const ServicesnextGen = () => {
+const      ServicesnextGen = () => {
     const nextgen = [
         {
             imgsrc: "",
@@ -27,7 +27,7 @@ const ServicesnextGen = () => {
 
         </div>
         <div className="bg-[#1c1c1c] md:py-[4%] w-full md:w-[80%] m-auto text-center rounded-2xl">
-            <h2 className="text-xl md:text-4xl 2xl:text-5xl">Need Something Else <span className="text-[#24CFA6]">Designed?</span> </h2>
+            <h1 className="text-xl md:text-4xl 2xl:text-5xl">Need Something Else <span className="text-[#24CFA6]">Designed?</span> </h1>
             <p className="text-lg md:text-2xl text-[#ffffffb9] md:py-7">Let us know how we can help your brand grow.</p>
         </div>
         </>

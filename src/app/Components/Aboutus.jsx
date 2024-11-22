@@ -44,15 +44,15 @@ const Aboutus = () => {
                 <div className=" flex justify-center items-center relative">
                     <Image
                         alt="Get Imagin"
-                        width={600}
+                        width={1600}
                         height={600}
                         loading="lazy"
                         quality={75}
                         src="/AboutUs/bg-con.jpg"
-                        className="w-[90%] h-96 rounded-tr-[120px]"
+                        className="w-[90%] h-96 rounded-tr-[150px]"
                     />
                     <div className="absolute top-[20%] flex justify-around items-center text-center text-lg lg:text-5xl">
-                    <h1 className="w-[45%] "> <span className="font-neueMachina font-bold">Interested </span> <br /> with working with <br /> <span className="font-fontspring"> Get Imagin </span></h1>
+                    <h1 className="w-[45%] leading-relaxed "> <span className="font-neueMachina font-bold">Interested </span> <br /> with working with <br /> <span className="font-fontspring"> Get Imagin </span></h1>
                     <div className="w-1/2  text-start ml-[5%]">
                     <h1 className="text-sm lg:text-lg">Drop us a line at</h1>
                     <Link href={"emilto:getimagin@gmail.com"} className="text-lg lg:text-4xl font-neueMachina font-bold" > getimagin@gmail.com </Link>
