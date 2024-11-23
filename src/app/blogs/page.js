@@ -1,6 +1,7 @@
 import { db } from '@/lib/firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function BlogsPage() {
   const querySnapshot = await getDocs(collection(db, "blogs"));
@@ -16,7 +17,8 @@ export default async function BlogsPage() {
         {blogs.map((blog) => (
           <div key={blog.id} className="bg-white main-color rounded-lg shadow-md overflow-hidden">
             {blog.imageUrl && (
-              <img 
+              <Image 
+              layout='fill'
                 src={blog.imageUrl} 
                 alt={blog.title} 
                 className="w-full h-48 object-cover"

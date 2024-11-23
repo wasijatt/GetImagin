@@ -1,6 +1,7 @@
 import { db } from '@/lib/firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Correct way to handle params in generateMetadata
 export async function generateMetadata({ params: { id } }) {
@@ -48,7 +49,7 @@ export default async function BlogPost({ params: { id } }) {
       </Link>
       
       {blog.imageUrl && (
-        <img 
+        <Image 
           src={blog.imageUrl} 
           alt={blog.title} 
           className="w-full h-64 object-cover rounded-lg mb-8"
