@@ -10,18 +10,15 @@ export class BlogRepository {
       const q = query(blogsRef, orderBy('createdAt', 'desc'));
       const querySnapshot = await getDocs(q);
       
-      const blogs = querySnapshot.docs.map(doc => {
-        const data = doc.data();
-        return {
-          id: doc.id,
-          ...data,
-          // Convert Firestore Timestamp to Date string
-          createdAt: data.createdAt?.toDate?.()?.toISOString() || null,
-          updatedAt: data.updatedAt?.toDate?.()?.toISOString() || null,
-        };
-      });
+      const blogs = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+        // Convert Firestore Timestamp to ISO string
+        createdAt: doc.data().createdAt?.toDate?.()?.toISOString() || null,
+        updatedAt: doc.data().updatedAt?.toDate?.()?.toISOString() || null,
+      }));
 
-      console.log(`Successfully fetched ${blogs.length} blogs`);
+      console.log(`Successfully fetched ${blogs.length} blogs:`, blogs);
       return blogs;
       
     } catch (error) {

@@ -14,7 +14,7 @@ export default async function BlogsPage() {
       <h1 className="text-3xl font-bold mb-8">Our Blog Posts</h1>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {blogs.map((blog) => (
-          <div key={blog.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div key={blog.id} className="bg-white main-color rounded-lg shadow-md overflow-hidden">
             {blog.imageUrl && (
               <img 
                 src={blog.imageUrl} 
@@ -23,11 +23,11 @@ export default async function BlogsPage() {
               />
             )}
             <div className="p-6">
-              <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
+              <h2 className="text-xl font-semibold mb-2  md:text-3xl">{blog.title}</h2>
               <p className="text-gray-600 mb-4 line-clamp-3">{blog.content}</p>
               <Link 
                 href={`/blogs/${blog.id}`}
-                className="text-blue-600 hover:text-blue-800"
+                className=" main-color font-bold text-lg "
               >
                 Read More →
               </Link>

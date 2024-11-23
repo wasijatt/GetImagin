@@ -132,7 +132,7 @@ const ScrollSection = () => {
         >
           <div className="w-full md:w-[85%] rounded-xl md:rounded-[70px] py-[10%] px-[7%] md:px-[5%] md:mx-[4%] max-h-fit md:h-[100vh] flex flex-col-reverse md:flex-row items-center bg-white">
             <div className="w-full md:w-[50%]">
-              <h1 className="text-[#24CFA6] text-3xl  lg:text-[50px] pt-8 leading-none">
+              <h1 className="main-color text-3xl  lg:text-[50px] pt-8 leading-none">
                 {section.title}
               </h1>
               <div className="flex text-[#303030] flex-wrap gap-1 md:gap-2 mt-2 md:mt-9">
@@ -147,7 +147,7 @@ const ScrollSection = () => {
                 ))}
                 <p className="text-lg">
                   {section.para} <br />
-                  <span className="text-bold text-sm md:text-lg text-[#24CFA6] font-juanaAlt">
+                  <span className="text-bold text-sm md:text-lg main-color font-juanaAlt">
                     {section.spanpara}
                   </span>
                   {section.lastpara}

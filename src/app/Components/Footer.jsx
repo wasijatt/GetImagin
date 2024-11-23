@@ -42,8 +42,8 @@ const Footer = () => {
             </div>
             <div className="my-10 pl-4 md:pl-20 ">
             <h1 className="pr-4 py-2 inline-block font-bold md:font-semibold text-sm md:text-2xl " href={"#"}  >Our Sector:</h1>
-            <Link className="md:px-8 px-3 text-[10px] py-1 md:py-2 border-2 rounded-3xl border-[#333]" href={"#"}  >Relegious and study</Link>
-            <Link className="md:px-8 px-3 text-[10px] py-1 md:py-2 border-2 rounded-3xl ml-4 border-[#333]" href={"#"}  >SaaS and Tech</Link>
+            <Link className="md:px-8 px-3 text-[10px] md:text-[20px] py-1 md:py-2 border-2 rounded-3xl border-[#333]" href={"#"}  >Relegious and study</Link>
+            <Link className="md:px-8 px-3 text-[10px] md:text-[20px] py-1 md:py-2 border-2 rounded-3xl ml-4 border-[#333]" href={"#"}  >SaaS and Tech</Link>
             </div>
         </div>
 <div className=" w-full md:w-1/4 flex flex-col justify-evenly items-center">
@@ -52,7 +52,7 @@ const Footer = () => {
 </div>
 
 
-      </div>
+      </div> 
 
     </div>
   );

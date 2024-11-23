@@ -1,43 +1,42 @@
 import { db } from '@/lib/firebase/config';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where, serverTimestamp } from 'firebase/firestore';
 import { NextResponse } from 'next/server';
-
-const sampleBlogs = [
-  {
-    title: "Welcome to Our Agency",
-    content: "We are a creative agency specializing in digital solutions.",
-    published: true,
-  },
-  {
-    title: "Our Design Process",
-    content: "Learn about how we approach each project with creativity and precision.",
-    published: true,
-  },
-  {
-    title: "Latest Projects",
-    content: "Check out our most recent work and client success stories.",
-    published: true,
-  }
-];
+import { blogs } from '@/data/blogs';
 
 export async function GET() {
   try {
     const blogsRef = collection(db, 'blogs');
     
-    const results = await Promise.all(
-      sampleBlogs.map(blog => 
-        addDoc(blogsRef, {
-          ...blog,
-          createdAt: serverTimestamp(),
-          updatedAt: serverTimestamp()
-        })
-      )
+    // Get existing blog titles
+    const snapshot = await getDocs(blogsRef);
+    const existingTitles = snapshot.docs.map(doc => doc.data().title);
+
+    // Filter out blogs that already exist
+    const newBlogs = blogs.filter(blog => !existingTitles.includes(blog.title));
+
+    if (newBlogs.length === 0) {
+      return NextResponse.json({ 
+        success: true, 
+        message: 'No new blogs to add',
+        added: 0
+      });
+    }
+
+    // Add only new blogs
+    const additions = newBlogs.map(blog => 
+      addDoc(blogsRef, {
+        ...blog,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      })
     );
+    
+    const results = await Promise.all(additions);
 
     return NextResponse.json({ 
       success: true, 
-      message: `Added ${results.length} blog posts`,
-      ids: results.map(ref => ref.id)
+      message: `Added ${results.length} new blog posts`,
+      newBlogIds: results.map(ref => ref.id)
     });
   } catch (error) {
     console.error('Seeding error:', error);

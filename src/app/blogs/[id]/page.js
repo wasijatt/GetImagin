@@ -25,7 +25,7 @@ export default async function BlogPost({ params: { id } }) {
         <h1 className="text-2xl font-bold">Blog post not found</h1>
         <Link 
           href="/blogs" 
-          className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
+          className="main-color  mt-4 inline-block"
         >
           ← Back to Blogs
         </Link>
@@ -42,7 +42,7 @@ export default async function BlogPost({ params: { id } }) {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <Link 
         href="/blogs" 
-        className="text-blue-600 hover:text-blue-800 mb-8 inline-block"
+        className="main-color  mb-8 inline-block"
       >
         ← Back to Blogs
       </Link>

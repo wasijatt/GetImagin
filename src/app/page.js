@@ -4,7 +4,7 @@ import OurWork from "./Components/OurWork";
 import OurResult from "./Components/OurResult";
 import Faqs from "./Components/Faqs";
 import ScrollSection from "./Components/ScrollSection";
-
+import LatestBlogs  from "./Components/LatestBlogs";
 import OurPartner from "./Components/OurPartner";
 
 
@@ -17,7 +17,7 @@ export default function Home() {
     <Impact/>
     <OurWork/>
     <OurResult/>
-    
+    <LatestBlogs/>
     <OurPartner/>
     <Faqs/>
   
