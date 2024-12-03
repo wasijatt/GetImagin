@@ -109,7 +109,7 @@ const Header = () => {
         </div>
         <div
           ref={dropdownRef}
-          className={`absolute -top-[45%] -right-[45%] bg-white h-[350px] py-10 w-[320px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
+          className={`absolute -top-[45%] -right-[45%] bg-white h-[400px] py-10 w-[320px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
           <ul className="flex flex-col px-10 text-[#000000] font-semibold text-2xl gap-5 cursor-pointer">
             <li>

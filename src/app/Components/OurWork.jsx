@@ -1,23 +1,18 @@
-
 "use client";
-import dynamic from 'next/dynamic';
-
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import useAnimatedLink from "../hooks/useAnimatedLink";
 import { gsap } from "gsap";
-const AnimatedLink = dynamic(() => import('./AnimatedLink'), { ssr: false });
-const Heading = dynamic(() => import('./Heading'), { ssr: false });
-
-
+import AnimatedLink from './AnimatedLink';
+import Heading from './Heading';
 
 const OurWork = () => {
   const workgallery = [
     "/OurWork/Branding-getimagin services.webp",
     "/OurWork/Branding.webp",
-    "/OurWork/01.webp",
-    "/OurWork/1.webp",
-    "/OurWork/2.webp",
+    "/OurWork/Get Imagin Illustration.webp",
+    "/OurWork/GetImagin Branding.webp",
+    "/OurWork/Web Design .webp",
   ];
   const projectLinks = [
     [
@@ -145,7 +140,7 @@ const OurWork = () => {
       </div>
 
       <div className="w-full my-20 text-center">
-        <AnimatedLink href={"#"} content={"view All Projects"} />
+        <AnimatedLink href={"#"} content={"view All Projects"} style={"bg-teal-400"} />
       </div>
     </div>
   );

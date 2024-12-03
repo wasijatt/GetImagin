@@ -39,9 +39,9 @@ export default function LatestBlogs() {
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="animate-pulse space-y-4">
+        <div className="animate-pulse  flex justify-center items-center gap-5 ">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="h-40 bg-gray-200 rounded-lg"></div>
+            <div key={i} className="h-80 w-[30%] bg-gray-200 rounded-lg rounded-tr-[100px]"></div>
           ))}
         </div>
       </div>
@@ -51,12 +51,12 @@ export default function LatestBlogs() {
   return (
     <section className="bg-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Latest Updates</h2>
-          <p className="mt-2 text-lg text-gray-600">Stay up to date with our latest news and insights</p>
+        <div className="flex justify-between text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900"><span className='font-neueMachina'>Latest</span>  articles</h2>
+         <AnimatedLink href={"/blogs"} content={"view All Posts"} style={"bg-teal-400"}/>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 rounded-tr-[100px]">
           {blogs.map((blog) => (
             <article 
               key={blog.id}

@@ -1,4 +1,3 @@
-
 'use client';
 import dynamic from 'next/dynamic';
 const CustomCursor = dynamic(() => import('./CustomCursor'), { ssr: false });
@@ -11,8 +10,8 @@ const Impact = () => {
 
   const thingsData = [
     {
-      sorc: '/OurWork/Branding.webp',
-      innerImg: '/OurWork/Branding.webp',
+      sorc: '/OurWork/Beauty-WebDevelopment -Getimagin.jpg',
+      innerImg: '/OurWork/Beauty-WebDevelopment -Getimagin.jpg',
 
       id: '01',
       title: 'Beauty',
@@ -21,17 +20,17 @@ const Impact = () => {
       highlightedText: 'one-of-a-kind',
     },
     {
-      innerImg: '/OurWork/Branding.webp',
+      innerImg: '/OurWork/Thoughts WebDesign -Getimagin.webp',
 
-      sorc: '/OurWork/Branding.webp',
+      sorc: '/OurWork/Thoughts WebDesign -Getimagin.webp',
       id: '02',
       title: 'Thought',
       description: 'As a web design agency, we love to deliver meaningful and intuitive user experiences that build trust with your target audience.',
       highlightedText: 'user experiences',
     },
     {
-      sorc: '/OurWork/Branding.webp',
-      innerImg: '/OurWork/Branding.webp',
+      sorc: '/OurWork/Impact - Social Media Design -Getimagin.webp',
+      innerImg: '/OurWork/Impact - Social Media Design -Getimagin.webp',
 
       id: '03',
       title: 'Impact',
