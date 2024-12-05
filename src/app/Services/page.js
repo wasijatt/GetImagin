@@ -6,7 +6,7 @@ import Chat from "../Components/Chat"
 import ServicesnextGen from "../Components/ServicesnextGen"
 const page = () => {
   return (
-    <div>
+    <div className="bg-white">
       <>
       <MiniHeroSection className="h-screen" head={" Our Get Imagin Work & Services That Will Send You to SPACE."} />
 <Space/>

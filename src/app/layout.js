@@ -1,7 +1,7 @@
 // import { SmoothScrollProvider } from '@/context/SmoothScrollContext';
 // import { SmoothScroll } from './Components/SmoothScroll';
 import "./globals.css";
-import Header from "./Components/Header";
+
 import Footer from "./Components/Footer";
 import CustomCursor from "./Components/CustomCursor";
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       <body>
         {/* <SmoothScrollProvider> */}
           {/* <SmoothScroll> */}
-            <Header/>
+            
             <CustomCursor />
             {children}
             <Footer/>

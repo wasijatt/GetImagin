@@ -1,14 +1,14 @@
 "use client";
 import { useEffect, useRef, useMemo } from 'react';
+import Link from 'next/link';
 
 const Page = () => {
-  // Memoize menu items to prevent unnecessary re-renders
-  const workmenu = useMemo(() => [
-    "Shedapk",
-    "LOt",
-    "QuranSpirits",
-    "Not",
-    "Madni",
+  const menuItems = useMemo(() => [
+    { name: "Shedapk", href: "/works/shedapk" },
+    { name: "LOt", href: "/works/lot" },
+    { name: "QuranSpirits", href: "/works/quranspirits" },
+    { name: "Not", href: "/works/not" },
+    { name: "Madni", href: "/works/madni" },
   ], []);
 
   const containerRef = useRef(null);
@@ -19,7 +19,7 @@ const Page = () => {
 
   useEffect(() => {
     const container = containerRef.current;
-    const ease = 0.075;
+    const ease = 0.05;
 
     // Use DocumentFragment for better performance when cloning
     const fragment = document.createDocumentFragment();
@@ -110,9 +110,10 @@ const Page = () => {
           perspective: 1000,
         }}
       >
-        {workmenu.map((item, index) => (
-          <div 
-            key={`${item}-${index}`}
+        {menuItems.map((item, index) => (
+          <Link 
+            key={`${item.name}-${index}`}
+            href={item.href}
             className="work-item h-[40vh] flex flex-col items-center justify-center cursor-pointer group"
           >
             <div 
@@ -123,11 +124,11 @@ const Page = () => {
               }}
             >
               <div className="text-2xl mb-4 opacity-50">0{index + 1}</div>
-              <div className="text-[8vw]  font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
-                {item}
+              <div className="text-[8vw] font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
+                {item.name}
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </main>

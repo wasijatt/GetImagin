@@ -107,7 +107,7 @@ const OurWork = () => {
           <div key={index} className={`relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
             <Image
              className='rounded-xl '
-              style={"width:45%"}
+              style={{width:"45%"}}
               src={img}
               alt={`Gallery image ${index + 1}`}
               loading="lazy"

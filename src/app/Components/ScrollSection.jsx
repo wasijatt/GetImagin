@@ -116,12 +116,12 @@ const ScrollSection = () => {
 
   return (
     <div>
-      <div className={`${isDesktop ? "panel" : ""} w-full md:-mt-[20%] flex justify-center items-center`}>
+      <div className={`${isDesktop ? "panel" : ""} w-full md:-mt-[15%] flex justify-center items-center`}>
         <div className="flex items-center justify-between w-[90%] md:w-[70%] m-auto py-8 md:py-4">
           <Heading mainText={"Our"} subText={"Services"} />
           <div className="relative">
             <div className="aboutusShadow hidden"></div>
-            <GoArrowLeft className="arrow-icon text-6xl md:text-[40px] lg:text-[200px] md:mt-16 z-50" />
+            <GoArrowLeft className="arrow-icon text-6xl md:text-[40px] lg:text-[250px] md:mt-16 z-50" />
           </div>
         </div>
       </div>

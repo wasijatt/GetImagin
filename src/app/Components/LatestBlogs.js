@@ -1,9 +1,10 @@
 'use client';
+import AnimatedLink from './AnimatedLink';
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase/config';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
 import Link from 'next/link';
-
+import Image from 'next/image';
 export default function LatestBlogs() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -38,7 +39,7 @@ export default function LatestBlogs() {
 
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:my-28">
         <div className="animate-pulse  flex justify-center items-center gap-5 ">
           {[1, 2, 3].map((i) => (
             <div key={i} className="h-80 w-[30%] bg-gray-200 rounded-lg rounded-tr-[100px]"></div>
@@ -49,19 +50,20 @@ export default function LatestBlogs() {
   }
 
   return (
-    <section className="bg-white py-12">
+    <section className=" py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900"><span className='font-neueMachina'>Latest</span>  articles</h2>
-         <AnimatedLink href={"/blogs"} content={"view All Posts"} style={"bg-teal-400"}/>
+          <h2 className="text-3xl  font-bold text-white"><span className='font-neueMachina'>Latest</span>  articles</h2>
+         <AnimatedLink  className='hidden md:block' href={"/blogs"} content={"view All Posts"} style={{background : "#fffff"}}/>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 rounded-tr-[100px]">
           {blogs.map((blog) => (
             <article 
               key={blog.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className=" bg-[#ffffff8a] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
+              
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {blog.title}
@@ -95,14 +97,11 @@ export default function LatestBlogs() {
           ))}
         </div>
 
-        <div className="text-center mt-8">
-          <Link
-            href="/blogs"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-          >
-            View All Posts
-          </Link>
+        <div className='m-auto w-1/2 md:hidden my-7'>
+        <AnimatedLink href={"/blogs"} content={"view All Posts"} style={{background : "#fffff"}}/>
+
         </div>
+        
       </div>
     </section>
   );

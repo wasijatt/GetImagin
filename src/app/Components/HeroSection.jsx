@@ -83,7 +83,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
       <p className=" hidden md:block ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara}</p>
       <button className="bg-[#24CFA6] mt-5 px-5 md:px-10 py-3 text-sm md:text-xl rounded-3xl">{HerosectionButton}</button>
 
-      <div className="hidden md:flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[80%] m-auto lg:mt-7">
+      <div className="hidden md:flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[80%] m-auto lg:mt-14">
         {CounterData.map((counterItem, index) => (
           <div
           ref={(el) => (countersRef.current[index] = el)}
