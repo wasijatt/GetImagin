@@ -15,7 +15,7 @@ const Aboutus = () => {
 
                 <div className="w-1/2">
                     <h1 className="text-6xl">Stuck with the same old design?</h1>
-                    <p className="text-sm my-[2%]">We’re a global agency in Multan, Pakistan, rocking Designing, UI, UX, and Web Development. From startups to Fortune 50s, we’ve got you covered.</p>
+                    <p className="text-sm my-[2%] md:w-3/4">We’re a global agency in Multan, Pakistan, rocking Designing, UI, UX, and Web Development. From startups to Fortune 50s, we’ve got you covered.</p>
                 </div>
                 <div className="relative">
                     <div className="aboutusShadow"></div>

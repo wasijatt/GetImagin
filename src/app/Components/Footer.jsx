@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="lg:p-10  ">
+    <div className="lg:p-10  mt-8">
       <div className="  md:flex w-full lg:w-[90%] justify-around ">
         <div className="  mt-2  p-3 font-neueMachina lg:text-lg">
           <Image className="w-[218px] lg:w-[250px]" quality={75}  loading="lazy" src="/Footer/GetImagin-footer-logo.svg" alt="Get-Imagin" width={250} height={250} />

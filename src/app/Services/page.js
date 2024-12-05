@@ -2,22 +2,24 @@ import MiniHeroSection from "../Components/MiniHeroSection"
 import Space from "../Components/Space"
 import Services from "../Components/Services"
 import Headline from "../Components/Headline"
-import Chat from "../Components/Chat"
+
 import ServicesnextGen from "../Components/ServicesnextGen"
+import Header from "../Components/Header"
 const page = () => {
   return (
-    <div className="bg-white">
-      <>
-      <MiniHeroSection className="h-screen" head={" Our Get Imagin Work & Services That Will Send You to SPACE."} />
+    <div className="bg-white pb-[%] ">
+      
+<Header/>
+      <MiniHeroSection className="h-screen" fhead={"Our"} span={" Get Imagin"} head={" & Services That Will Send You to SPACE."} />
 <Space/>
 <Services/>
 <Headline/>
 <ServicesnextGen/>
 
-<Chat/>
 
 
-      </>
+
+      
     </div>
   )
 }

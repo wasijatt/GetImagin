@@ -2,7 +2,7 @@ import { db } from '@/lib/firebase/config';
 import { collection, getDocs } from 'firebase/firestore';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import Header from '../Components/Header';
 export default async function BlogsPage() {
   const querySnapshot = await getDocs(collection(db, "blogs"));
   const blogs = querySnapshot.docs.map(doc => ({
@@ -11,6 +11,8 @@ export default async function BlogsPage() {
   }));
 
   return (
+    <>
+    <Header/>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-3xl font-bold mb-8">Our Blog Posts</h1>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -38,5 +40,6 @@ export default async function BlogsPage() {
         ))}
       </div>
     </div>
+    </>
   );
 }

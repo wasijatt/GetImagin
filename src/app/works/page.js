@@ -1,14 +1,15 @@
 "use client";
 import { useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
+import Header from '../Components/Header';
 
 const Page = () => {
   const menuItems = useMemo(() => [
-    { name: "Shedapk", href: "/works/shedapk" },
-    { name: "LOt", href: "/works/lot" },
-    { name: "QuranSpirits", href: "/works/quranspirits" },
-    { name: "Not", href: "/works/not" },
-    { name: "Madni", href: "/works/madni" },
+    { name: "Cynetic ", href: "/works/Cynetic" },
+    { name: "Likhon.Net", href: "/works/Likhon" },
+    { name: "Pokruszone ", href: "/works/Pokruszone" },
+    { name: "Transcend ", href: "/works/Transcend" },
+ 
   ], []);
 
   const containerRef = useRef(null);
@@ -100,7 +101,8 @@ const Page = () => {
   }, []);
 
   return (
-    <main className="fixed w-full h-screen bg-white text-[#1b1b1b] overflow-hidden">
+    <main className="fixed w-full h-screen bg-black text-white overflow-hidden">
+      <Header/>
       <div 
         ref={containerRef} 
         className="relative flex flex-col"
@@ -114,7 +116,7 @@ const Page = () => {
           <Link 
             key={`${item.name}-${index}`}
             href={item.href}
-            className="work-item h-[40vh] flex flex-col items-center justify-center cursor-pointer group"
+            className="work-item h-[30vh] flex flex-col items-center justify-center cursor-pointer group"
           >
             <div 
               className="content-wrapper relative overflow-hidden"
@@ -123,8 +125,8 @@ const Page = () => {
                 backfaceVisibility: 'hidden',
               }}
             >
-              <div className="text-2xl mb-4 opacity-50">0{index + 1}</div>
-              <div className="text-[8vw] font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
+              <div className="text-2xl  opacity-50">0{index + 1}</div>
+              <div className="text-[6vw] font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
                 {item.name}
               </div>
             </div>
