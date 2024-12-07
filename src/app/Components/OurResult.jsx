@@ -24,26 +24,20 @@ const SCALE_SMALL = 0.8;
 
 // Image data
 const SLIDER_IMAGES = [
-  { src: "/OurResult/Container.jpg", alt: "Portfolio", logo: "", Desc: "", heading:"76.8%" },
-  { src: "/OurResult/Container.jpg", alt: "Container", logo: "", Desc: "", heading:"76.8%" },
-  { src: "/OurResult/Container.jpg", alt: "Container", logo: "", Desc: "", heading:"76.8%" },
+  {
+    src: "/OurResult/",
+    alt: "Portfolio",
+    logo: "/OurResult/Healthy brand GetImagin.png",
+    Desc: "increase in average engagement time after 3 months.",
+    heading: "76.8%",
+    mainImage: "/OurResult/Healthy brand GetImagin 2.png"
+  },
+  { src: "/OurResult/Container.jpg", alt: "Container", logo: "/OurResult/Abyss-brading-getimagin-services (2).png", Desc: "increase in sales after 1 year.", heading: "87.14%", mainImage: "/OurResult/Abyss-brading-getimagin-services (1).png" },
+  { src: "/OurResult/Container.jpg", alt: "Container", logo: "/OurResult/Biker-brading-getimagin-desingagecny-services (2).png", Desc: "rise in engaged sessions per user after 1 month", heading: "67.4%", mainImage: "/OurResult/Biker-brading-getimagin-desingagecny-services (1).png" },
 ]
 
-// Memoized Image component
-const SliderImage = memo(({ src, alt }) => (
-  <Image
-    alt={alt}
-    src={src}
-    layout="fill"
-    objectFit="cover"
-    objectPosition="center"
-    quality={75}
-    loading="lazy"
-    className="rounded-tr-[130px] h-full w-full border-[#333] border-2"
-  />
-));
 
-SliderImage.displayName = 'SliderImage';
+
 
 const Slider = () => {
   const sliderRef = useRef(null);
@@ -156,27 +150,43 @@ const Slider = () => {
         <div ref={sliderRef} className="slider relative w-full h-[100vh] perspective-[100px] flex">
           <button
             ref={buttonRef}
-            className="absolute right-[5%] bottom-[5%] slider-button  rounded-full border-white p-2 z-30 transition-opacity duration-300 opacity-0 pointer-events-none"
+            className="absolute right-[5%] bottom-[15%] slider-button  rounded-full border-[#b6b6b683] border-2 p-2 z-30 transition-opacity duration-300 opacity-0 pointer-events-none"
             aria-label="Next slide"
           >
             <MdOutlineNavigateNext className="text-3xl" />
           </button>
-          <span className="absolute bottom-[5%] left-[3%] inline-block px-4 z-30 py-2 rounded-3xl transition-all ease-out">
+          <span className="absolute bottom-[15%] left-[3%] inline-block px-4 z-30 py-2 rounded-3xl transition-all ease-out">
             <AnimatedLink href="#" content="View All Projects" />
           </span>
           {SLIDER_IMAGES.map((item, index) => (
             <div
               key={index}
-              className="item absolute w-full h-full text-2xl rounded-tr-full"
-              style={{ zIndex: index + 1 }}
+              className="item absolute w-full h-[90vh] text-2xl md:rounded-tr-[300px] rounded-tr-[100px] flex flex-col-reverse md:flex-row rounded-xl justify-center items-center px-6 md:px-[5%] border-2 border-[#b6b6b683] 2xl:px-[8%] bg-black"
+              style={{
+                zIndex: index + 1,
+                backgroundImage: `url("/AboutUs/bg-con.jpg")`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             >
-              <div className=''>
-                <Image src={item.logo}
-                  width={300} height={100} layout='fill' quality={75} alt='Logo-GetImagin'
+              <div className='md:w-1/2 z-10 h-3/4 mix-blend-normal flex justify-evenly flex-col '>
+                <div>
+                  <Image src={item.logo}
+                  className='max-w-min  '
+                  width={1200} height={100} quality={75} alt='Logo-GetImagin'
                 />
-                <h1 className='mdl:text-2xl' >{item.heading}</h1>
+                </div>
+                <div className='mb-4'>
+                  <h1 className='text-[6rem] main-color' >{item.heading}</h1>
+                  <p className='text-base md:text-xl mt-10'>{item.Desc}</p>
+                </div>
               </div>
-              <SliderImage {...item} />
+              <div className='md:w-1/2'>
+                <Image src={item.mainImage}
+                  className='w-[900px] '
+                  width={1000} height={1100} quality={75} alt='Logo-GetImagin'
+                />
+              </div>
 
             </div>
           ))}
@@ -187,4 +197,3 @@ const Slider = () => {
 };
 
 export default memo(Slider);
-

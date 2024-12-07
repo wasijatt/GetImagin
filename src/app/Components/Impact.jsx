@@ -10,7 +10,7 @@ const Impact = () => {
 
   const thingsData = [
     {
-      sorc: '/OurWork/Beauty-WebDevelopment -Getimagin.jpg',
+      sorc: '/OurResult/Abyss-brading-getimagin-services (1).png',
       innerImg: '/OurWork/Beauty-WebDevelopment -Getimagin.jpg',
 
       id: '01',

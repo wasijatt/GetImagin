@@ -20,7 +20,7 @@ const CustomCursor = ({ cursorContent }) => {
       cursorStyle.backgroundColor = '#7700ff';
       cursorStyle.borderRadius = '50%';
       cursorStyle.pointerEvents = 'none';
-      cursorStyle.mixBlendMode = 'difference';
+      // cursorStyle.mixBlendMode = 'difference';
       cursorStyle.transition =
         'transform 0.8s ease-out, width 0.8s ease-out, height 0.8s ease-out, background-color 0.3s ease-out';
       cursorStyle.transform = 'translate(-50%, -50%)';

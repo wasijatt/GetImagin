@@ -87,9 +87,9 @@ const PinnedText = ({ items }) => {
           ref={(el) => (stepsRef.current[index] = el)}
           className="absolute opacity-0 w-full text-center px-4 transform scale-90"
         >
-          <h3 className="mt-[5%] text-xl md:text-3xl sticky">Things That We're Expert on</h3>
+          <h3 className="mt-[5%] text-xl md:text-3xl sticky">Things That We are Expert on</h3>
           <h1 className="mt-[8%] text-2xl md:text-8xl ">{item.heading}</h1>
-          <h2 className="mt-[3%] text-xl md:text-3xl font-semibold">What You'll Get</h2>
+          <h2 className="mt-[3%] text-xl md:text-3xl font-semibold">What You will Get</h2>
           <ul className="mt-14 flex flex-wrap w-1/2 m-auto">
             {item.subservice.map((sub, idx) => (
               <li
