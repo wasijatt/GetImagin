@@ -6,7 +6,7 @@ import { FaPlus,FaMinus } from "react-icons/fa";
 const Faqs = () => {
   const [faqs, setFaqs] = useState([
     {
-      question: "Why should I choose Get Imagin's services over hiring a full-time designer?",
+      question: "What are the advantages of choosing Get Imagin's services over hiring a full-time designer?",
       answer: "Choosing Get Imagin's services offers you flexibility and cost-effectiveness. With our services, you get access to a team of skilled designers without the overhead costs associated with hiring a full-time designer. Additionally, you benefit from diverse perspectives and expertise from our team, ensuring high-quality designs tailored to your needs.",
     },
     {

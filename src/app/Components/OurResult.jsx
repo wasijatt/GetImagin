@@ -28,7 +28,7 @@ const SLIDER_IMAGES = [
     src: "/OurResult/",
     alt: "Portfolio",
     logo: "/OurResult/Healthy brand GetImagin.png",
-    Desc: "increase in average engagement time after 3 months.",
+    Desc: "Achieved a 76.8% increase in average engagement time within 3 months.",
     heading: "76.8%",
     mainImage: "/OurResult/Healthy brand GetImagin 2.png"
   },

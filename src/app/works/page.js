@@ -9,6 +9,8 @@ const Page = () => {
     { name: "Likhon.Net", href: "/works/Likhon" },
     { name: "Pokruszone ", href: "/works/Pokruszone" },
     { name: "Transcend ", href: "/works/Transcend" },
+    { name: "Mr Franky ", href: "/works/Transcend" },
+    { name: "Pasco Pastry ", href: "/works/Transcend" },
  
   ], []);
 

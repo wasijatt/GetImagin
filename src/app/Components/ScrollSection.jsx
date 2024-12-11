@@ -54,7 +54,7 @@ const ScrollSection = () => {
         trigger: panel,
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: 1,
         onUpdate: (self) => {
           const scale = 1 - self.progress * 0.2;
           const opacity = 1 - self.progress * 1;

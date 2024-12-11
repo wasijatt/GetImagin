@@ -18,8 +18,7 @@ const Space = () => {
         scale: 1, // Scale up to 1
         width: '100vw',
         height: '100vh',
-        // Adjust duration for smooth transition
-
+ease: "power1",
         scrollTrigger: {
           trigger: videoRef.current,
           start: 'top bottom', // 70% from top (or 30% from bottom)
