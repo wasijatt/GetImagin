@@ -106,14 +106,14 @@ const OurWork = () => {
         {workgallery.map((img, index) => (
           <div key={index} className={`relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
             <Image
-             className='rounded-xl '
-              style={{width:"45%"}}
+              className='rounded-xl '
+              style={{ width: "45%" }}
               src={img}
-              alt={`Gallery image ${index + 1}`}
+              alt={`Gallery image ${index}`}
               loading="lazy"
               layout="responsive"
               width={100}
-              height={100} // Adjust height based on your needs
+              height={100}
               objectFit="cover"
             />
 
@@ -121,17 +121,18 @@ const OurWork = () => {
             <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-around  items-center transition-opacity duration-500">
               <div className="text-center text-white ">
                 <h2 className="text-xl font-bold mb-[10%] block">We Created Visualization AND </h2>
-<div className='flex'>
-                {projectLinks[index].map((link) => (
+                <div className='flex'>
+                  {projectLinks[index].map((link ,linkindex ) => (
 
-                  <div key={index}
+                    <div key={`project-${index}-${linkindex}`}
+                    
 
 
-                    className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
-                  >
-                    {link.text} {/* Use the text from the object */}
-                  </div>
-                ))}
+                      className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
+                    >
+                      {link.text} {/* Use the text from the object */}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -140,7 +141,7 @@ const OurWork = () => {
       </div>
 
       <div className="w-full my-20 text-center">
-        <AnimatedLink href={"#"} content={"view All Projects"} style={"bg-teal-400"} />
+        <AnimatedLink href={"#"} content={"view All Projects"} style={{ backGround: "yellow" }} />
       </div>
     </div>
   );

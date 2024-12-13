@@ -68,7 +68,7 @@ const PinnedText = ({ items }) => {
           scale: 0.9,
           opacity: 0,
           duration: .6,
-          ease: "power1.inOut",
+          ease: "power1",
         })
         .from(
           listItems,
@@ -77,7 +77,7 @@ const PinnedText = ({ items }) => {
             opacity: 0,
             duration: 0.7,
             stagger: 0.1,
-            ease: "power1.inOut",
+            ease: "power1",
             scrub: 1,
           },
           "<"
@@ -85,7 +85,7 @@ const PinnedText = ({ items }) => {
         .to(step, {
           autoAlpha: 0,
           duration: 0.3,
-          ease: "power1.inOut",
+          ease: "power1",
         });
 
       timeline.add(sectionTimeline, index * 1.5);
