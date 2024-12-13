@@ -1,6 +1,6 @@
 ---
 title: "How GSAP Animations Improve Website Performance and User Experience"
-slug: "how-gsap-animations-improve-website"
+slug: "How-GSAP-Animations-Improve-Website"
 description: "Web animations are a great way to make websites more fun and interactive. One tool that stands out for creating amazing animations is the GreenSock Animation Platform (GSAP). It helps make animations smooth and fast, giving users a better experience. In this article, we’ll talk about how GSAP can make websites perform better and feel more engaging, plus how you can start using it easily."
 date: "2024-12-07"
 author: "Muhammad Wasim"
