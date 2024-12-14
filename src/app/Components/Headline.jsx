@@ -29,18 +29,18 @@ const Headline = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full bg-white overflow-hidden text-black flex  relative">
+    <div className="max-h-min md:h-screen w-full bg-white overflow-hidden  flex text-black relative">
       
       <div
         ref={marqueeContainerRef}
-        className="flex items-center whitespace-nowrap -mt-[10%]"
+        className="flex items-center whitespace-nowrap mt-8 md:-mt-[10%]"
         style={{
           willChange: "transform",
           transformStyle: "preserve-3d",
         }}
       >
         <h1
-          className="marquee-text text-[180px] font-bold uppercase mx-10"
+          className="marquee-text text-3xl md:text-[180px] font-bold uppercase mx-3 md:mx-10 text-black"
           style={{
             transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
           }}
@@ -49,7 +49,7 @@ const Headline = () => {
         </h1>
 
       </div>
-      <div><p className=" absolute bottom-28 left-4  w-1/2 p-[5%] text-3xl">Discover our portfolio and see how we transform ideas into impactful digital experiences. Explore our projects to see the innovation and creativity we bring to every <span className="text-[#24CFA6]">design</span>.</p></div>
+      <div><p className=" absolute bottom-28 left-4 text-black  w-1/2 p-[5%] text-3xl">Discover our portfolio and see how we transform ideas into impactful digital experiences. Explore our projects to see the innovation and creativity we bring to every <span className="text-[#24CFA6]">design</span>.</p></div>
 
 
 

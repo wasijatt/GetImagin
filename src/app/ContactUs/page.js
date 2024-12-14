@@ -2,6 +2,7 @@ import Link from "next/link"
 import Header from "../Components/Header"
 import HeroSection from "../Components/HeroSection"
 import Login from "../Components/Login"
+import Footer from "../Components/Footer"
 const page = () => {
 
   const mailsarray = [
@@ -23,6 +24,7 @@ const page = () => {
     }
   ]
   return (
+    <>
     <div>
       <Header/>
       <HeroSection head={"Get thing happen when you say hey."} />
@@ -65,6 +67,8 @@ const page = () => {
 
 
     </div >
+    <Footer/>
+   </>
   )
 }
 

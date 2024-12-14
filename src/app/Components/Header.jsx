@@ -79,7 +79,7 @@ const Header = () => {
   }, [isDropdownOpen]);
 
   return (
-    <div className="flex items-center justify-between px-4 md:px-20 pt-4 relative bg-transparent  ">
+    <header className="flex items-center justify-between px-4 md:px-20 pt-4 relative bg-transparent  ">
       <div className="absolute left-[20%] md:left-[10%] -z-30 -top-[550%] md:-top-[450%] w-[250px] md:w-[1200px]  h-[600px]">
         <Image
           alt="Get Imagin Shadow"
@@ -89,7 +89,7 @@ const Header = () => {
           quality={75}
         />
       </div>
-      <div>
+      <nav>
         <Link href={"/"}>
           <Image
           className="w-[40px] md:w-[50px] 2xl:w-[60px]"
@@ -101,7 +101,7 @@ const Header = () => {
             src="/HeaderLogo/Getimagin.png"
           />
         </Link>
-      </div>
+      </nav>
       <div className="relative z-50" ref={toggleRef} onClick={toggleDropdown}>
         <div className="dropdown flex flex-col items-center justify-center rounded-full border-[3px] border-[#24CFA6] w-[40px] md:w-[50px] 2xl:w-[60px]  h-[40px] md:h-[50px] 2xl:h-[60px] ">
           <div className={`${style.Logo} upper  `}></div>
@@ -111,6 +111,7 @@ const Header = () => {
           ref={dropdownRef}
           className={`absolute -top-[45%] -right-[45%] bg-white h-[400px] py-10 w-[320px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
+          <nav>
           <ul className="flex flex-col px-10 text-[#000000] font-semibold text-2xl gap-5 cursor-pointer">
             <li>
               <Link href="/works" >
@@ -138,12 +139,12 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-           
+          </nav>
               <AnimatedLink className="text-black font-semibold text-[18px] ml-5 my-4" content={`Let's start Projects`} href={'#'} style={{ borderColor: "#303030" }} />
             
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

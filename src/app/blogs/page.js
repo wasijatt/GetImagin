@@ -62,7 +62,7 @@ import { getSortedPostsData } from "../lib/api";
 import Image from "next/image";
 import Header from "../Components/Header";
 import AnimatedLink from "../Components/AnimatedLink";
-
+import Footer from "../Components/Footer";
 export default function BlogPage() {
   const blogs = getSortedPostsData();
 
@@ -104,6 +104,7 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+<Footer/>
     </>
   );
 }

@@ -32,7 +32,7 @@ ease: "power1",
   }, []);
 
   return (
-    <div className="w-full flex justify-start -mt-[20%] "> {/* Overflow-hidden for smooth scaling */}
+    <div className="w-full flex justify-start md:-mt-[20%] "> {/* Overflow-hidden for smooth scaling */}
       <div className="w-full overflow-hidden relative">
         <video
           ref={videoRef}

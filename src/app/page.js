@@ -7,6 +7,7 @@ import ScrollSection from "./Components/ScrollSection";
 import LatestBlogs from "./Components/LatestBlogs";
 import OurPartner from "./Components/OurPartner";
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 import { getSortedPostsData } from "./lib/api";
 
 
@@ -24,6 +25,7 @@ export default function Home() {
     <LatestBlogs blogs = {blogs}/>
     <OurPartner />
     <Faqs />
+    <Footer />
 
   </>
   );

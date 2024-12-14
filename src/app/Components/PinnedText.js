@@ -102,7 +102,7 @@ const PinnedText = ({ items }) => {
         <Image
           ref={vectorRef}
           src="/Services/Vector.svg"
-          className="vector w-[800px] absolute -bottom-[20%] blur-lg overflow-hidden -left-[10%]"
+          className="vector w-2/3 md:w-[800px] absolute bottom-2/4 md:-bottom-[20%] blur-lg overflow-hidden -left-[10%]"
           width={750}
           height={750}
           quality={75}
@@ -111,7 +111,7 @@ const PinnedText = ({ items }) => {
         <Image
           ref={miniVectorRef}
           src="/Services/minivector.svg"
-          className="minivector w-[300px] blur-[1px] absolute top-[25%] right-[8%]"
+          className="minivector w-20 md:w-[300px] blur-[1px] absolute top-3/4 md:top-[25%] right-[8%]"
           width={750}
           height={750}
           quality={75}
@@ -132,7 +132,7 @@ const PinnedText = ({ items }) => {
           <h2 className="mt-[3%] text-xl md:text-3xl font-semibold">
             What You will Get
           </h2>
-          <ul className="mt-44 flex flex-wrap w-1/2 m-auto">
+          <ul className="mt-44 flex flex-wrap md:w-1/2 m-auto">
             {item.subservice.map((sub, idx) => (
               <li
                 key={idx}

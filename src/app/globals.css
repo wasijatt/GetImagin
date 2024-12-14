@@ -47,10 +47,33 @@ h1 {
   z-index: 0;
   transform: translate(-50%, -50%);
 
+
 }
-.no-scrollbar::-webkit-scrollbar{
-  display: none;
+.prespective{
+  perspective: 1000px;
 }
+.animatedworkbutton {
+  position: fixed;
+  right: 20px;
+  top: 30px;
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.7s ease, box-shadow 0.5s ease;
+  transform-origin: center;
+}
+
+.animatedworkbutton:hover {
+ 
+  transform:  rotateX(360deg);
+}
+
+
 
 .aboutusShadow::after {
   content: "";

@@ -1,115 +1,136 @@
+"use client";
+import { useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import PropTypes from "prop-types";
 import Image from "next/image";
+import Link from "next/link";
+
 const BrandingPageComponent = ({ items }) => {
-    return (
+  const router = useRouter();
+
+  
+  const menuItems = useMemo(
+    () => [
+      { name: "Cynetic", href: "/works/Cynetic" },
+      { name: "Likhon.Net", href: "/works/Likhon" },
+      { name: "Pokruszone", href: "/works/Pokruszone" },
+      { name: "Transcend", href: "/works/Transcend" },
+      { name: "Mr Franky", href: "/works/MrFranky" },
+      { name: "Pasco Pastry", href: "/works/PascoPastry" },
+    ],
+    []
+  );
 
 
-        
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-        // <div className="w-full ">
-        //     {items.map((item, index) => (
-        //         <div
-        //             key={index}
+  
+  const handleNextProject = () => {
+    const nextIndex = (currentIndex + 1) % menuItems.length; 
+    setCurrentIndex(nextIndex);
 
-        //             className="w-full flex "
-        //         > 
-               
+    
+    router.push(menuItems[nextIndex].href);
+  };
 
+  return (
+    <div className="flex flex-col lg:flex-row relative h-screen ">
 
+     
 
-                    
-        //             <div className="w-1/2 ">
-        //             <Image
-        //         className="w-full h-full bg-green-400 "
-        //           alt="Get Imagin"
-        //           width={1600}
-        //           height={1900}
-               
-        //           loading="lazy"
-        //           quality={75}
-        //           src="/OurWork/Cynetis Branding/Cynetis Brandin-get imagin-Services 01.jpg"
-        //         />
-                 
-                    
-        //             </div>
-                   
-        //             <div className="w-1/2 fixed float-right  ">
-                
-        //             <h1 className="mt-[8%] text-2xl md:text-8xl ">{item.heading}</h1>
-              
-        //             <ul className="mt-14 flex flex-wrap w-1/2 m-auto"></ul>
+        <div className="fixed  left-[50%] md:left-[23%]  -top-[30%] md:-top-[450%]w-[250px] md:w-[1200px]  h-[700px]">
+        <Image 
+        className=""
+          alt="Get Imagin Shadow"
+          src={"/HeaderLogo/Container.svg"}
+          fill
+          loading="lazy"
+          quality={75}
+        />
 
-        //             </div>
-                    
-        //         </div>
-        //     ))}
-        // </div>
+      </div>
+      <div className="perspective">
+  <button
+    className="fixed right-8 md:right-20 top-8 md:top-30 border-x-2 px-7 z-20 border-white animatedworkbutton"
+    onClick={handleNextProject}
+  >
+    Next Project
+  </button>
+</div>
+      {/* Left Scrollable Image Section */}
+      <div className="w-full lg:w-1/2 h-full  ">
+      <header>
+      <nav className=" z-30 fixed bottom-24 left-20  hidden md:flex gap-5 text-xl  "> 
+<Link className="bg-[#8a8989] px-6 py-3 rounded-3xl  " href="/" >Home</Link>
+<Link className="bg-[#8a8989] px-6 py-3 rounded-3xl " href="/ContactUs" >Contact</Link>
+<Link className="bg-[#8a8989] px-6 py-3 rounded-3xl " href="/Services" > More Services </Link>
        
-            <div className="flex flex-col lg:flex-row h-screen bg-gray-900">
-              {/* Left Scrollable Image Section */}
-              <div className="w-full lg:w-1/2 h-full overflow-y-scroll  no-scollbar ">
-                <div className="flex flex-col items-center  ">
-                  {/* Example Image 1 */}
-                  <div className="w-full">
-                            <Image
-                className="w-full h-[100vh] bg-green-400 "
-                  alt="Get Imagin"
-                  width={1900}
-                  height={1900}
-                  
-               
-                  loading="lazy"
-                  quality={75}
-                  src="/OurWork/Cynetis Branding/Cynetis Brandin-get imagin-Services 01.jpg"
-                />
-                  </div>
-                  {/* Example Image 2 */}
-                  <div className="w-3/4">
-                          <Image
-                className="w-full h-full bg-green-400 "
-                  alt="Get Imagin"
-                  width={1600}
-                  height={1900}
-               
-                  loading="lazy"
-                  quality={75}
-                  src="/OurWork/Cynetis Branding/Cynetis Brandin-get imagin-Services 01.jpg"
-                />
-                  </div>
-                  {/* Add more images here */}
-                </div>
-              </div>
-        
-              {/* Right Content Section */}
-              <div className="w-full lg:w-1/2 h-full flex flex-col justify-center items-center text-white px-10">
-                <div className="space-y-4">
-                  <button className="px-4 py-2 bg-gray-700 rounded-full text-sm">
-                    ECOMMERCE
-                  </button>
-                  <h1 className="text-6xl font-bold">
-                    IMAGIN <span className="italic">THREADS</span>
-                  </h1>
-                  <p className="text-lg leading-relaxed">
-                    Branding, an iOS app, and a complex affiliate web presence were
-                    designed for BestOdds.com with industry-leading looks, in the form
-                    of magazine-style layouts.
-                  </p>
-                </div>
-              </div>
+      </nav>
+      </header>
+        <div className="flex flex-col items-center">
+
+          {/* Map through the first item's images (assuming items[0] exists) */}
+          {items[0]?.images.map((img, index) => (
+            <div key={index} className={img.containerClasses || "w-full  z-10 "}>
+              <Image
+                className={img.imgClasses || " w-full h-[full] bg-green-400"}
+                alt={img.alt || "Get Imagin"}
+                width={ 2500}
+                height={ 1900}
+                objectFit="cover"
+                objectPosition="center"
+                loading="lazy"
+                quality={75}
+                src={img.src}
+              />
             </div>
+          ))}
+        </div>
+      </div>
 
-    )
-}
+   
+      <div className=" hidden fixed float-right right-0  w-full lg:w-1/2 h-full md:flex flex-col justify-center items-center text-white px-10">
 
-
-
-BrandingPageComponent.propTypes = {
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            heading: PropTypes.string.isRequired,
-
-        })
-    ).isRequired,
+        <div className="space">
+         
+          {items[0] && (
+            <>
+              <button className="px-4 py-2 bg-white main-color font-bold  rounded-full text-sm">
+                {items[0].category }
+              </button>
+              <h1 className="text-[80px] font-bold">
+                {items[0].title} <span className="italic">{items[0].subtitle}</span>
+              </h1>
+              <p className="text-lg leading-relaxed">
+                {items[0].description}
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
-export default BrandingPageComponent
+BrandingPageComponent.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      subtitle: PropTypes.string,
+      description: PropTypes.string,
+      category: PropTypes.string,
+      images: PropTypes.arrayOf(
+        PropTypes.shape({
+          src: PropTypes.string.isRequired,
+          alt: PropTypes.string,
+          width: PropTypes.number,
+          height: PropTypes.number,
+          imgClasses: PropTypes.string,
+          containerClasses: PropTypes.string,
+        })
+      ),
+    })
+  ).isRequired,
+};
+
+export default BrandingPageComponent;
