@@ -37,7 +37,7 @@ const LatestBlogs = ({ blogs }) => {
                 <p className="text-base text-gray-300 mb-4">
                   {new Date(blog.date).toLocaleDateString()} by {blog.author}
                 </p>
-                <p className="text-gray-300 mb-4 text-[12px]">{blog.description}</p>
+                {/* <p className="text-gray-300 mb-4 text-[12px]">{blog.description}</p> */}
                 <Link
                   href={`/blogs/${blog.slug}`}
                   className="main-color hover:underline font-medium"

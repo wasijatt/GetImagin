@@ -10,7 +10,7 @@ const page = () => {
     <div className="bg-white  ">
       
 <Header/>
-      <MiniHeroSection className=" max-h-min md:h-screen" fhead={"Our"} span={" Get Imagin"} head={" & Services That Will Send You to SPACE."} />
+      <MiniHeroSection className=" max-h-min md:h-screen  " fhead={"Our"} span={" Get Imagin"} head={" & Services That Will Send You to SPACE."} />
 <Space/>
 <Services/>
 <Headline/>

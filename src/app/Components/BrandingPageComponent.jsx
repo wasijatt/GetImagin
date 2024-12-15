@@ -60,10 +60,10 @@ const BrandingPageComponent = ({ items }) => {
       {/* Left Scrollable Image Section */}
       <div className="w-full lg:w-1/2 h-full  ">
       <header>
-      <nav className=" z-30 fixed bottom-24 left-20  hidden md:flex gap-5 text-xl  "> 
-<Link className="bg-[#8a8989] px-6 py-3 rounded-3xl  " href="/" >Home</Link>
-<Link className="bg-[#8a8989] px-6 py-3 rounded-3xl " href="/ContactUs" >Contact</Link>
-<Link className="bg-[#8a8989] px-6 py-3 rounded-3xl " href="/Services" > More Services </Link>
+      <nav className="perspective  z-30 fixed bottom-24 left-20 text-[#8a8989] hidden md:flex gap-5 text-[16px] mix-blend-difference font-bold "> 
+<Link className=" border-[#8a8989] border-2 px-4 py-2 rounded-3xl animatedworkbutton" href="/" > / Home </Link>
+<Link className="border-[#8a8989] border-2  px-4 py-2 rounded-3xl animatedworkbutton" href="/ContactUs" >Contact</Link>
+<Link className="border-[#8a8989] border-2 px-4 py-2 rounded-3xl animatedworkbutton" href="/Services" > More Services </Link>
        
       </nav>
       </header>
@@ -89,19 +89,19 @@ const BrandingPageComponent = ({ items }) => {
       </div>
 
    
-      <div className=" hidden fixed float-right right-0  w-full lg:w-1/2 h-full md:flex flex-col justify-center items-center text-white px-10">
+      <div className=" hidden fixed float-right right-0  w-full lg:w-1/2 h-full md:flex flex-col  justify-center items-center text-white px-10">
 
-        <div className="space">
+        <div className="space-y-6">
          
           {items[0] && (
             <>
-              <button className="px-4 py-2 bg-white main-color font-bold  rounded-full text-sm">
+              <button className="px-4 py-2 border-white border-2 text-white font-bold  rounded-full text-[14px]">
                 {items[0].category }
               </button>
-              <h1 className="text-[80px] font-bold">
+              <h1 className="md:text-[60px] 2xl:text-[80px] font-bold">
                 {items[0].title} <span className="italic">{items[0].subtitle}</span>
               </h1>
-              <p className="text-lg leading-relaxed">
+              <p className="text-sm leading-relaxed ">
                 {items[0].description}
               </p>
             </>

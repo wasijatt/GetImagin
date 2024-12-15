@@ -90,7 +90,7 @@ export default function BlogPage() {
                   <p className="text-gray-400 text-sm mb-4">
                     {new Date(blog.date).toLocaleDateString()} by {blog.author}
                   </p>
-                  <p className="text-gray-400 mb-4">{blog.description}</p>
+                  <p className="text-gray-400 mb-4">{blog.description.slice(0,100)}</p>
                   <div>
                     <AnimatedLink
                       href={`/blogs/${blog.slug}`}

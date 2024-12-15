@@ -29,11 +29,11 @@ const Headline = () => {
   }, []);
 
   return (
-    <div className="max-h-min md:h-screen w-full bg-white overflow-hidden  flex text-black relative">
+    <div className="max-h-min md:h-screen w-full bg-white overflow-hidden  md:flex  text-black relative">
       
       <div
         ref={marqueeContainerRef}
-        className="flex items-center whitespace-nowrap mt-8 md:-mt-[10%]"
+        className="flex  items-center whitespace-nowrap mt-8 md:-mt-[10%]"
         style={{
           willChange: "transform",
           transformStyle: "preserve-3d",
@@ -49,7 +49,7 @@ const Headline = () => {
         </h1>
 
       </div>
-      <div><p className=" absolute bottom-28 left-4 text-black  w-1/2 p-[5%] text-3xl">Discover our portfolio and see how we transform ideas into impactful digital experiences. Explore our projects to see the innovation and creativity we bring to every <span className="text-[#24CFA6]">design</span>.</p></div>
+      <div><p className=" md:absolute  bottom-28 left-4  text-black  md:w-1/2 p-[5%] text-sm md:text-3xl">Discover our portfolio and see how we transform ideas into impactful digital experiences. Explore our projects to see the innovation and creativity we bring to every <span className="text-[#24CFA6]">design</span>.</p></div>
 
 
 
