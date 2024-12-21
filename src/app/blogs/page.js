@@ -86,7 +86,7 @@ export default function BlogPage() {
                 blurDataURL="/path/to/placeholder"
                 />
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2">{blog.title}</h2>
+                  <h2 className="text-xl font-semibold mb-2 break-words">{blog.title}</h2>
                   <p className="text-gray-400 text-sm mb-4">
                     {new Date(blog.date).toLocaleDateString()} by {blog.author}
                   </p>

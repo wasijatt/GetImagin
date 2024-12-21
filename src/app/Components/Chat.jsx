@@ -6,7 +6,7 @@ const chat = () => {
         <h1 className="text-sm">(Say Hi, or Start a New Project!)</h1>
         <Link href={"#"}>
     <h1 className="w-[300px] text-center my-[2%]">
-      <IoChatbubbleEllipses className="inline text-5xl mx-1"  /> <span className="text-4xl  ">Let’s Have a Chat</span>
+      <IoChatbubbleEllipses className="inline text-2xl md:text-5xl mx-1"  /> <span className="text-xl md:text-4xl  ">Let’s Have a Chat</span>
 
     </h1>
     </Link>

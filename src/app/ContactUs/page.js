@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Header from "../Components/Header"
-import HeroSection from "../Components/HeroSection"
+import SecondHero from "../Components/SecondHero"
 import Login from "../Components/Login"
 import Footer from "../Components/Footer"
 const page = () => {
@@ -27,7 +27,7 @@ const page = () => {
     <>
     <div>
       <Header/>
-      <HeroSection head={"Get thing happen when you say hey."} />
+      <SecondHero sfhead={"Get thing happen when you say hey."} />
       <Login />
     
 <div className="flex flex-col md:flex-row justify-around opacity-60 space-y-8 md:space-y-0 md:space-x-8 p-4 md:p-8">

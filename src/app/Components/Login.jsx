@@ -79,9 +79,9 @@ const Login = () => {
     return (
         <div className="w-full p-[8%]">
             <h1 className="text-lg lg:text-4xl 2xl:text-[45px]">{` I am interested in :`}</h1>
-            <div className="flex flex-wrap w-3/4 gap-4 mt-4">
+            <div className="flex flex-wrap w-[90%] md:w-3/4 gap-4 mt-4">
                 {UserInterest.map((item, index) => (
-                    <label key={index} className="cursor-pointer mt-8">
+                    <label key={index} className="cursor-pointer mt-2 md:mt-8">
                         <input
                             type="checkbox"
                             checked={selectedItems.includes(index)}
@@ -89,7 +89,7 @@ const Login = () => {
                             className="hidden" // Hides the checkbox input from view
                         />
                         <span
-                            className={`px-4 py-2 border-2 border-[#c4c4c4] duration-800 rounded-3xl transition font-semibold ${
+                            className={`px-4  py-2 border-2 text-sm md:text-xl border-[#c4c4c4] duration-800 rounded-3xl transition font-semibold ${
                                 selectedItems.includes(index)
                                     ? 'bg-[#eef0f0] text-black'
                                     : 'bg-transparent text-white'
@@ -101,21 +101,22 @@ const Login = () => {
                 ))}
             </div>
             <form className="font-neueMachina mt-[7%]" onSubmit={handleSubmit}>
-                <input className="w-[20%]" type="text" placeholder="First Name*" name="firstName" required onChange={handleChange} />
-                <input className="w-[20%]" type="text" placeholder="Last Name*" name="lastName" required onChange={handleChange} />
-                <input className="w-[40%]" type="email" placeholder="Email*" name="email" required onChange={handleChange} />
-                <input className="w-[45%]" type="number" name="budget" placeholder="Budget($)" required onChange={handleChange} />
-                <input className="w-[40%]" type="file" placeholder="Attachments" name="attachments" accept=".doc,.docx,.pdf,image/*" onChange={handleChange} />
+                <input className="w-[90%] md:w-[20%]" type="text" placeholder="First Name*" name="firstName" required onChange={handleChange} />
+                <input className="w-[90%] md:w-[20%]" type="text" placeholder="Last Name*" name="lastName" required onChange={handleChange} />
+                <input className="w-[90%] md:w-[40%]" type="email" placeholder="Email*" name="email" required onChange={handleChange} />
+                <input className="w-[90%] md:w-[45%]" type="number" name="budget" placeholder="Budget($)" required onChange={handleChange} />
+                <input className="w-[90%] md:w-[40%]" type="file" placeholder="Attachments" name="attachments" accept=".doc,.docx,.pdf,image/*" onChange={handleChange} />
                 <input className="w-[90%]" type="text" name="message" placeholder="Message" onChange={handleChange} />
                 <label className="block mt-5" htmlFor="">
-                    <input className="accent-[#24CFA6]" type="checkbox" name="gmailNotification" id="gmailNotification" />
+                    <input className="accent-[#24CFA6] text-sm " type="checkbox" name="gmailNotification" id="gmailNotification" />
                     {`I'm happy to receive a monthly newsletter from Get Imagin`}
                 </label>
                 <label htmlFor="">
                     <input className="accent-[#24CFA6]" type="checkbox" name="agree" id="agree" />
                     I understand that Get Imagin will securely hold my data in accordance with their privacy policy.
                 </label>
-                <button className="border-2 borde-white px-3 -py-1 rounded-3xl ml-[5%]" type="submit">
+                
+                <button className="border-2 borde-white px-4 py-1 rounded-3xl ml-[35%] " type="submit">
                     {/* <AnimatedLink content={"Submit"} href={""} style={{ borderColor: "transparent" }} /> */}   submit
                 </button>
             </form>

@@ -213,4 +213,12 @@ body {
 main {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
 }
-
+@media only  screen and (max-width : 768px){
+  input{
+    font-size: large;
+    padding: 6px 10px;
+    margin: 8px 15px;
+  
+    border-bottom: 1px solid white;
+  }
+}

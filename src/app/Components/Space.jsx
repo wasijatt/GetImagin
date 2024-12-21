@@ -18,7 +18,7 @@ const Space = () => {
         scale: 1, // Scale up to 1
         width: '100vw',
         height: '100vh',
-ease: "power1",
+        ease: "power1",
         scrollTrigger: {
           trigger: videoRef.current,
           start: 'top bottom', // 70% from top (or 30% from bottom)
@@ -32,7 +32,7 @@ ease: "power1",
   }, []);
 
   return (
-    <div className="w-full flex justify-start md:-mt-[20%] "> {/* Overflow-hidden for smooth scaling */}
+    <div className=" hidden  w-full md:flex justify-start md:-mt-[20%] "> {/* Overflow-hidden for smooth scaling */}
       <div className="w-full overflow-hidden relative">
         <video
           ref={videoRef}
@@ -48,15 +48,15 @@ ease: "power1",
             type="video/webm"
           />
         </video>
-      <Image 
-      className=' absolute w-full h-1/2 -mt-[25%] !z-50'
-        src="/Services/Space Gradient.svg"
-        alt="Get-Imagin-space-gradient"
-        width={1200}
-        height={700}
-        quality={75}
-        loading="lazy"
-      ></Image>
+        <Image
+          className=' absolute w-full h-1/2 -mt-[25%] !z-50'
+          src="/Services/Space Gradient.svg"
+          alt="Get-Imagin-space-gradient"
+          width={1200}
+          height={700}
+          quality={75}
+          loading="lazy"
+        ></Image>
       </div>
     </div>
   );
