@@ -3,7 +3,8 @@
 "use client";
 import { useState , useEffect ,useRef } from "react";
 import gsap from "gsap";
-const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, chfont , Last }) => {
+import Image from "next/image";
+const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, chfont , Last , herop }) => {
   const [projects, setProjects] = useState(0);
   const [clients, setClients] = useState(0);
   const [countries, setCountries] = useState(0);
@@ -76,12 +77,22 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
   
   return (
     <div className="w-full text-center flex flex-col justify-center items-center mt-6 md:mt-0">
-      <h1 className="text-2xl md:text-5xl 2xl:text-[4rem] leading-tight z-30  w-[70%] md:w-[40%] ">
+      <h1 className="text-2xl md:text-5xl 2xl:text-[6rem] leading-tight z-30  w-[70%] md:w-[40%] 2xl:w-[60%] py-16 ">
+
         {fhead}
-        <span className="text-teal-400">{span}</span> <span>{head}</span> <span className="font-fontspring"> {chfont}</span>{Last}
+        <span className="text-teal-400">{span}</span> <span>{head}</span> <span className="fontspring relative">
+         
+           {chfont}<Image
+         className="  md:w-52 h-6  absolute   right-[18%]"
+         src={"/Footer/good ki line.svg"}
+         width={100}
+         height={30}
+        //  layout="responsive"
+         quality={75}
+         /></span>{Last}
       </h1>
-      <p className=" hidden md:block ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara}</p>
-      <button className="bg-[#24CFA6] mt-5 px-5 md:px-10 py-3 text-sm md:text-xl rounded-3xl">{HerosectionButton}</button>
+      <p className=" hidden md:block ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara} <span className="main-color font-semibold">{herop}</span></p>
+      <button className="bg-[#24CFA6] mt-5 px-5 md:px-10 py-3 text-sm md:text-xl rounded-3xl text-black font-semibold">{HerosectionButton}</button>
 
       <div className="hidden md:flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[80%] m-auto lg:mt-14">
         {CounterData.map((counterItem, index) => (

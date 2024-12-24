@@ -29,7 +29,9 @@ h1 {
   color: white;
 
 }
-
+.fontspring{
+  font-family: 'Font Spring', sans-serif;
+}
 .work-item {
   will-change: transform;
 }
