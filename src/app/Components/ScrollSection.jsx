@@ -83,7 +83,7 @@ const ScrollSection = () => {
           spanpara: "unlocking",
           lastpara: " revenue potential with every click.",
           imageAlt: "Get-imagin Web Development and Design Agency ",
-          imageUrl: "/Animation .mp4",
+          imageUrl: "/Web design & development.mp4",
           findmorebuton: "Find Our More "
         },
         {
@@ -96,7 +96,7 @@ const ScrollSection = () => {
           spanpara: "brand identity, ",
           lastpara: " from your visuals to your voice.",
           imageAlt: "Get-Imagin Branding",
-          imageUrl: "/Poster.mp4",
+          imageUrl: "/Digital Marketing.mp4",
           findmorebuton: "Find Our More "
         },
         {
@@ -108,7 +108,8 @@ const ScrollSection = () => {
           ],
           para: "Delivering motion graphics and campaigns that earn attention, spark emotion and increase conversions.",
           imageAlt: "Get Imagin Marketing",
-          imageUrl: "/Dranding About Main Pictures.mp4",
+          imageUrl: "/Branding.mp4",
+
           findmorebuton: "Find Our More "
         }
       ];

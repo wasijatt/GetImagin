@@ -73,10 +73,10 @@ const BrandingPageComponent = ({ items }) => {
           {items[0]?.images.map((img, index) => (
             <div key={index} className={img.containerClasses || "w-full  z-10 "}>
               <Image
-                className={img.imgClasses || " w-full h-[full] blur-sm bg-[#ddd]"}
+                className={img.imgClasses || " w-full h-[full]   border-y-2 border-white"}
                 alt={img.alt || "Get Imagin"}
                 width={ 2500}
-                height={ 1900}
+                height={ 2500}
                 objectFit="cover"
                 objectPosition="center"
                 loading="lazy"

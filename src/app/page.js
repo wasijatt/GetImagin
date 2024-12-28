@@ -19,7 +19,7 @@ export default function Home() {
     <ScrollSection />
 
 
-    <Impact />/
+    <Impact />
     <OurWork />
     <OurResult />
     <LatestBlogs blogs = {blogs}/>
