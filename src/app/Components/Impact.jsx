@@ -44,11 +44,17 @@ const Impact = () => {
 
       <CustomCursor cursorContent={cursorContent} />
 
-      <div className="text-center">
-        <h1 className="text-2xl md:text-5xl leading-tight">
+      <div className="text-center ">
+        <h1 className="text-2xl md:text-6xl 2xl:text-8xl leading-tight z-10 ">
           We develop bespoke <br /> websites with{' '}
-          <span className="text-teal-400">three</span> <br /> things in mind
+          <span className="text-teal-400">three</span> <br /> <span className='fontspring'>things</span>  in mind
         </h1>
+        {/* <Image src={"/Footer/good ki line.svg"} alt="Get Imagin Shadow"
+              className="w-[900px] h-10 absolute -bottom-2 left-[25%] hidden 2xl:block"
+             width={300}
+             height={20}
+              loading="lazy"
+              quality={75} /> */}
       </div>
       <div className="radialshadow  w-[300px] overflow-hidden"></div>
 
@@ -63,7 +69,7 @@ const Impact = () => {
             <div className="flex flex-col w-full">
               <h2 className=" text-sm md:text-xl font-bold text-gray-500">{thing.id}/</h2>
               <div>
-                <h1 className=" text-3xl md:text-6xl">{thing.title}</h1>
+                <h1 className=" text-3xl md:text-8xl">{thing.title}</h1>
             <Image src={thing.innerImg} alt="Get Imagin Shadow"
               className="w-full rounded-xl my-7 md:hidden"
              width={500}
@@ -77,7 +83,7 @@ const Impact = () => {
             <div className="md:w-1/2">
               <p className="text-gray-300 text-left">
                 {thing.description.split(thing.highlightedText)[0]}
-                <span className="text-teal-400">{thing.highlightedText}</span>
+                <i className="text-teal-400 font-bold">{thing.highlightedText}</i>
                 {thing.description.split(thing.highlightedText)[1]}
               </p>
             </div>

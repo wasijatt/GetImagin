@@ -118,7 +118,7 @@ const OurWork = () => {
             />
 
             {/* Overlay Menu */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-around  items-center transition-opacity duration-500">
+            {/* <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-around  items-center transition-opacity duration-500">
               <div className="text-center text-white ">
                 <h2 className="text-xl font-bold mb-[10%] block">We Created Visualization AND </h2>
                 <div className='flex'>
@@ -131,11 +131,11 @@ const OurWork = () => {
                       className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
                     >
                       {link.text} {/* Use the text from the object */}
-                    </div>
+                    {/* </div>
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */} 
           </div>
         ))}
       </div>

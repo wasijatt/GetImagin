@@ -21,8 +21,11 @@ body {
   margin: 0;
  overflow-x: hidden;
  box-sizing: border-box;
+ background-image: url("/texture getimagin desingagency.svg");
 }
-
+.fontneue{
+  font-family: 'Neue Machina', sans-serif;
+}
 h1 {
   font-family: 'Neue Machina', sans-serif;
   font-weight: normal;

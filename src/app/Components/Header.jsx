@@ -13,6 +13,7 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const toggleRef = useRef(null);
 
+
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
@@ -34,7 +35,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [handleClickOutside]); // Include handleClickOutside in the dependency array
+  }, [handleClickOutside]); 
 
   useEffect(() => {
     if (isDropdownOpen) {
@@ -92,7 +93,7 @@ const Header = () => {
       <nav>
         <Link href={"/"}>
           <Image
-          className="w-[40px] md:w-[50px] 2xl:w-[60px]"
+          className="w-[40px] md:w-[50px] 2xl:w-[50px]"
             alt="Get Imagin"
             width={70}
             height={70}
@@ -103,17 +104,17 @@ const Header = () => {
         </Link>
       </nav>
       <div className="relative z-50" ref={toggleRef} onClick={toggleDropdown}>
-        <div className="dropdown flex flex-col items-center justify-center rounded-full border-[3px] border-[#24CFA6] w-[40px] md:w-[50px] 2xl:w-[60px]  h-[40px] md:h-[50px] 2xl:h-[60px] ">
+        <div className="dropdown flex flex-col items-center justify-center rounded-full border-[3px] border-[#24CFA6] w-[40px] md:w-[50px] 2xl:w-[50px]  h-[40px] md:h-[50px] 2xl:h-[50px] ">
           <div className={`${style.Logo} upper  `}></div>
           <div className={`${style.Logo} lower mt-2`}></div>
         </div>
         <div
           ref={dropdownRef}
-          className={`absolute -top-[45%] -right-[45%] bg-white h-[400px] py-10 w-[320px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
+          className={`absolute -top-[45%] -right-[40%] bg-white h-[420px] py-10 w-[320px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
           <nav>
-          <ul className="flex flex-col px-10 text-[#000000] font-semibold text-2xl gap-5 cursor-pointer">
-            <li>
+          <ul className="flex flex-col px-10 text-[#000000]  pt-10  fontneue text-2xl gap-3 cursor-pointer">
+            <li >
               <Link href="/works" >
                 Works
               </Link>
@@ -140,7 +141,7 @@ const Header = () => {
             </li>
           </ul>
           </nav>
-              <AnimatedLink className="text-black font-semibold text-[18px] ml-5 my-4" content={`Let's start Projects`} href={'#'} style={{ borderColor: "#303030" }} />
+              <AnimatedLink className="text-black  text-[18px] ml-5 md:mt-6 my-4 font-semibold" content={`Let's start Projects`} href={'#'} style={{ borderColor: "#303030" }} />
             
         </div>
       </div>

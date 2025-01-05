@@ -32,7 +32,7 @@ const Space = () => {
   }, []);
 
   return (
-    <div className=" hidden  w-full md:flex justify-start md:-mt-[20%] "> {/* Overflow-hidden for smooth scaling */}
+    <div className=" hidden  w-full md:flex justify-start "> {/* Overflow-hidden for smooth scaling */}
       <div className="w-full overflow-hidden relative">
         <video
           ref={videoRef}

@@ -83,18 +83,19 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
         <span className="text-teal-400">{span}</span> <span>{head}</span> <span className="fontspring relative">
          
            {chfont}<Image
-         className="  md:w-52 h-6  absolute   right-[18%]"
+         className="  md:w-52 h-6  absolute   right-[5%]"
          src={"/Footer/good ki line.svg"}
          width={100}
          height={30}
+         alt="GoodLine "
         //  layout="responsive"
          quality={75}
          /></span>{Last}
       </h1>
-      <p className=" hidden md:block ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara} <span className="main-color font-semibold">{herop}</span></p>
+      <p className=" hidden md:block ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara} <i className="main-color font-semibold ">  {herop}</i></p>
       <button className="bg-[#24CFA6] mt-5 px-5 md:px-10 py-3 text-sm md:text-xl rounded-3xl text-black font-semibold">{HerosectionButton}</button>
 
-      <div className="hidden md:flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[80%] m-auto lg:mt-14">
+      <div className="hidden md:flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[65%] m-auto lg:mt-14">
         {CounterData.map((counterItem, index) => (
           <div
           ref={(el) => (countersRef.current[index] = el)}
@@ -102,10 +103,10 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
          
             className="text-center  lg:w-[30%] m-4 py-10 lg:py-20 rounded-3xl"
           >
-            <h1 className="text-xl lg:text-[40px]">{counterItem.number}+</h1>
-            <h2 className="text-lg lg:text-[25px] mt-2 lg:mt-6 font-bold">
+            <h2 className="text-xl lg:text-[35px] font-bold">{counterItem.number}+</h2>
+            <p className="text-lg lg:text-[22px] mt-2 lg:mt-2  font-light fontneue">
               {counterItem.title}
-            </h2>
+            </p>
           </div>
         ))}
       </div>

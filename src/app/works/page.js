@@ -133,8 +133,8 @@ const Page = () => {
                 backfaceVisibility: "hidden",
               }}
             >
-              <div className="text-2xl opacity-50">0{index + 1}</div>
-              <div className="text-[6vw] font-neueMachina transform group-hover:translate-y-[-8px] transition-transform duration-300">
+              <div className="text-2xl fontneue md:-mb-10 opacity-50">0{index + 1}</div>
+              <div className="text-[7vw] fontneue transform group-hover:translate-y-[-8px] transition-transform duration-300">
                 {item.name}
               </div>
             </div>

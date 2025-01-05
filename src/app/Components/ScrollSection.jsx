@@ -96,7 +96,7 @@ const ScrollSection = () => {
           spanpara: "brand identity, ",
           lastpara: " from your visuals to your voice.",
           imageAlt: "Get-Imagin Branding",
-          imageUrl: "/Digital Marketing.mp4",
+          imageUrl: "/Branding services getimagin design agency usa.mp4",
           findmorebuton: "Find Our More "
         },
         {
@@ -133,7 +133,7 @@ const ScrollSection = () => {
         >
           <div className="w-full md:w-[85%] rounded-xl md:rounded-[70px] py-[10%] px-[7%] md:px-[5%] md:mx-[4%] max-h-fit md:h-[100vh] flex flex-col-reverse md:flex-row items-center bg-white">
             <div className="w-full md:w-[50%]">
-              <h1 className="main-color text-3xl  lg:text-[50px] pt-8 leading-none">
+              <h1 className="main-color text-3xl  lg:text-[50px] 2xl:text-[90px] pt-6 leading-none">
                 {section.title}
               </h1>
               <div className="flex text-[#303030] flex-wrap gap-1 md:gap-2 mt-2 md:mt-9">
@@ -141,25 +141,26 @@ const ScrollSection = () => {
                   <Link
                     key={i}
                     href={button.href}
-                    className=" text-sm md:text-lg hover:bg-[#303030] hover:text-[#e9e7e7] transition duration-600 py-2 px-6 border-[#303030] border-2 rounded-3xl my-1"
+                    className=" text-sm  hover:bg-[#303030] hover:text-[#e9e7e7] transition duration-600 py-2 px-4 border-[#303030] border-2 rounded-3xl my-1"
                   >
                     {button.buton}
                   </Link>
                 ))}
-                <p className="text-lg">
+                <p className="text-lg md:mr-7  md:pt-8">
                   {section.para} <br />
-                  <span className="text-bold text-sm md:text-lg main-color font-juanaAlt">
+                  <i className="text-bold text-sm md:text-lg main-color font-juanaAlt font-bold">
                     {section.spanpara}
-                  </span>
+                  </i>
                   {section.lastpara}
                 </p>
               </div>
+              <div className='mt-10'>
               <AnimatedLink
-                className="text-black text-lg md:text-xl mt-0"
+                className="text-black text-lg md:text-xl mt-5"
                 style={{ borderColor: "#303030" }}
                 content="Find Our More"
                 href="#"
-              />
+              /></div>
             </div>
             <div className="w-full md:w-1/2">
               <video loop muted autoPlay className="w-full h-full rounded-lg md:rounded-xl rounded-tr-[70px] md:rounded-tr-[100px]">
