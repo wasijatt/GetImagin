@@ -1,23 +1,18 @@
-
 "use client";
-import dynamic from 'next/dynamic';
-
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import useAnimatedLink from "../hooks/useAnimatedLink";
 import { gsap } from "gsap";
-const AnimatedLink = dynamic(() => import('./AnimatedLink'), { ssr: false });
-const Heading = dynamic(() => import('./Heading'), { ssr: false });
-
-
+import AnimatedLink from './AnimatedLink';
+import Heading from './Heading';
 
 const OurWork = () => {
   const workgallery = [
     "/OurWork/Branding-getimagin services.webp",
     "/OurWork/Branding.webp",
-    "/OurWork/01.webp",
-    "/OurWork/1.webp",
-    "/OurWork/2.webp",
+    "/OurWork/Get Imagin Illustration.webp",
+    "/OurWork/GetImagin Branding.webp",
+    "/OurWork/Web Design .webp",
   ];
   const projectLinks = [
     [
@@ -91,13 +86,13 @@ const OurWork = () => {
 
   return (
     <div>
-      <div className="flex px-[10%] justify-between items-center py-[7vh] my-8">
+      <div className="flex flex-col-reverse md:flex-row px-[10%] justify-between md:items-center md:py-[7vh] my-8">
         <Heading mainText="Our" subText="Work" />
-        <div className="w-1/2">
-          <h1 className="text-lg lg:text-4xl ">
+        <div className="md:w-1/2">
+          <h1 className="text-xl lg:text-4xl ">
             Making brands a damn site better.
           </h1>
-          <p className="text-[12px] mt-4 w-3/4">
+          <p className="text-[14px] mt-4 md:w-3/4">
             Let’s face it, first impressions matter. Your website’s an
             opportunity to wow your audience, so why choose bad design? Brands
             win over fans when they’re brave enough to go beyond their creative
@@ -109,43 +104,49 @@ const OurWork = () => {
       {/* Work Gallery */}
       <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 px-[5%]">
         {workgallery.map((img, index) => (
-          <div key={index} className={`relative group ${index === 0 ? "w-[90%]" : "w-[45%]"}`} >
+          <div key={index} className={`relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
             <Image
-              //  className={`${index === 0 ? "w-[90%]" : "w-[45%]"}`}
-              style={"width:45%"}
+              className='rounded-xl '
+              style={{ width: "45%" }}
               src={img}
-              alt={`Gallery image ${index + 1}`}
+              alt={`Gallery image ${index}`}
               loading="lazy"
               layout="responsive"
               width={100}
-              height={100} // Adjust height based on your needs
+              height={100}
               objectFit="cover"
             />
 
             {/* Overlay Menu */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-around  items-center transition-opacity duration-500">
+            {/* <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-around  items-center transition-opacity duration-500">
               <div className="text-center text-white ">
                 <h2 className="text-xl font-bold mb-[10%] block">We Created Visualization AND </h2>
+<<<<<<< HEAD
 <div className='flex justify-items-center' >
                 {projectLinks[index].map((link) => (
+=======
+                <div className='flex'>
+                  {projectLinks[index].map((link ,linkindex ) => (
+>>>>>>> c19f363eea34ee562b3c969f02582b6ad16d49c4
 
-                  <div key={index}
+                    <div key={`project-${index}-${linkindex}`}
+                    
 
 
-                    className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
-                  >
-                    {link.text} {/* Use the text from the object */}
-                  </div>
-                ))}
+                      className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
+                    >
+                      {link.text} {/* Use the text from the object */}
+                    {/* </div>
+                  ))}
                 </div>
               </div>
-            </div>
+            </div> */} 
           </div>
         ))}
       </div>
 
       <div className="w-full my-20 text-center">
-        <AnimatedLink href={"#"} content={"view All Projects"} />
+        <AnimatedLink href={"#"} content={"view All Projects"} style={{ backGround: "yellow" }} />
       </div>
     </div>
   );

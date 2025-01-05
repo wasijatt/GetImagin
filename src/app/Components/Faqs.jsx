@@ -6,7 +6,7 @@ import { FaPlus,FaMinus } from "react-icons/fa";
 const Faqs = () => {
   const [faqs, setFaqs] = useState([
     {
-      question: "Why should I choose Get Imagin's services over hiring a full-time designer?",
+      question: "What are the advantages of choosing Get Imagin's services over hiring a full-time designer?",
       answer: "Choosing Get Imagin's services offers you flexibility and cost-effectiveness. With our services, you get access to a team of skilled designers without the overhead costs associated with hiring a full-time designer. Additionally, you benefit from diverse perspectives and expertise from our team, ensuring high-quality designs tailored to your needs.",
     },
     {
@@ -60,13 +60,13 @@ const Faqs = () => {
           className="flex items-center justify-between relative cursor-pointer"
           onClick={toggle}
         >
-          <h3 className=" pl-20 text-white text-base md:text-lg lg:text-xl mxl:text-2xl py-4 w-full ">
+          <h3 className=" pl-12 md:pl-20 text-white text-base md:text-lg lg:text-xl mxl:text-2xl py-4 w-full ">
             {question}
           </h3>
           {isOpen ? (
-            <FaMinus className="absolute left-4 text-gray-400 w-5 h-5" />
+            <FaMinus className="absolute left-2 md:left-4 text-gray-400 w-5 h-5" />
           ) : (
-            <FaPlus className="absolute left-4 text-gray-400 w-5 h-5" />
+            <FaPlus className="absolute left-2 md:left-4 text-gray-400 w-5 h-5" />
           )}
         </div>
         <div
