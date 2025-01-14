@@ -161,7 +161,7 @@ const Slider = () => {
           {SLIDER_IMAGES.map((item, index) => (
             <div
               key={index}
-              className="item absolute w-full h-[90vh] text-2xl md:rounded-tr-[300px] rounded-tr-[100px] flex flex-col-reverse md:flex-row rounded-xl justify-center items-center px-6 md:px-[5%] border-2 border-[#b6b6b683] 2xl:px-[8%] bg-black"
+              className="item absolute w-full h-[90vh] text-2xl md:rounded-tr-[200px] 2xl:rounded-tr-[300px] rounded-tr-[100px] flex flex-col-reverse md:flex-row rounded-xl justify-center items-center px-6 md:px-[5%] border-2 border-[#b6b6b683] 2xl:px-[8%] bg-black"
               style={{
                 zIndex: index + 1,
                 backgroundImage: `url("/AboutUs/bg-con.jpg")`,

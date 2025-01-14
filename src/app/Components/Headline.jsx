@@ -49,7 +49,7 @@ const Headline = () => {
         </h1>
 
       </div>
-      <div><p className=" md:absolute  bottom-28 left-4  text-black  md:w-1/2 p-[5%] text-sm md:text-3xl">Discover our portfolio and see how we transform ideas into impactful digital experiences. Explore our projects to see the innovation and creativity we bring to every <span className="text-[#24CFA6]">design</span>.</p></div>
+      <div><p className=" md:absolute bottom-10 2xl:bottom-28 left-4  text-black  md:w-1/2 p-[5%] text-sm md:text-3xl">Discover our portfolio and see how we transform ideas into impactful digital experiences. Explore our projects to see the innovation and creativity we bring to every <span className="text-[#24CFA6]">design</span>.</p></div>
 
 
 

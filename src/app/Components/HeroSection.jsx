@@ -101,7 +101,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
           ref={(el) => (countersRef.current[index] = el)}
           key={index}
          
-            className="text-center  lg:w-[30%] m-4 py-10 lg:py-20 rounded-3xl"
+            className="text-center  lg:w-[30%] 2xl:m-4 py-10 lg:py-20 rounded-3xl"
           >
             <h2 className="text-xl lg:text-[35px] font-bold">{counterItem.number}+</h2>
             <p className="text-lg lg:text-[22px] mt-2 lg:mt-2  font-light fontneue">

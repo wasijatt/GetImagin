@@ -118,7 +118,7 @@ const ScrollSection = () => {
   return (
     <div>
       <div className={`${isDesktop ? "panel" : ""} w-full md:-mt-[15%] flex justify-center items-center`}>
-        <div className="flex items-center justify-between w-[90%] md:w-[70%] m-auto py-8 md:py-4">
+        <div className="flex items-center justify-between w-[90%] md:w-[70%] m-auto 2xl:py-8 md:py-4">
           <Heading mainText={"Our"} subText={"Services"} />
           <div className="relative">
             <div className="aboutusShadow hidden"></div>
@@ -133,7 +133,7 @@ const ScrollSection = () => {
         >
           <div className="w-full md:w-[85%] rounded-xl md:rounded-[70px] py-[10%] px-[7%] md:px-[5%] md:mx-[4%] max-h-fit md:h-[100vh] flex flex-col-reverse md:flex-row items-center bg-white">
             <div className="w-full md:w-[50%]">
-              <h1 className="main-color text-3xl  lg:text-[50px] 2xl:text-[90px] pt-6 leading-none">
+              <h1 className="main-color text-3xl  lg:text-[50px] 2xl:text-[85px] pt-6 leading-none">
                 {section.title}
               </h1>
               <div className="flex text-[#303030] flex-wrap gap-1 md:gap-2 mt-2 md:mt-9">
@@ -147,8 +147,8 @@ const ScrollSection = () => {
                   </Link>
                 ))}
                 <p className="text-lg md:mr-7  md:pt-8">
-                  {section.para} <br />
-                  <i className="text-bold text-sm md:text-lg main-color font-juanaAlt font-bold">
+                  {section.para} 
+                  <i className="text-bold text-sm md:text-lg main-color  font-juanaAlt font-bold">
                     {section.spanpara}
                   </i>
                   {section.lastpara}

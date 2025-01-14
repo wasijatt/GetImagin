@@ -90,7 +90,7 @@ const Faqs = () => {
 
       <div className="w-full lg:w-[80%] mx-auto px-4 md:px-6 lg:px-8 py-8 lg:py-16">
         <h1 className="text-white text-center text-2xl md:text-3xl lg:text-6xl font-semibold mb-8">
-        Curious? Let us clear <br />it up!
+        Curious? Let us clear <br /> <span className="fontspring"> its up</span>!
         </h1>
         {faqs.map((faq, index) => (
           <FaqItem key={index} question={faq.question} answer={faq.answer} />
