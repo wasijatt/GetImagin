@@ -8,39 +8,28 @@ import Heading from './Heading';
 
 const OurWork = () => {
   const workgallery = [
-    "/OurWork/Branding-getimagin services.webp",
-    "/OurWork/Branding.webp",
-    "/OurWork/Get Imagin Illustration.webp",
-    "/OurWork/GetImagin Branding.webp",
-    "/OurWork/Web Design .webp",
+    { img :  "/OurWork/Branding-getimagin services.webp",
+      year: "2024",
+      brandname:"Kotto"
+    },
+   { img :  "/OurWork/Branding.webp",
+    year: "2023",
+    brandname:"Cloud"
+   },
+    {img :  "/OurWork/Get Imagin Illustration.webp",
+      year: "2023",
+      brandname:"Schaeffler"
+    },
+    {img :  "/OurWork/GetImagin Branding.webp",
+      year: "2023",
+      brandname:"Owo"
+    },
+   { img :  "/OurWork/Web Design .webp",
+    year: "2023",
+    brandname:"Shingfong"
+   },
   ];
-  const projectLinks = [
-    [
-      { text: "View Project 1", href: "/project1" },
-      { text: "View Project 2", href: "/project2" },
-      { text: "View Project 3", href: "/project3" },
-    ],
-    [
-      { text: "View Project 4", href: "/project4" },
-      { text: "View Project 5", href: "/project5" },
-      { text: "View Project 6", href: "/project6" },
-    ],
-    [
-      { text: "View Project 7", href: "/project7" },
-      { text: "View Project 8", href: "/project8" },
-      { text: "View Project 9", href: "/project9" },
-    ],
-    [
-      { text: "View Project 10", href: "/project10" },
-      { text: "View Project 11", href: "/project11" },
-      { text: "View Project 12", href: "/project12" },
-    ],
-    [
-      { text: "View Project 13", href: "/project13" },
-      { text: "View Project 14", href: "/project14" },
-      { text: "View Project 15", href: "/project15" },
-    ],
-  ];
+  
   // Using the animated link hook
   const {
     isHovered,
@@ -96,19 +85,33 @@ const OurWork = () => {
             Let’s face it, first impressions matter. Your website’s an
             opportunity to wow your audience, so why choose bad design? Brands
             win over fans when they’re brave enough to go beyond their creative
-            comfort zone.
+            <strong className="main-color"> comfort </strong> zone.
           </p>
         </div>
       </div>
 
       {/* Work Gallery */}
       <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 px-[5%]">
-        {workgallery.map((img, index) => (
-          <div key={index} className={`relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
+        {workgallery.map((item, index) => (
+          <div key={index} className={` border-[2px] rounded-xl border-[#383838] relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
+            <div className="w-full px-4 py-2 flex justify-between"> 
+              <h4 className="flex "> <Image
+              className='rounded-xl mr-2'
+              style={{ width: "45%" }}
+              src={"/OurWork/arooow.svg"}
+              alt={`Gallery image ${index}`}
+              loading="lazy"
+              layout="responsive"
+              width={100}
+              height={100}
+              objectFit="cover"
+            />{ item.brandname}</h4>
+              <h4>{item.year}</h4>
+            </div>
             <Image
               className='rounded-xl '
               style={{ width: "45%" }}
-              src={img}
+              src={item.img}
               alt={`Gallery image ${index}`}
               loading="lazy"
               layout="responsive"
@@ -117,36 +120,12 @@ const OurWork = () => {
               objectFit="cover"
             />
 
-            {/* Overlay Menu */}
-            {/* <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 flex justify-around  items-center transition-opacity duration-500">
-              <div className="text-center text-white ">
-                <h2 className="text-xl font-bold mb-[10%] block">We Created Visualization AND </h2>
-<<<<<<< HEAD
-<div className='flex justify-items-center' >
-                {projectLinks[index].map((link) => (
-=======
-                <div className='flex'>
-                  {projectLinks[index].map((link ,linkindex ) => (
->>>>>>> c19f363eea34ee562b3c969f02582b6ad16d49c4
-
-                    <div key={`project-${index}-${linkindex}`}
-                    
-
-
-                      className="px-4 py-2 rounded-3xl text-sm bg-teal-400 hover:bg-teal-500 transition-colors duration-600 m-2 text-center"
-                    >
-                      {link.text} {/* Use the text from the object */}
-                    {/* </div>
-                  ))}
-                </div>
-              </div>
-            </div> */} 
           </div>
         ))}
       </div>
 
       <div className="w-full my-20 text-center">
-        <AnimatedLink href={"#"} content={"view All Projects"} style={{ backGround: "yellow" }} />
+        <AnimatedLink href={"/work"} content={"view All Projects"} style={{ backGround: "yellow" }} />
       </div>
     </div>
   );

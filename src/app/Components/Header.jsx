@@ -141,7 +141,7 @@ const Header = () => {
             </li>
           </ul>
           </nav>
-              <AnimatedLink className="text-black  text-[18px] ml-5 md:mt-6 my-4 font-semibold" content={`Let's start Projects`} href={'#'} style={{ borderColor: "#303030" }} />
+              <AnimatedLink className="text-black  text-[18px] ml-5 md:mt-6 my-4 font-semibold" content={`Let's start Projects`} href={'/ContactUs'} style={{ borderColor: "#303030" }} />
             
         </div>
       </div>

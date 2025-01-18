@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { FaPlus,FaMinus } from "react-icons/fa";
-
+import Image from "next/image";
 
 const Faqs = () => {
   const [faqs, setFaqs] = useState([
@@ -90,7 +90,18 @@ const Faqs = () => {
 
       <div className="w-full lg:w-[80%] mx-auto px-4 md:px-6 lg:px-8 py-8 lg:py-16">
         <h1 className="text-white text-center text-2xl md:text-3xl lg:text-6xl font-semibold mb-8">
-        Curious? Let us clear <br /> <span className="fontspring"> its up</span>!
+        Curious? Let us clear <br /> <span className="fontspring relative">
+           
+           <Image
+           className="absolute w-20 h-20 right-0"
+           src={"/HeaderLogo/svg latest articles.svg"} 
+           width={100}
+           height={100}
+           alt="up svg "
+           quality={75}
+
+          />
+           its up</span>!
         </h1>
         {faqs.map((faq, index) => (
           <FaqItem key={index} question={faq.question} answer={faq.answer} />

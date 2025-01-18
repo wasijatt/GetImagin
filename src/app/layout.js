@@ -7,11 +7,11 @@ import CustomCursor from "./Components/CustomCursor";
 
 
 export const metadata = {
-  title: 'Your Company Name | Creative Design Agency',
+  title: 'Get Imagin| Creative Design Agency',
   description: 'Professional web design and development agency specializing in creative solutions, branding, and Web3 development.',
   keywords: 'web design, creative agency, branding, Web3, development, Pakistan',
   openGraph: {
-    title: 'Your Company Name | Creative Design Agency',
+    title: 'Get Imagin| Creative Design Agency',
     description: 'Professional web design and development agency specializing in creative solutions, branding, and Web3 development.',
     images: ['/path-to-your-og-image.jpg'],
     type: 'website',

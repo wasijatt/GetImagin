@@ -118,7 +118,7 @@ const PinnedText = ({ items }) => {
           alt="Get Imagin"
         />
       </div>
-      <h3 className=" mt-[60%] md:mt-[5%] opacity-70 text-lg md:text-3xl sticky">
+      <h3 className=" mt-[60%] md:mt-[8%] opacity-70 text-lg md:text-3xl sticky">
         Things That We are Expert on
       </h3>
       {items.map((item, index) => (
@@ -128,11 +128,11 @@ const PinnedText = ({ items }) => {
           className="absolute opacity-0 w-full text-center px-4 transform scale-90"
         >
 
-          <h1 className="mt-[80%] md:mt-[13%] text-4xl md:text-8xl">{item.heading}</h1>
+          <h1 className="mt-[80%] md:mt-[13%] text-4xl md:text-8xl">{item.heading} <span className="fontspring" >{item.subHead}</span> </h1>
           <h2 className="mt-[10%] md:mt-[3%] text-lg md:text-3xl font-semibold">
             What You will Get
           </h2>
-          <ul className=" mt-10 md:mt-44 flex flex-wrap md:w-1/2 m-auto">
+          <ul className=" mt-10 md:mt-20 2xl:mt-44 flex flex-wrap md:w-1/2 m-auto">
             {item.subservice.map((sub, idx) => (
               <li
                 key={idx}

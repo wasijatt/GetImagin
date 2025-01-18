@@ -3,7 +3,8 @@ import PinnedText from "./PinnedText";
 const Services = () => {
   const ServicesSec = [
     {
-      heading: "Web Designing",
+      heading: "Web ",
+      subHead:"Designing",
       subservice: [
         "Custom Design",
         "App Design",
@@ -13,7 +14,9 @@ const Services = () => {
         "User Experience",
       ],
     },{
-        heading: "Web Development",
+        heading: "Web",
+      subHead:"Development",
+
         subservice: [
           " Custom Web Dev ",
           "WordPress",
@@ -23,7 +26,9 @@ const Services = () => {
           " E-commerce Development",
         ],
       },{
-        heading: "Graphic Design",
+        heading: "Graphic ",
+      subHead:"Design",
+
         subservice: [
           "Logo Design",
           "Branding & Identity Design",
@@ -33,7 +38,9 @@ const Services = () => {
        
         ],
       },{
-        heading: "Data Analytics ",
+        heading: "Data  ",
+      subHead:"Analytics",
+
         subservice: [
           "Power BI",
           " Power Query ",
@@ -42,7 +49,9 @@ const Services = () => {
       
         ],
       },{
-        heading: "Facebook Services",
+        heading: "Facebook",
+      subHead:"Services",
+
         subservice: [
           "Facebook Reviews",
           "Facebook Feedback",

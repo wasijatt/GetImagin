@@ -159,7 +159,7 @@ const ScrollSection = () => {
                 className="text-black text-lg md:text-xl mt-5"
                 style={{ borderColor: "#303030" }}
                 content="Find Our More"
-                href="#"
+                href="/work"
               /></div>
             </div>
             <div className="w-full md:w-1/2">

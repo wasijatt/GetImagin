@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 const      ServicesnextGen = () => {
     const nextgen = [
@@ -11,6 +13,10 @@ const      ServicesnextGen = () => {
             title: "NextGen Properties",
             description: "Transformed custom design into Webflow, enhancing user experience and modern co-living solutions."
         }, ]
+    const handlespeed = ()=>{
+
+        document.querySelector('video').playbackRate = 0.25;
+    }  
     return (
         <div className="">
         <div className=" md:flex  text-black justify-center items-center">
@@ -26,9 +32,22 @@ const      ServicesnextGen = () => {
 
 
         </div>
-        <div className="bg-[#1c1c1c]  px-5 py-[6%]  w-full md:w-[80%] m-auto text-center my-10 rounded-2xl  ">
-            <h1 className="text-xl md:text-4xl 2xl:text-5xl">Need Something Else <span className="text-[#24CFA6] cursor-pointer">Designed?</span> </h1>
-            <p className="text-sm md:text-2xl text-[#ffffffb9] md:py-7">Let us know how we can help your brand grow.</p>
+        <div className=" bg-black px-5 py-[6%]  w-full md:w-[80%] m-auto text-center my-10 rounded-2xl relative  ">
+        {/* <video
+          
+          className="video w-full h-auto absolute top-0 left-0 z-0"
+          autoPlay
+          loop
+          muted
+          onCanPlay={handlespeed}
+          playsInline
+          preload="auto"
+          src="/Services/lets caht with getimagin desing agency.mp4"
+        >
+         
+        </video> */}
+            <h1 className="text-xl md:text-4xl 2xl:text-5xl !z-10">Need Something Else <span className="text-[#24CFA6] cursor-pointer">Designed?</span> </h1>
+            <p className="text-sm md:text-2xl text-[#ffffffb9] md:py-7 !z-10">Let us know how we can help your brand grow.</p>
         </div>
 
         <div className=" md:h-16 "></div>

@@ -89,7 +89,7 @@ const Login = () => {
                             className="hidden" // Hides the checkbox input from view
                         />
                         <span
-                            className={`px-4  py-2 border-2 text-sm md:text-xl border-[#c4c4c4] duration-800 rounded-3xl transition font-semibold ${
+                            className={`px-4  py-2 border-2 text-sm md:text-lg border-[#c4c4c4] duration-800 rounded-3xl transition font-semibold ${
                                 selectedItems.includes(index)
                                     ? 'bg-[#eef0f0] text-black'
                                     : 'bg-transparent text-white'
@@ -117,7 +117,7 @@ const Login = () => {
                 </label>
                 
                 <button className="border-2 borde-white px-4 py-1 rounded-3xl ml-[35%] " type="submit">
-                    {/* <AnimatedLink content={"Submit"} href={""} style={{ borderColor: "transparent" }} /> */}   submit
+                     submit
                 </button>
             </form>
         </div>
