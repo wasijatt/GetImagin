@@ -72,7 +72,7 @@ animation: 2s spin linear infinite;
 .animatedborder::before{
   filter: blur(1.5rem);
   opacity: 0.3;
-} */ */
+} */ 
 .fontneue{
   font-family: 'Neue Machina', sans-serif;
 }

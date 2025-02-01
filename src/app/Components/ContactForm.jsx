@@ -176,7 +176,7 @@ const ContactForm = () => {
                             {...register("gmailNotification")}
                         />
                         <span className="text-sm">
-                            I'm happy to receive a monthly newsletter from Get Imagin
+                            I am happy to receive a monthly newsletter from Get Imagin
                         </span>
                     </label>
 
