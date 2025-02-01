@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Header from "../Components/Header"
 import SecondHero from "../Components/SecondHero"
-import Login from "../Components/Login"
+import ContactForm from "../Components/ContactForm"
 import Footer from "../Components/Footer"
 const page = () => {
 
@@ -28,7 +28,7 @@ const page = () => {
     <div>
       <Header/>
       <SecondHero sfhead={"Get thing happen when you say hey."} />
-      <Login />
+      <ContactForm />
     
 <div className="flex flex-col md:flex-row justify-around opacity-60 space-y-8 md:space-y-0 md:space-x-8 p-4 md:p-8">
   <div className="bg-[#e7e7e7] 2xl:w-[35%] md:w-[40%] rounded-tr-[150px] text-black p-6 md:p-10">
@@ -44,8 +44,8 @@ const page = () => {
         <p className="cursor-pointer text-sm md:text-base">Railway Road M.Garh</p>
       </div>
     </div>
-    <Link href={"tell:+923401438235"} className="text-base md:text-2xl font-semibold font-neueMachina block mb-2">+923401438235</Link>
-    <Link href={"tell:+923005452425"} className="text-base md:text-2xl font-semibold font-neueMachina block mb-6">+923005452425</Link>
+    <Link href={"tell:+923401438235"} className="text-base md:text-2xl font-semibold fontneue block mb-2">+923401438235</Link>
+    <Link href={"tell:+4407506592977"} className="text-base md:text-2xl font-semibold fontneue block mb-6">+4407506592977</Link>
     <p className="text-sm md:text-base">{`Have a quick question you need answering? Check out - FAQ's : Working with Get Imagin`}</p>
   </div>
   <div className="md:w-[40%] text-white">
@@ -59,7 +59,7 @@ const page = () => {
       <h2 className="md:text-2xl">Follow us</h2>
       <Link href="https://www.instagram.com/getimagin/" className="text-sm md:text-base">Instagram</Link>
       <Link href="https://web.facebook.com/profile.php?id=61565487723248" className="text-sm md:text-base">Facebook</Link>
-      <Link href="#" className="text-sm md:text-base">LinkedIn</Link>
+      <Link href="https://www.linkedin.com/company/get-imagin/" className="text-sm md:text-base">LinkedIn</Link>
     </div>
   </div>
 </div>

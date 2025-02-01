@@ -91,9 +91,9 @@ const OurWork = () => {
       </div>
 
       {/* Work Gallery */}
-      <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 px-[5%]">
+      <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 md:py-5 px-[5%]">
         {workgallery.map((item, index) => (
-          <div key={index} className={` border-[2px] rounded-xl border-[#383838] relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
+          <div key={index} className={`  border-[2px] rounded-xl border-[#383838] relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
             <div className="w-full px-4 py-2 flex justify-between"> 
               <h4 className="flex "> <Image
               className='rounded-xl mr-2'
@@ -104,7 +104,7 @@ const OurWork = () => {
               layout="responsive"
               width={100}
               height={100}
-              objectFit="cover"
+              // objectFit="cover"
             />{ item.brandname}</h4>
               <h4>{item.year}</h4>
             </div>

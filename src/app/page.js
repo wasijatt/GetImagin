@@ -1,13 +1,15 @@
-import HeroSection from "./Components/HeroSection";
-import Impact from "./Components/Impact";
-import OurWork from "./Components/OurWork";
-import OurResult from "./Components/OurResult";
-import Faqs from "./Components/Faqs";
-import ScrollSection from "./Components/ScrollSection";
-import LatestBlogs from "./Components/LatestBlogs";
+import dynamic from "next/dynamic";
+const HeroSection = dynamic(() => import('./Components/HeroSection'));
+const Impact = dynamic(() => import('./Components/Impact'));
+const OurWork = dynamic(() => import('./Components/OurWork'));
+const OurResult = dynamic(() => import('./Components/OurResult'));
+const Faqs = dynamic(() => import('./Components/Faqs'));
+const ScrollSection = dynamic(() => import('./Components/ScrollSection'));
+const LatestBlogs = dynamic(() => import('./Components/LatestBlogs'));
+const Header = dynamic(() => import('./Components/Header'));
+const Footer = dynamic(() => import('./Components/Footer'));
 
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+
 import { getSortedPostsData } from "./lib/api";
 
 

@@ -10,7 +10,7 @@ const Footer = () => {
   const socialMedia = [
     { icon: "Instagram", link: "https://www.instagram.com/getimagin/" },
     { icon: "Facebook", link: "https://web.facebook.com/profile.php?id=61565487723248" },
-    { icon: "FaLinkedin ", link: "https://www.linkedin.com/company/get-imagin/" },
+    { icon: "Linkedin ", link: "https://www.linkedin.com/company/get-imagin/" },
 
   ];
 

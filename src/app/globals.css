@@ -23,6 +23,56 @@ body {
  box-sizing: border-box;
  background-image: url("/texture getimagin desingagency.svg");
 }
+
+
+
+
+
+/* animated border css  */
+
+/* @property --angle{
+syntax: "<angle>";
+initial-value: 0deg;
+inherits: false;
+}
+@keyframes spin{
+ from{
+  --angle: 0deg;
+ }
+ to{
+  --angle: 360deg;
+ }
+}
+.animatedborder{
+
+   /* width: 300px; */
+/*   
+  position: relative;
+  background: white;
+  margin: 0 auto;
+  color: black;
+  
+  border-radius: 20px;
+}
+.animatedborder::after ,.animatedborder::before{
+  content:"";
+ position: absolute;
+ width: 101%;
+ height: 101%;
+ left: 50%;
+ top: 50%;
+ translate: -50% -50%;
+ background-image: conic-gradient(from var(--angle), yellow , rgb(25, 82, 25), red, rgb(0, 255, 145) , rgb(57, 13, 57));
+ z-index: -1;
+ padding: 10px ;
+ border-radius: 17px;
+animation: 2s spin linear infinite;
+
+}
+.animatedborder::before{
+  filter: blur(1.5rem);
+  opacity: 0.3;
+} */ */
 .fontneue{
   font-family: 'Neue Machina', sans-serif;
 }

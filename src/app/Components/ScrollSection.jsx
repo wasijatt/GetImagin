@@ -138,13 +138,13 @@ const ScrollSection = () => {
               </h1>
               <div className="flex text-[#303030] flex-wrap gap-1 md:gap-2 mt-2 md:mt-9">
                 {section.btn.map((button, i) => (
-                  <Link
+                  <p
                     key={i}
                     href={button.href}
                     className=" text-sm  hover:bg-[#303030] hover:text-[#e9e7e7] transition duration-600 py-2 px-4 border-[#303030] border-2 rounded-3xl my-1"
                   >
                     {button.buton}
-                  </Link>
+                  </p>
                 ))}
                 <p className="text-lg md:mr-7  md:pt-8">
                   {section.para} 
@@ -159,7 +159,7 @@ const ScrollSection = () => {
                 className="text-black text-lg md:text-xl mt-5"
                 style={{ borderColor: "#303030" }}
                 content="Find Our More"
-                href="/work"
+                href="/works"
               /></div>
             </div>
             <div className="w-full md:w-1/2">

@@ -1,6 +1,6 @@
-// import { SmoothScrollProvider } from '@/context/SmoothScrollContext';
-// import { SmoothScroll } from './Components/SmoothScroll';
+
 import "./globals.css";
+
 
 import Footer from "./Components/Footer";
 import CustomCursor from "./Components/CustomCursor";
@@ -23,6 +23,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <head>
@@ -44,32 +45,29 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Your Company Name",
-              "url": "https://yourwebsite.com",
-              "logo": "https://yourwebsite.com/logo.png",
+              "name": "Get Imagin",
+              "url": "https://getimagin.com",
+              "logo": "https://getimagin.com/logo.png",
               "description": "Professional web design and development agency specializing in creative solutions.",
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "Pakistan"
               },
               "sameAs": [
-                "https://facebook.com/yourcompany",
-                "https://twitter.com/yourcompany",
-                "https://linkedin.com/company/yourcompany"
+                "https://facebook.com/getimagin",
+                "https://twitter.com/getimagin",
+                "https://linkedin.com/getimagin"
               ]
             })
           }}
         />
       </head>
       <body>
-        {/* <SmoothScrollProvider> */}
-          {/* <SmoothScroll> */}
-            
-            <CustomCursor />
+     
+            <CustomCursor/>
             {children}
-            {/* <Footer/> */}
-          {/* </SmoothScroll> */}
-        {/* </SmoothScrollProvider> */}
+          
+        
       </body>
     </html>
   )

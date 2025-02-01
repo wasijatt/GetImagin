@@ -4,6 +4,7 @@
 import { useState , useEffect ,useRef } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, chfont , Last , herop }) => {
   const [projects, setProjects] = useState(0);
   const [clients, setClients] = useState(0);
@@ -93,7 +94,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
          /></span>{Last}
       </h1>
       <p className=" hidden md:block ml-[700px] text-sm w-[300px] -z-20 text-[#E9E9E9]">{HerosectionPara} <i className="main-color font-semibold ">  {herop}</i></p>
-      <button className="bg-[#24CFA6] mt-5 px-5 md:px-10 py-3 text-sm md:text-xl rounded-3xl text-black font-semibold">{HerosectionButton}</button>
+      <Link  href="/works" className="bg-[#24CFA6] mt-5 px-5 md:px-10 py-3 text-sm md:text-xl rounded-3xl text-black font-semibold">{HerosectionButton}</Link>
 
       <div className="hidden md:flex flex-wrap justify-center text-[#E9E9E9] items-center lg:justify-between w-full lg:w-[65%] m-auto lg:mt-14">
         {CounterData.map((counterItem, index) => (

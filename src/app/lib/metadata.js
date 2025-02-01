@@ -1,21 +1,3 @@
-// src/lib/metadata.js
-// export function generatePostMetadata(post) {
-//     return {
-//       title: post.title,
-//       description: post.description,
-//       openGraph: {
-//         title: post.title,
-//         description: post.description,
-//         images: [
-//           {
-//             url: post.featuredImage,
-//             alt: `Image for ${post.title}`,
-//           },
-//         ],
-//       },
-//     };
-//   }
-  
 
 
 export async function generateMetadata({ params }) {
