@@ -1,11 +1,9 @@
 
 import "./globals.css";
 
-
-import Footer from "./Components/Footer";
 import CustomCursor from "./Components/CustomCursor";
 
-
+// import SmoothScroll from "./Components/SmoothScroll";
 export const metadata = {
   title: 'Get Imagin| Creative Design Agency',
   description: 'Professional web design and development agency specializing in creative solutions, branding, and Web3 development.',
@@ -63,11 +61,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-     
+     {/* <SmoothScroll> */}
             <CustomCursor/>
             {children}
           
-        
+            {/* </SmoothScroll> */}
       </body>
     </html>
   )

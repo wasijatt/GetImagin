@@ -66,77 +66,118 @@
 
 
 
-'use client'
+// "use client";
+// import { useEffect, useRef } from 'react';
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// gsap.registerPlugin(ScrollTrigger);
 
-import { useEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useLayoutEffect } from 'react'
+// const Space = () => {
+//   const videoRef = useRef(null);
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger)
+//   useEffect(() => {
+//     if (videoRef.current) {
+//       // Set initial width to 10vw
+//       gsap.set(videoRef.current, { width: '10vw' });
+
+//       // Animate width from 10vw to 100vw on scroll
+//       gsap.to(videoRef.current, {
+//         width: '100vw', // Animate to full width
+//         ease: "power1.out", // Linear easing for smooth scroll-based animation
+//         scrollTrigger: {
+//           trigger: videoRef.current, // Use the video as the trigger
+//           start: 'bottom bottom', // Start animation when the bottom of the video hits the bottom of the viewport
+//           end: 'top top', // End animation when the top of the video hits the top of the viewport
+//           scrub: true, // Smoothly animate based on scroll position
+//           markers: false, // Set to true for debugging (shows start/end markers)
+//         },
+//       });
+//     }
+//   }, []);
+
+//   return (
+//     <div style={{ height: '100vh', position: 'relative', overflow: 'hidden' }}>
+//       <video
+//         ref={videoRef}
+//         style={{
+//           position: 'absolute',
+//           bottom: 0,
+//           left: '50%',
+//           transform: 'translateX(-50%)',
+//           height: '100%',
+//           objectFit: 'cover',
+//         }}
+//         autoPlay
+//         muted
+//         loop
+//       >
+//         <source src="https://cdn.prod.website-files.com/6694cfbb7de2e7a505091bcd%2F669e188ae962be55ac7f4bf0_SaCZ_-owaHrwwJFz5CebZZlFtC3o28mkSMfoe0eg6xo-transcode.webm" type="video/mp4" />
+//         Your browser does not support the video tag.
+//       </video>
+//     </div>
+//   );
+// };
+
+// export default Space;
+
+
+
+"use client";
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Space = () => {
-  const containerRef = useRef(null)
-  const videoRef = useRef(null)
+  const videoRef = useRef(null);
 
-  // Use layoutEffect to prevent flash of unstyled content
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!videoRef.current || !containerRef.current) return
+  useEffect(() => {
+    if (videoRef.current) {
+      // Set initial width to 10vw
+      gsap.set(videoRef.current, { width: '10vw' });
 
-      // Initial state
-      gsap.set(videoRef.current, {
-        width: '10vw',
-        height: 'auto',
-      })
-
-      // Create animation
-      const tl = gsap.timeline({
+      // Animate width from 10vw to 100vw on scroll
+      gsap.to(videoRef.current, {
+        width: '100vw', // Animate to full width
+        ease: "none", // Linear easing for smooth scroll-based animation
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top bottom',
-          end: 'top top',
-          scrub: 1, // Smooth scrubbing
-          pin: true,
-          anticipatePin: 1, // Improves pin performance
-          invalidateOnRefresh: true, // Handles resize properly
+          trigger: videoRef.current, // Use the video as the trigger
+          start: 'top bottom', // Start animation when the bottom of the video hits the bottom of the viewport
+          end: 'top top', // End animation when the top of the video hits the top of the viewport
+          scrub: 1, // Smoothly animate based on scroll position (1 second delay for smoothness)
+          markers: false, // Set to true for debugging (shows start/end markers)
+          invalidateOnRefresh: true, // Ensures the animation recalculates on window resize
         },
-      })
+      });
+    }
 
-      tl.to(videoRef.current, {
-        width: '100vw',
-        height: '100vh',
-        ease: 'none', // Linear animation for smooth scroll
-      })
-
-      // Cleanup function
-      return () => {
-        tl.kill()
-        ScrollTrigger.getAll().forEach(trigger => trigger.kill())
-      }
-    }, containerRef) // Scope GSAP to our component
-
-    return () => ctx.revert() // Clean up context
-  }, [])
+    // Cleanup ScrollTrigger on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
 
   return (
-    <div 
-      ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-black"
-    >
+    <div style={{ height: '100vh', position: 'relative', overflow: 'hidden' }}>
       <video
         ref={videoRef}
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          height: '100%',
+          objectFit: 'cover',
+        }}
         autoPlay
         muted
         loop
-        playsInline
-        className="absolute left-1/2 top-1/2 h-auto w-[10vw] -translate-x-1/2 -translate-y-1/2 object-cover"
       >
         <source src="https://cdn.prod.website-files.com/6694cfbb7de2e7a505091bcd%2F669e188ae962be55ac7f4bf0_SaCZ_-owaHrwwJFz5CebZZlFtC3o28mkSMfoe0eg6xo-transcode.webm" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
     </div>
-  )
-}
+  );
+};
 
-export default Space
+export default Space;
