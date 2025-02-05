@@ -43,19 +43,20 @@ const ServicesnextGen = () => {
 
             </div>
             <div
-                className=" w-full md:w-[80%] m-auto text-center mb-[30%] md:mb-96   relative"
+                className=" w-full md:w-[80%] m-auto text-center mb-[30%] md:mb-96    relative"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
                 <video
                     ref={videoRef}
-                    className="video w-full h-auto absolute top-0 rounded-2xl  left-0"
+                    className="video w-full h-auto absolute top-0 rounded-2xl    left-0"
                     loop
                     muted
                     playsInline
                     preload="auto"
                     src="/Services/lets caht with getimagin desing agency.mp4"
                 ></video>
+                {/* <div className="w-full h-auto absolute top-0 rounded-2xl  left-0 bg-[#00000068] "></div> */}
                 <div className="absolute mt-[10%] left-[10%] md:left-[18%]">
                 <h1 className=" text-white text-xl md:text-4xl 2xl:text-5xl  !z-10">
                     Need Something Else{' '}

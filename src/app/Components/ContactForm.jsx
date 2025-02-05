@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 
 const ContactForm = () => {
     const [selectedItems, setSelectedItems] = useState([]);
+    const [showThankYouPopup, setShowThankYouPopup] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const {
@@ -71,6 +72,7 @@ const ContactForm = () => {
             toast.success('Form submitted successfully!');
             reset();
             setSelectedItems([]);
+            setShowThankYouPopup(true); // Show thank you popup
         } catch (error) {
             console.error('Submission error:', error);
             toast.error('Something went wrong. Please try again.');
@@ -205,6 +207,20 @@ const ContactForm = () => {
                     {isSubmitting ? 'Submitting...' : 'Submit '}
                 </button>
             </form>
+            {showThankYouPopup && (
+                <div className="fixed inset-0 flex items-center justify-center !bg-[#0000008a] bg-opacity-50">
+                    <div className="bg-white text-black p-6 rounded-lg shadow-lg text-center">
+                        <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+                        <p>Your form has been submitted successfully.</p>
+                        <button
+                            className="mt-4 px-4 py-2 bg-[#24CFA6] text-white rounded"
+                            onClick={() => setShowThankYouPopup(false)}
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

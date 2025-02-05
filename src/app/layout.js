@@ -23,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   
   return (
-   <>
+   <html>
       <Head>
         <title>Get Imagin - Professional Web Design</title>
         <meta name="description" content="Professional web design and development agency specializing in creative solutions." />
@@ -66,6 +66,6 @@ export default function RootLayout({ children }) {
           
             {/* </SmoothScroll> */}
       </body>
-    </>
+    </html>
   )
 }
