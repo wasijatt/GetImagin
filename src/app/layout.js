@@ -24,41 +24,21 @@ export default function RootLayout({ children }) {
   
   return (
    <html>
-      <Head>
+      <head>
         <title>Get Imagin - Professional Web Design</title>
         <meta name="description" content="Professional web design and development agency specializing in creative solutions." />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+        {/* <!-- Google tag (gtag.js) --> */}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WHQWT01LQR"/>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
 
-      {/* Google Tag Manager */}
-      <Script id="google-tag-manager" strategy="afterInteractive" dangerouslySetInnerHTML={{
-        __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','G-Z2Y2RNNK3J');`
-      }} />
+  gtag('config', 'G-WHQWT01LQR');
+</script>
+      </head>
 
-      {/* Schema.org JSON-LD */}
-      <Script id="schema-json-ld" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Get Imagin",
-          "url": "https://getimagin.com",
-          "logo": "https://getimagin.com/logo.png",
-          "description": "Professional web design and development agency specializing in creative solutions.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "Pakistan"
-          },
-          "sameAs": [
-            "https://facebook.com/getimagin",
-            "https://twitter.com/getimagin",
-            "https://linkedin.com/getimagin"
-          ]
-        })
-      }} />
       <body>
      {/* <SmoothScroll> */}
             <CustomCursor/>

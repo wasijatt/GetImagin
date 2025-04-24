@@ -62,7 +62,7 @@ const Impact = () => {
         {thingsData.map((thing) => (
           <div
             key={thing.id}
-            onMouseEnter={() => setCursorContent(thing.sorc)} // Set the image source when hovering
+            onMouseEnter={() => setCursorContent(  '/OurWork/Beauty-WebDevelopment -Getimagin.jpg' )} // Set the image source when hovering
             onMouseLeave={() => setCursorContent(null)} // Clear the cursor content when leaving hover
             className="flex flex-col md:flex-row items-center px-[5%] py-[9%] md:opacity-30 hover:opacity-100 duration-1000 text-left border-b-2 border-[#333]"
           >
