@@ -2,6 +2,7 @@
 import "./globals.css";
 import Script from "next/script";
 import CustomCursor from "./Components/CustomCursor";
+// import PageTransition from "./Components/PageTransition";
 import Head from "next/head";
 // import SmoothScroll from "./Components/SmoothScroll";
 export const metadata = {
@@ -61,8 +62,10 @@ export default function RootLayout({ children }) {
       }} />
       <body>
      {/* <SmoothScroll> */}
+     {/* <PageTransition> */}
             <CustomCursor/>
             {children}
+     {/* </PageTransition> */}
           
             {/* </SmoothScroll> */}
       </body>

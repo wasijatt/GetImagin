@@ -3,6 +3,8 @@ import Header from "../Components/Header"
 import SecondHero from "../Components/SecondHero"
 import ContactForm from "../Components/ContactForm"
 import Footer from "../Components/Footer"
+import ChatWidget from "../Components/ChatWidget"
+import styles from "@/app/Styles/chat.module.css"
 const page = () => {
 
   const mailsarray = [
@@ -29,7 +31,10 @@ const page = () => {
       <Header/>
       <SecondHero sfhead={"Get thing happen when you say hey."} />
       <ContactForm />
-    
+      <div className={styles.container}>
+      <h1>Agency AI Assistant</h1>
+      <ChatWidget />
+    </div>
 <div className="flex flex-col md:flex-row justify-around opacity-60 space-y-8 md:space-y-0 md:space-x-8 p-4 md:p-8">
   <div className="bg-[#e7e7e7] 2xl:w-[35%] md:w-[40%] rounded-tr-[150px] text-black p-6 md:p-10">
     <div className="flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 mb-6">
