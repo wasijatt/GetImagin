@@ -2,6 +2,7 @@
 import "./globals.css";
 import Script from "next/script";
 import CustomCursor from "./Components/CustomCursor";
+import WhatsappButtton from "./Components/whatsappButtton";
 // import PageTransition from "./Components/PageTransition";
 import Head from "next/head";
 // import SmoothScroll from "./Components/SmoothScroll";
@@ -31,18 +32,19 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         {/* <!-- Google tag (gtag.js) --> */}
 <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WHQWT01LQR"/>
-<Script>
+{/* <Script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments)}
   gtag('js', new Date());
 
   gtag('config', 'G-WHQWT01LQR');
-</Script>
+</Script> */}
       </head>
 
       <body>
      {/* <SmoothScroll> */}
      {/* <PageTransition> */}
+     <WhatsappButtton/>
             <CustomCursor/>
             {children}
      {/* </PageTransition> */}

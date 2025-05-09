@@ -8,7 +8,7 @@ const ScrollSection = dynamic(() => import('./Components/ScrollSection'));
 const LatestBlogs = dynamic(() => import('./Components/LatestBlogs'));
 const Header = dynamic(() => import('./Components/Header'));
 const Footer = dynamic(() => import('./Components/Footer'));
-
+    
 
 import { getSortedPostsData } from "./lib/api";
 

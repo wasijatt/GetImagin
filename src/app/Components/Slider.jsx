@@ -4,18 +4,20 @@ import { useState, useEffect, useRef } from "react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { set } from "lodash";
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [hover , sethover] = useState(null)
+ 
   const [direction, setDirection] = useState("next"); // Track navigation direction
   const [previousIndex, setPreviousIndex] = useState(0); // Keep track of the previous index
   const images = [
-    "/OurWork/Link (1).png",
-    "/OurWork/Link (4).png",
-    "/OurWork/Link (3).png",
-    "/OurWork/Link (4).png",
-    "/OurWork/Link (1).png",
-    "/OurWork/Link (4).png",
-    "/OurWork/Link (4).png",
+    "/AboutUs/team/Muhammad Wasim . the Full stack Developer-min.jpg",
+    "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
+   "/AboutUs/team/jaan Muhammad The Social Media Manager.jpg",
+    "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
+    "/AboutUs/team/Muhammad Wasim . the Full stack Developer-min.jpg",
+    "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
   ];
 
   // Create a ref to hold the container of the popup image for GSAP
@@ -26,7 +28,13 @@ const Slider = () => {
     setPreviousIndex(currentIndex); // Update previous index before setting new one
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-
+  const handlehover = () => {
+    hover ? sethover(true) :  sethover(false)
+    sethover(true)
+  };
+  const handlehoverout = () => {
+    sethover(false) }
+    
   const prevSlide = () => {
     setDirection("prev"); // Set direction as "prev"
     setPreviousIndex(currentIndex); // Update previous index before setting new one
@@ -59,9 +67,9 @@ const Slider = () => {
   }, [currentIndex, direction]); // Re-run animation on direction or index change
 
   return (
-    <div className="relative w-full mx-auto py-8 overflow-hidden">
+    <div className="relative w-full h-[80vh] mx-auto py-8 ">
       {/* Popup */}
-      <div className="absolute top-0 left-0 w-full h-[90vh] flex items-center z-50 bg-opacity-40">
+      <div className="absolute -top-[10%] left-0 w-full h-inherit flex items-center z-50 bg-opacity-40">
         {/* navigation */}
       <button
             className="absolute left-[40%] text-4xl top-1/2 transform -translate-y-1/2 z-50 p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
@@ -79,24 +87,33 @@ const Slider = () => {
           {/* static bg Background  */}
           <div className="absolute w-full h-full overflow-hidden ">
             <Image
+           
               src={images[previousIndex]} 
               alt={`Background Image ${previousIndex}`}
-              width={400}
-              height={600}
+             layout="fill"
               quality={100}
               loading="lazy"
               className="w-full h-full object-cover rounded-tr-[50px] s" 
             />
+            {sethover && <div className="absolute top-0 left-0 w-full h-full bg-black z-10 opacity-50">
+
+
+              <div className="flex justify-center items-center h-full">
+                <h1 className="text-white text-2xl font-bold">hbfdhsgayhfyuasgdh</h1>
+              </div>
+              </div>}
+              
           </div>
 
           {/* Foreground Image */}
           <div className="relative w-full h-full overflow-hidden">
             <Image
+             onMouseEnter={handlehover}
+             onMouseLeave={handlehoverout}
               ref={imageRef} 
               src={images[currentIndex]} 
               alt={`Foreground Image ${currentIndex}`}
-              width={400}
-              height={600}
+            layout="fill"
               quality={100}
               loading="lazy"
               className="w-full h-full object-cover rounded-tr-[50px]"
@@ -123,7 +140,7 @@ const Slider = () => {
               height={600}
               quality={90}
               loading="lazy"
-              className="w-full h-[400px] object-cover rounded-tr-[10px]"
+              className="w-full h-[400px] object-cover rounded-tr-[30px]"
             />
           </div>
         ))}
