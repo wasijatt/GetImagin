@@ -39,6 +39,7 @@ export default async function BlogPost({ params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
+      <main>
       <Header/>
       <div className="max-w-4xl  mx-auto px-10 py-12">
         <Link className="my-10 main-color" href={"/blogs"}><FaArrowLeftLong className="inline mx-2 " />
@@ -50,6 +51,7 @@ export default async function BlogPost({ params }) {
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>
+      </main>
     </>
   );
 }

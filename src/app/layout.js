@@ -26,30 +26,14 @@ export default function RootLayout({ children }) {
   
   return (
    <html>
-      <head>
-        <title>Get Imagin - Professional Web Design</title>
-        <meta name="description" content="Professional web design and development agency specializing in creative solutions." />
-        <link rel="icon" href="/favicon.ico" />
-        {/* <!-- Google tag (gtag.js) --> */}
-<Script async src="https://www.googletagmanager.com/gtag/js?id=G-WHQWT01LQR"/>
-{/* <Script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
 
-  gtag('config', 'G-WHQWT01LQR');
-</Script> */}
-      </head>
 
       <body>
-     {/* <SmoothScroll> */}
-     {/* <PageTransition> */}
+ 
      <WhatsappButtton/>
             <CustomCursor/>
             {children}
-     {/* </PageTransition> */}
-          
-            {/* </SmoothScroll> */}
+   
       </body>
     </html>
   )

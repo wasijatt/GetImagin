@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+     
     "start": "next start",
     "lint": "next lint"
   },
@@ -27,6 +28,7 @@
     "lodash": "^4.17.21",
     "marked": "^15.0.3",
     "next": "^15.0.3",
+    "next-sitemap": "^4.2.3",
     "nodemailer": "^6.9.16",
     "react": "^18",
     "react-dom": "^18",

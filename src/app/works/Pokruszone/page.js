@@ -78,9 +78,9 @@ const page = () => {
     },
   ];
   return (
-    <div >
+    <main >
       <BrandingPageComponent items={branding}  />
-    </div>
+    </main>
   )
 }
 

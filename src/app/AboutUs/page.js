@@ -6,14 +6,14 @@ import Footer from "../Components/Footer"
 const Page = () => {
 
     return (
-        <div>
+        <main>
             <Header/>
             <SecondHero sfhead={"Top-Tier Creative Designer & Developers."} />
           
             <Aboutus />
             <Footer />
                        
-        </div>
+        </main>
     )
 }
 

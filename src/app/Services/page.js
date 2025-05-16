@@ -7,7 +7,7 @@ import ServicesnextGen from "../Components/ServicesnextGen"
 import Header from "../Components/Header"
 const page = () => {
   return (
-    <div className="bg-white  ">
+    <main className="bg-white  ">
       
 <Header/>
       <MiniHeroSection className=" max-h-min md:h-screen  " fhead={"Our"} span={" Get Imagin"} head={" & Services That Will Send You to SPACE."} />
@@ -21,7 +21,7 @@ const page = () => {
 
 
       
-    </div>
+    </main>
   )
 }
 

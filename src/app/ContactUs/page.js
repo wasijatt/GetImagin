@@ -27,7 +27,8 @@ const page = () => {
   ]
   return (
     <>
-    <div>
+    
+    <main>
       <Header/>
       <SecondHero sfhead={"Get thing happen when you say hey."} />
       <ContactForm />
@@ -71,7 +72,7 @@ const page = () => {
 
 
 
-    </div >
+    </main >
     <Footer/>
    </>
   )
