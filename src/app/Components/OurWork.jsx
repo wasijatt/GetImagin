@@ -114,7 +114,7 @@ const OurWork = () => {
               src={item.img}
               alt={`Gallery image ${index}`}
               loading="lazy"
-              layout="responsive"
+              // layout="responsive"
               width={100}
               height={100}
               objectFit="cover"
