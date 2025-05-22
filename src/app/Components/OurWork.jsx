@@ -110,13 +110,13 @@ const OurWork = () => {
             </div>
             <Image
               className='rounded-xl '
-              style={{ width: "45%" }}
+              style={{ width: "100%" }}
               src={item.img}
               alt={`Gallery image ${index}`}
               loading="lazy"
               // layout="responsive"
-              width={100}
-              height={100}
+              width={1200}
+              height={800}
               objectFit="cover"
             />
 
@@ -125,7 +125,7 @@ const OurWork = () => {
       </div>
 
       <div className="w-full my-20 text-center">
-        <AnimatedLink href={"/work"} content={"view All Projects"} style={{ backGround: "yellow" }} />
+        <AnimatedLink href={"/works"} content={"view All Projects"} style={{ backGround: "yellow" }} />
       </div>
     </div>
   );

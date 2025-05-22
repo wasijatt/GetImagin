@@ -3,8 +3,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
-import Image from 'next/image';
+import CloudVideo from './Cloudvideo';
 import { GoArrowLeft } from "react-icons/go";
 const Heading = dynamic(() => import('./Heading'), { ssr: false });
 const AnimatedLink = dynamic(() => import('./AnimatedLink'), { ssr: false });
@@ -83,7 +82,7 @@ const ScrollSection = () => {
           spanpara: "unlocking",
           lastpara: " revenue potential with every click.",
           imageAlt: "Get-imagin Web Development and Design Agency ",
-          imageUrl: "/Web design & development.mp4",
+          imageUrl: "Web_design_development_rm1qc7",
           findmorebuton: "Find Our More "
         },
         {
@@ -96,7 +95,7 @@ const ScrollSection = () => {
           spanpara: "brand identity, ",
           lastpara: " from your visuals to your voice.",
           imageAlt: "Get-Imagin Branding",
-          imageUrl: "/Branding services getimagin design agency usa.mp4",
+          imageUrl: "Branding_services_getimagin_design_agency_usa_uye9su",
           findmorebuton: "Find Our More "
         },
         {
@@ -108,7 +107,7 @@ const ScrollSection = () => {
           ],
           para: "Delivering motion graphics and campaigns that earn attention, spark emotion and increase conversions.",
           imageAlt: "Get Imagin Marketing",
-          imageUrl: "/Branding.mp4",
+          imageUrl: "Branding_fkhtcn",
 
           findmorebuton: "Find Our More "
         }
@@ -163,9 +162,17 @@ const ScrollSection = () => {
               /></div>
             </div>
             <div className="w-full md:w-1/2">
-              <video loop muted autoPlay className="w-full h-full rounded-lg md:rounded-xl rounded-tr-[70px] md:rounded-tr-[100px]">
+              {/* <video loop muted autoPlay className="w-full h-full rounded-lg md:rounded-xl rounded-tr-[70px] md:rounded-tr-[100px]">
                 <source src={section.imageUrl} type="video/mp4" />
-              </video>
+              </video> */}
+              <CloudVideo
+                publicId={section.imageUrl} 
+                cloudName="dgqftl3o8"
+                width={600}
+                height={800}  
+                 />
+              
+                
             </div>
           </div>
         </section>

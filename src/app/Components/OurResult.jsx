@@ -156,7 +156,7 @@ const Slider = () => {
             <MdOutlineNavigateNext className="text-3xl" />
           </button>
           <span className="absolute bottom-[15%] left-[3%] inline-block px-4 z-30 py-2 rounded-3xl transition-all ease-out">
-            <AnimatedLink href="#" content="View All Projects" />
+            <AnimatedLink href="/works" content="View All Projects" />
           </span>
           {SLIDER_IMAGES.map((item, index) => (
             <div

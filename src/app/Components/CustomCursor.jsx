@@ -1,10 +1,13 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect} from 'react';
+// import { useState } from 'react';
+// import { useCursor } from '../context/CursorContext';
+
 
 const CustomCursor = ({ cursorContent }) => {
   useEffect(() => {
     let cursor = document.querySelector('.custom-cursor');
-    
+
     // Create the custom cursor if it doesn't already exist
     if (!cursor) {
       cursor = document.createElement('div');
@@ -86,4 +89,41 @@ const CustomCursor = ({ cursorContent }) => {
   return null;
 };
 
-export default CustomCursor;
+
+
+// const CustomCursor = () => {
+//   const { cursorContent } = useCursor()
+//   const [position, setpostion] = useState({ x: 0, y: 0 })
+//   useEffect(() => {
+//     const move = (e) => {
+//       setpostion({ x: e.clientX, y: e.clientY })
+//     }
+//     window.addEventListener('mousemove', move)
+//     return () => {
+//       window.removeEventListener('mousemove', move)
+//     }
+
+//   }, [])
+//   return (
+//     <div
+//       style={{
+//         left: position.x,
+//         top: position.y,
+//         transform: 'translate(-50%, -50%)',
+//       }}
+//       className='fixed z-[9999] pointer-events-none transition-all duration-200 ease-out'>
+//       {cursorContent ? (
+
+//         <div className='w-32 h-32 rounded-full overflow-hidden' > {cursorContent} </div>)
+//         : (
+//           <div className="w-[10px] h-[10px] bg-main-color rounded-full"></div>
+//         )}
+
+//     </div>
+//   )
+
+
+
+// }
+
+  export default CustomCursor;

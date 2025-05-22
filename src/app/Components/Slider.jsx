@@ -15,9 +15,8 @@ const Slider = () => {
     "/AboutUs/team/Muhammad Wasim . the Full stack Developer-min.jpg",
     "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
    "/AboutUs/team/jaan Muhammad The Social Media Manager.jpg",
-    "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
-    "/AboutUs/team/Muhammad Wasim . the Full stack Developer-min.jpg",
-    "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
+  
+    "/AboutUs/team/usman-video editor.jpg",
   ];
 
   // Create a ref to hold the container of the popup image for GSAP

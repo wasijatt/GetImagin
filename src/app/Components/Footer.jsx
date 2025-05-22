@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="my-10 pl-4 md:pr-20 ">
             <Link className="pr-4 py-2 " href={"ContactUs"}  >Contact Us</Link>
             <Link className="px-4 py-2 " href={"/ContactUs"}  >FAQs</Link>
-            <Link className="px-4 py-2 " href={"/privacy"}  >Privacy Policy</Link>
+            <Link className="px-4 py-2 " href={"/PrivacyPolicy"}  >Privacy Policy</Link>
             </div>
             <div className="my-10 pl-4 md:pr-20 ">
             <h1 className="pr-4 py-2 inline-block font-bold md:font-semibold text-sm md:text-2xl "   >Our Sector:</h1>

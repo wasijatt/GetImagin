@@ -11,7 +11,7 @@ const WhatsappButtton = () => {
           href={`https://wa.me/${phoneNumber}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center w-28 h-28 md:w-32 md:h-32 bg-green-500 text-white bg rounded-full shadow-lg hover:bg-green-600 transition duration-300"
+          className="flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-green-500 text-white bg rounded-full shadow-lg hover:bg-green-600 transition duration-300"
         >
           <FaWhatsapp size={32} />
         </Link>

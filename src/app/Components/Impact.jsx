@@ -49,12 +49,7 @@ const Impact = () => {
           We develop bespoke <br /> websites with{' '}
           <span className="text-teal-400">three</span> <br /> <span className='fontspring'>things</span>  in mind
         </h1>
-        {/* <Image src={"/Footer/good ki line.svg"} alt="Get Imagin Shadow"
-              className="w-[900px] h-10 absolute -bottom-2 left-[25%] hidden 2xl:block"
-             width={300}
-             height={20}
-              loading="lazy"
-              quality={75} /> */}
+        
       </div>
       <div className="radialshadow  w-[300px] overflow-hidden"></div>
 

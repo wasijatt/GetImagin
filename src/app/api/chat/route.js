@@ -1,38 +1,3 @@
-// import axios from "axios";
-
-// export async function POST(req) {
-//   try {
-//     const { message } = await req.json();
-//     const apiKey = process.env.GEMMA_API_KEY;
-
-//     if (!apiKey) {
-//       throw new Error("API key is missing. Check your environment variables.");
-//     }
-
-//     const response = await axios.post(
-//       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-//       {
-//         contents: [
-//           {
-//             role: "user",
-//             parts: [{ text: "Tell me about the services offered by our digital agency." }],
-//           },
-//         ],
-//       }
-//     );
-
-//     return new Response(JSON.stringify(response.data), {
-//       status: 200,
-//       headers: { "Content-Type": "application/json" },
-//     });
-//   } catch (error) {
-//     console.error("Error:", error);
-//     return new Response(JSON.stringify({ error: error.response?.data || error.message }), {
-//       status: error.response?.status || 500,
-//       headers: { "Content-Type": "application/json" },
-//     });
-//   }
-// }
 import axios from "axios";
 
 export async function POST(req) {
