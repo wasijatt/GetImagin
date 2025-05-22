@@ -1,6 +1,6 @@
 ---
 title: "Best Web Design Agency in USA: Delivering Exceptional Digital Experiences"
-slug: "best-web-design-agency-in-uSA"
+slug: "Best-Web-Design-Agency-in-USA"
 description: "In today’s fast-changing digital world, having a professional online presence is essential. Businesses are competing to grab attention, and web design plays a key role in building trust and engaging audiences. This is where **Get Imagin**, a leading web design agency in the USA, excels. They offer top-notch web design along with branding, social media marketing, and web development. Let’s explore how Get Imagin can help your business thrive online."
 date: "12-12-2024"
 author: "Muahammad Wasim"
