@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CloudVideo from './Cloudvideo';
+import CloudVideo from './CloudVideo';
 import { GoArrowLeft } from "react-icons/go";
 const Heading = dynamic(() => import('./Heading'), { ssr: false });
 const AnimatedLink = dynamic(() => import('./AnimatedLink'), { ssr: false });
