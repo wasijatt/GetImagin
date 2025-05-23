@@ -295,15 +295,15 @@ const Slider = () => {
 
   return (
     <div className="relative w-full h-[80vh] mx-auto py-8">
-      <div className="absolute -top-[10%] left-0 w-full h-inherit flex items-center z-50 bg-opacity-90 group ">
+      <div className="absolute -top-[10%] left-0 w-full h-inherit flex items-center z-50 bg-opacity-90 group"> 
         <button
-          className="absolute left-[40%] text-4xl top-[90%] md:top-1/2 transform -translate-y-1/2 z-50 p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
+          className="absolute left-3/4 md:left-[40%] text-2xl md:text-4xl top-[105%] md:top-1/2 transform -translate-y-1/2 z-50 p-2 md:p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
           onClick={prevSlide}
         >
           <FaArrowLeft />
         </button>
         <button
-          className="absolute right-[16%]  top-[90%] md:top-1/2 transform -translate-y-1/2 z-50 text-4xl p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
+          className="absolute right-[5%] md:right-[16%]  top-[105%] md:top-1/2 transform -translate-y-1/2 z-50 text-2xl md:text-4xl p-2 md:p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
           onClick={nextSlide}
         >
           <FaArrowRight />
@@ -313,7 +313,7 @@ const Slider = () => {
       <h2 className="text-white text-lg md:text-2xl font-semibold mb-2">
         {images[currentIndex].names}
       </h2>
-      <div className="flex justify-center gap-6 text-xl text-white">
+      <div className="flex justify-center gap-6  py-3 text-xl text-white">
         {images[currentIndex].Linkedin && (
           <Link href={images[currentIndex].Linkedin} target="_blank" aria-label="LinkedIn">
             <FaLinkedin className="hover:text-main-color transition" />
