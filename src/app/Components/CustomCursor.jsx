@@ -36,7 +36,7 @@ const CustomCursor = ({ cursorContent }) => {
   }, [mouse.x, mouse.y]);
 
   return (
-    <div
+    <div className='hidden md:block'
       style={{
         left: cursor.x,
         top: cursor.y,
@@ -45,7 +45,7 @@ const CustomCursor = ({ cursorContent }) => {
         position: 'fixed',
         zIndex: 10,
         pointerEvents: 'none',
-        transition: 'width 2s, height 0.8s, background 0.3s',
+        transition: 'width .9s, height 0.8s, background 0.3s',
       }}
     >
       {cursorContent ? (
@@ -64,7 +64,7 @@ const CustomCursor = ({ cursorContent }) => {
              transform: ` rotate(${cursor.rotation}deg)`,
             objectFit: 'cover',
             pointerEvents: 'none',
-              transition: ' 1s ease-out width 0.8s, height 0.8s, background 0.3s',
+              transition: ' .9s ease-out width 0.8s, height 0.8s, background 0.9s',
           }}
         />
       ) : (
@@ -74,7 +74,7 @@ const CustomCursor = ({ cursorContent }) => {
             height: 10,
             background: '#24CFA6',
             borderRadius: '50%',
-            transition : "1s ease",
+            transition : ".9s ease",
            mixBlendMode:"difference",
  
 
