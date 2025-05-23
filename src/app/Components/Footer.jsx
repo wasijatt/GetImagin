@@ -41,7 +41,7 @@ const Footer = () => {
             <Link className="px-4 py-2 " href={"/PrivacyPolicy"}  >Privacy Policy</Link>
             </div>
             <div className="my-10 pl-4 md:pr-20 ">
-            <h1 className="pr-4 py-2 inline-block font-bold md:font-semibold text-sm md:text-2xl "   >Our Sector:</h1>
+            <h1 className="pr-4 py-2 md:inline-block font-bold md:font-semibold text-sm md:text-2xl block "   >Our Sector:</h1>
             <Link className="md:px-8 px-3 text-[10px] md:text-[20px] py-1 md:py-2 border-2 rounded-3xl border-[#333]" href={"/ContactUs"}  >Relegious and study</Link>
             <Link className="md:px-8 px-3 text-[10px] md:text-[20px] py-1 md:py-2 border-2 rounded-3xl ml-4 border-[#333]" href={"/ContactUs"}  >SaaS and Tech</Link>
             </div>
