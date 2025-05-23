@@ -61,9 +61,9 @@ const BrandingPageComponent = ({ items }) => {
       <div className="w-full lg:w-1/2 h-full  ">
       <header>
       <nav className="perspective  z-30 fixed bottom-24 left-20 text-[#8a8989] hidden md:flex gap-5 text-[12px] mix-blend-difference font-bold "> 
-<Link className=" border-[#8a8989] border-[2px] px-3 py-1 rounded-3xl animatedworkbutton" href="/" > / Home </Link>
-<Link className="border-[#8a8989] border-[2px]  px-3 py-1 rounded-3xl animatedworkbutton" href="/ContactUs" >Contact</Link>
-<Link className="border-[#8a8989] border-[2px] px-3 py-1 rounded-3xl animatedworkbutton" href="/Services" > More Services </Link>
+<Link className=" border-[#8a8989] border-[2px] px-3 py-1 rounded-3xl " href="/" > / Home </Link>
+<Link className="border-[#8a8989] border-[2px]  px-3 py-1 rounded-3xl " href="/ContactUs" >Contact</Link>
+<Link className="border-[#8a8989] border-[2px] px-3 py-1 rounded-3xl " href="/Services" > More Services </Link>
        
       </nav>
       </header>

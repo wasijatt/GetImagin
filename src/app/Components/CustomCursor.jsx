@@ -1,129 +1,88 @@
-'use client';
-import { useEffect} from 'react';
-// import { useState } from 'react';
-// import { useCursor } from '../context/CursorContext';
 
+'use client';
+import Image from 'next/image';
+import { useEffect, useState ,useRef } from 'react';
 
 const CustomCursor = ({ cursorContent }) => {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const [cursor, setCursor] = useState({ x: 0, y: 0, rotation: 0 });
+  const rafRef = useRef();
+
+  // Track mouse position
   useEffect(() => {
-    let cursor = document.querySelector('.custom-cursor');
+    const handleMove = (e) => setMouse({ x: e.clientX, y: e.clientY });
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
+  }, []);
 
-    // Create the custom cursor if it doesn't already exist
-    if (!cursor) {
-      cursor = document.createElement('div');
-      cursor.classList.add('custom-cursor');
-      document.body.appendChild(cursor);
+  // Animate cursor position and rotation
+  useEffect(() => {
+    let { x, y } = cursor;
+    let rotation = 0;
 
-      const cursorStyle = cursor.style;
-      cursorStyle.position = 'fixed';
-      cursorStyle.top = '0px';
-      cursorStyle.left = '0px';
-      cursorStyle.width = '10px';
-      cursorStyle.height = '10px';
-      cursorStyle.backgroundColor = '#7700ff';
-      cursorStyle.borderRadius = '50%';
-      cursorStyle.pointerEvents = 'none';
-      // cursorStyle.mixBlendMode = 'difference';
-      cursorStyle.transition =
-        'transform 0.8s ease-out, width 0.8s ease-out, height 0.8s ease-out, background-color 0.3s ease-out';
-      cursorStyle.transform = 'translate(-50%, -50%)';
-    }
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-
-    const updateCursorPosition = (event) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+    const animate = () => {
+      x += (mouse.x - x) * 0.1;
+      y += (mouse.y - y) * 0.1;
+      const deltaX = mouse.x - x;
+      const deltaY = mouse.y - y;
+      rotation = (deltaX + deltaY) * 0.05;
+      
+      setCursor({ x, y, rotation });
+      rafRef.current = requestAnimationFrame(animate);
     };
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+    // eslint-disable-next-line
+  }, [mouse.x, mouse.y]);
 
-    // Animate cursor movement with requestAnimationFrame
-    const animateCursor = () => {
-      // Smoothly interpolate cursor position
-      cursorX += (mouseX - cursorX) * 0.1;
-      cursorY += (mouseY - cursorY) * 0.1;
+  return (
+    <div
+      style={{
+        left: cursor.x,
+        top: cursor.y,
+        // transition:"transform 0.8s ease-out, width 0.8s ease-out, height 0.8s ease-out, background-color 0.3s ease-out",
+        transform: 'translate(-50%, -50%)',
+        position: 'fixed',
+        zIndex: 10,
+        pointerEvents: 'none',
+        transition: 'width 2s, height 0.8s, background 0.3s',
+      }}
+    >
+      {cursorContent ? (
+        <Image
+        width={500}
+        height={500}
+          src={cursorContent}
+          alt="GetImagin-Impact Inner Images"
+          loading='lazy'
+          quality={75}
+          style={{
+            width: 250,
+            height: 250,
+            borderRadius: 10,
+         
+             transform: ` rotate(${cursor.rotation}deg)`,
+            objectFit: 'cover',
+            pointerEvents: 'none',
+              transition: ' 1s ease-out width 0.8s, height 0.8s, background 0.3s',
+          }}
+        />
+      ) : (
+        <div
+          style={{
+            width: 10,
+            height: 10,
+            background: '#24CFA6',
+            borderRadius: '50%',
+            transition : "1s ease",
+           mixBlendMode:"difference",
+ 
 
-      // Apply rotation based on movement speed
-      const deltaX = mouseX - cursorX;
-      const deltaY = mouseY - cursorY;
-      const rotation = (deltaX + deltaY) * 0.05; // Adjust the multiplier for more or less rotation
-
-      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) rotate(${rotation}deg)`;
-
-      requestAnimationFrame(animateCursor);
-    };
-
-    // Initialize cursor animation
-    requestAnimationFrame(animateCursor);
-
-    // Adjust cursor style based on content or default
-    const updateCursorStyle = () => {
-      if (cursorContent) {
-        cursor.style.backgroundImage = `url(${cursorContent})`;
-        cursor.style.backgroundSize = 'cover';
-        cursor.style.width = '250px';
-        cursor.style.height = '250px';
-        cursor.style.transform = 'translate(-50%, -50%)';
-        cursor.style.borderRadius = '10px'; 
-        cursor.style.backgroundColor = 'transparent'; 
-      } else {
-        cursor.style.backgroundImage = 'none';
-        cursor.style.width = '10px';
-        cursor.style.height = '10px';
-        cursor.style.borderRadius = '50%'; // Reapply the circular shape when no image
-        cursor.style.backgroundColor = '#24CFA6';
-      }
-    };
-
-    updateCursorStyle();
-
-    document.addEventListener('mousemove', updateCursorPosition);
-
-    return () => {
-      document.removeEventListener('mousemove', updateCursorPosition);
-    };
-  }, [cursorContent]);
-
-  return null;
+          }}
+        />
+      )}
+    </div>
+  );
 };
 
-
-
-// const CustomCursor = () => {
-//   const { cursorContent } = useCursor()
-//   const [position, setpostion] = useState({ x: 0, y: 0 })
-//   useEffect(() => {
-//     const move = (e) => {
-//       setpostion({ x: e.clientX, y: e.clientY })
-//     }
-//     window.addEventListener('mousemove', move)
-//     return () => {
-//       window.removeEventListener('mousemove', move)
-//     }
-
-//   }, [])
-//   return (
-//     <div
-//       style={{
-//         left: position.x,
-//         top: position.y,
-//         transform: 'translate(-50%, -50%)',
-//       }}
-//       className='fixed z-[9999] pointer-events-none transition-all duration-200 ease-out'>
-//       {cursorContent ? (
-
-//         <div className='w-32 h-32 rounded-full overflow-hidden' > {cursorContent} </div>)
-//         : (
-//           <div className="w-[10px] h-[10px] bg-main-color rounded-full"></div>
-//         )}
-
-//     </div>
-//   )
-
-
-
-// }
-
-  export default CustomCursor;
+export default CustomCursor;

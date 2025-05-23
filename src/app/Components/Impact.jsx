@@ -57,11 +57,11 @@ const Impact = () => {
         {thingsData.map((thing) => (
           <div
             key={thing.id}
-            onMouseEnter={() => setCursorContent(  '/OurWork/Beauty-WebDevelopment -Getimagin.jpg' )} // Set the image source when hovering
-            onMouseLeave={() => setCursorContent(null)} // Clear the cursor content when leaving hover
+            onMouseEnter={() => setCursorContent(  thing.innerImg )} 
+            onMouseLeave={() => setCursorContent(null)} 
             className="flex flex-col md:flex-row items-center px-[5%] py-[9%] md:opacity-30 hover:opacity-100 duration-1000 text-left border-b-2 border-[#333]"
           >
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full z-20">
               <h2 className=" text-sm md:text-xl font-bold text-gray-500">{thing.id}/</h2>
               <div>
                 <h1 className=" text-3xl md:text-8xl">{thing.title}</h1>
@@ -75,7 +75,7 @@ const Impact = () => {
              
               </div>
             </div>
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 z-20">
               <p className="text-gray-300 text-left">
                 {thing.description.split(thing.highlightedText)[0]}
                 <i className="text-teal-400 font-bold">{thing.highlightedText}</i>
@@ -90,3 +90,4 @@ const Impact = () => {
 };
 
 export default Impact;
+
