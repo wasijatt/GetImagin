@@ -1,6 +1,6 @@
 
 import "./globals.css";
-
+import PageWrapper from "./Components/PageWrapper";
 import CustomCursor from "./Components/CustomCursor";
 import WhatsappButtton from "./Components/WhatsappButtton";
 
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
  
      <WhatsappButtton/>
             <CustomCursor/>
-            {children}
+        <PageWrapper> {children}</PageWrapper>   
    
       </body>
     </html>

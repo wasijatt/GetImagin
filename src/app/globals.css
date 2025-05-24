@@ -279,3 +279,11 @@ main {
     border-bottom: 1px solid white;
   }
 }
+
+
+
+/* globals.css */
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
