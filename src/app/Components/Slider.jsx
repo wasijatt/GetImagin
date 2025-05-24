@@ -125,7 +125,7 @@
 //           {/* Foreground Image */}
 //           {/* <div className="relative w-full h-full overflow-hidden">
 //             <Image
-             
+
 //               ref={imageRef}
 //               src={images[currentIndex]}
 //               alt={`Foreground Image ${currentIndex}`}
@@ -227,6 +227,7 @@ const Slider = () => {
     {
       image: "/AboutUs/team/Muhammad Wasim . the Full stack Developer-min.jpg",
       names: "Muhammad Wasim",
+      role: "Full Stack Developer",
       facebook: "",
       Linkedin: "https://www.linkedin.com/in/muhammad-wasim-57400a301/",
       instagramme: "https://www.instagram.com/dev_shade/",
@@ -234,6 +235,7 @@ const Slider = () => {
     {
       image: "/AboutUs/team/Muhammad Yousaf  The Lottie Animator.jpg",
       names: "Muhammad Yousaf",
+      role: "Lottie Animator",
       facebook: "",
       Linkedin: "",
       instagramme: "",
@@ -241,6 +243,7 @@ const Slider = () => {
     {
       image: "/AboutUs/team/jaan Muhammad The Social Media Manager.jpg",
       names: "Jaan Muhammad",
+      role: "Social Media Manager",
       facebook: "",
       Linkedin: "https://www.linkedin.com/in/jaan-muhammad-dm/",
       instagramme: "https://www.instagram.com/jaanmuhammad_dm",
@@ -248,6 +251,7 @@ const Slider = () => {
     {
       image: "/AboutUs/team/Abdullah - Graphic Designer.jpg",
       names: "Muhammad Abdullah",
+      role: "Graphic Designer",
       facebook: "",
       Linkedin: "https://www.linkedin.com/in/design-by-rajput/",
       instagramme: "https://www.instagram.com/design_by_rajput/",
@@ -255,12 +259,14 @@ const Slider = () => {
     {
       image: "/AboutUs/team/usman-video editor.jpg",
       names: "Muhammad Usman",
+      role: "Video Editor",
       facebook: "",
       Linkedin: "",
       instagramme: "https://www.instagram.com/uqeditor/",
     }, {
       image: "/AboutUs/team/usman-video editor.jpg",
       names: "Anas Rajput",
+      role: "Web Developer",
       facebook: "https://web.facebook.com/anas.rajput.625299",
       Linkedin: "https://www.linkedin.com/in/anas-rajpoot-b39974256/",
       instagramme: "https://www.instagram.com/anas_rajput936/",
@@ -288,14 +294,14 @@ const Slider = () => {
       timeline.fromTo(
         imageRef.current,
         { x: xStart },
-        { x: 0, duration: 0.5, ease: "none" }
+        { x: 0, duration: 1, ease: "ease" }
       );
     }
   }, [currentIndex, direction]);
 
   return (
-    <div className="relative w-full h-[80vh] mx-auto py-8">
-      <div className="absolute -top-[10%] left-0 w-full h-inherit flex items-center z-50 bg-opacity-90 group"> 
+    <div className="relative w-full h-[80vh] mx-auto md:py-8">
+      <div className="absolute -top-[10%] left-0 w-full h-inherit flex items-center z-50 bg-opacity-90 ">
         <button
           className="absolute left-3/4 md:left-[40%] text-2xl md:text-4xl top-[105%] md:top-1/2 transform -translate-y-1/2 z-50 p-2 md:p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
           onClick={prevSlide}
@@ -303,86 +309,92 @@ const Slider = () => {
           <FaArrowLeft />
         </button>
         <button
-          className="absolute right-[5%] md:right-[16%]  top-[105%] md:top-1/2 transform -translate-y-1/2 z-50 text-2xl md:text-4xl p-2 md:p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
+          className="absolute right-[2%] md:right-[16%]  top-[105%] md:top-1/2 transform -translate-y-1/2 z-50 text-2xl md:text-4xl p-2 md:p-4 text-[#24CFA6] bg-opacity-80 bg-white rounded-full"
           onClick={nextSlide}
         >
           <FaArrowRight />
         </button>
- <div className="md:hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center z-10 rounded-tr-[50px] md:opacity-100 md:bg-opacity-30 md:justify-center md:items-end md:p-6">
-    <div className="bg-[#00000080] w-full text-center py-4 rounded-b-lg  ">
-      <h2 className="text-white text-lg md:text-2xl font-semibold mb-2">
-        {images[currentIndex].names}
-      </h2>
-      <div className="flex justify-center gap-6  py-3 text-xl text-white">
-        {images[currentIndex].Linkedin && (
-          <Link href={images[currentIndex].Linkedin} target="_blank" aria-label="LinkedIn">
-            <FaLinkedin className="hover:text-main-color transition" />
-          </Link>
-        )}
-        {images[currentIndex].facebook && (
-          <Link href={images[currentIndex].facebook} target="_blank" aria-label="Facebook">
-            <FaFacebook className="hover:text-blue-400 transition" />
-          </Link>
-        )}
-        {images[currentIndex].instagramme && (
-          <Link href={images[currentIndex].instagramme} target="_blank" aria-label="Instagram">
-            <FaInstagram className="hover:main-color transition" />
-          </Link>
-        )}
-      </div>
-    </div>
-  </div>
+        <div className="absolute top-0 left-0 bg-black z-50 w-full h-full bg-opacity-10 md:hidden flex justify-center items-end" >  
+          <div className="bg-[#000000a9] w-full text-center py-4 rounded-b-lg  ">
+          <h2 className="text-white text-lg md:text-2xl font-semibold mb-2">
+            {images[currentIndex].names}
+          </h2>
+          <div className="flex justify-center gap-6  py-3 text-xl text-white">
+            {images[currentIndex].Linkedin && (
+              <Link href={images[currentIndex].Linkedin} target="_blank" aria-label="LinkedIn">
+                <FaLinkedin className="hover:text-main-color transition" />
+              </Link>
+            )}
+            {images[currentIndex].facebook && (
+              <Link href={images[currentIndex].facebook} target="_blank" aria-label="Facebook">
+                <FaFacebook className="hover:text-blue-400 transition" />
+              </Link>
+            )}
+            {images[currentIndex].instagramme && (
+              <Link href={images[currentIndex].instagramme} target="_blank" aria-label="Instagram">
+                <FaInstagram className="hover:main-color transition" />
+              </Link>
+            )}
+          </div>
+        </div> </div>
+   
         <div className="relative w-full h-[70vh] md:w-[30%] md:left-[47%] md:h-[90vh] border-2 border-[#24CFA6] shadow-lg rounded-tr-[80px] rounded-lg overflow-hidden mb-5">
-          <div className="absolute w-full h-full overflow-hidden ">
+          <div className="absolute w-full h-[90vh] overflow-hidden ">
             <Image
               src={images[previousIndex].image}
               alt={`Background Image ${previousIndex}`}
-              layout="fill"
+              width={400}
+              height={600}
+              objectFit="cover"
               quality={100}
               loading="lazy"
               className="w-full h-full object-cover rounded-tr-[50px]"
             />
-           
+
           </div>
 
           <div className="absolute w-full h-[90vh] overflow-hidden group" ref={imageRef}>
-  {/* Background Image */}
-  <Image
-    src={images[currentIndex].image}
-    alt={`Team Member ${currentIndex}`}
-    layout="fill"
-    objectFit="cover"
-    quality={100}
-    loading="lazy"
-    className="w-full h-full object-cover rounded-tr-[50px]"
-  />
+            {/* Background Image */}
+            <Image
+              src={images[currentIndex].image}
+              alt={`Team Member ${currentIndex}`}
+              width={400}
+              height={600}
+              objectFit="cover"
+              quality={100}
+              loading="lazy"
+              className="w-full h-full object-cover rounded-tr-[50px]"
+            />
 
-  {/* Overlay */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center z-10 rounded-tr-[50px] md:opacity-100 md:bg-opacity-30 md:justify-center md:items-end md:p-6">
-    <div className="bg-[#00000080] w-full text-center py-4 rounded-b-lg  ">
-      <h2 className="text-white text-lg md:text-2xl font-semibold mb-2">
-        {images[currentIndex].names}
-      </h2>
-      <div className="flex justify-center gap-6 text-xl text-white">
-        {images[currentIndex].Linkedin && (
-          <Link href={images[currentIndex].Linkedin} target="_blank" aria-label="LinkedIn">
-            <FaLinkedin className="hover:text-main-color transition" />
-          </Link>
-        )}
-        {images[currentIndex].facebook && (
-          <Link href={images[currentIndex].facebook} target="_blank" aria-label="Facebook">
-            <FaFacebook className="hover:text-blue-400 transition" />
-          </Link>
-        )}
-        {images[currentIndex].instagramme && (
-          <Link href={images[currentIndex].instagramme} target="_blank" aria-label="Instagram">
-            <FaInstagram className="hover:main-color transition" />
-          </Link>
-        )}
-      </div>
-    </div>
-  </div>
-</div>
+            {/* Overlay */}
+            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center z-10 rounded-tr-[50px] md:opacity-100 md:bg-opacity-30 md:justify-center md:items-end md:py-6">
+              <div className="bg-[#00000080] w-full py-4 rounded-b-lg  px-4 ">
+                <h2 className="text-white  md:text-5xl font-semibold mb-2">
+                  {images[currentIndex].names}
+                </h2>
+                 <p className="text-white font-thin  md:text-2xl  mb-2">
+                  {images[currentIndex].role}
+                </p>
+                <div className="flex  gap-6 text-xl text-white">
+                  {images[currentIndex].Linkedin && (
+                    <Link href={images[currentIndex].Linkedin} target="_blank" aria-label="LinkedIn">
+                      <FaLinkedin className="hover:text-main-color transition" />
+                    </Link>
+                  )}
+                  {images[currentIndex].facebook && (
+                    <Link href={images[currentIndex].facebook} target="_blank" aria-label="Facebook">
+                      <FaFacebook className="hover:text-blue-400 transition" />
+                    </Link>
+                  )}
+                  {images[currentIndex].instagramme && (
+                    <Link href={images[currentIndex].instagramme} target="_blank" aria-label="Instagram">
+                      <FaInstagram className="hover:main-color transition" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -400,6 +412,7 @@ const Slider = () => {
               alt={`Image ${index}`}
               width={400}
               height={600}
+              objectFit="cover"
               quality={90}
               loading="lazy"
               className="w-full h-[400px] object-cover rounded-tr-[30px]"
@@ -408,28 +421,6 @@ const Slider = () => {
         ))}
 
 
-             <div className="flex md:hidden justify-center items-center gap-3 mt-6">
-          {images.map((item, index) => (
-            <div
-              key={index}
-              className={`w-20 h-20 rounded overflow-hidden border-2 ${
-                currentIndex === index ? "border-[#24CFA6]" : "border-gray-300"
-              } cursor-pointer`}
-              onClick={() => {
-                setDirection(index > currentIndex ? "next" : "prev");
-                setCurrentIndex(index);
-              }}
-            >
-              <Image
-                src={item.image}
-                alt={item.names}
-                width={80}
-                height={80}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

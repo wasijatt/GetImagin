@@ -80,7 +80,7 @@ const Header = () => {
   }, [isDropdownOpen]);
 
   return (
-    <header className="flex items-center justify-between px-4 md:px-20 pt-4 relative bg-transparent  ">
+    <header className="flex items-center justify-between px-4 md:px-10 md:py-10 pt-4 relative bg-transparent z-20  ">
       <div className="absolute left-[20%] md:left-[10%] -z-30 -top-[550%] md:-top-[450%] w-[250px] md:w-[1200px]  h-[600px]">
         <Image
           alt="Get Imagin Shadow"
@@ -110,7 +110,7 @@ const Header = () => {
         </div>
         <div
           ref={dropdownRef}
-          className={`absolute -top-[45%] -right-[40%] bg-white h-[420px] py-10 w-[320px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
+          className={`absolute -top-[45%] -right-[40%] bg-white h-[420px] py-10 w-[280px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
           <nav>
           <ul className="flex flex-col px-10 text-[#000000]  pt-10  fontneue text-2xl gap-3 cursor-pointer">

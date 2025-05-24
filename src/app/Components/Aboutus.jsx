@@ -40,7 +40,7 @@ const Aboutus = () => {
             </div>
             <Slider />
         
-            <div className=" w-full mt-10">
+            <div className=" w-full md:mt-10">
                 <div className=" flex justify-center items-center relative">
                     <Image
                         alt="Get Imagin"

@@ -169,7 +169,7 @@ const ScrollSection = () => {
                 publicId={section.imageUrl} 
                 cloudName="dgqftl3o8"
                 width={600}
-                height={800}  
+                height={1200}  
                  />
               
                 

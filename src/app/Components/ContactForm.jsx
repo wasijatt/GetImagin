@@ -96,7 +96,7 @@ const ContactForm = () => {
                             className="hidden"
                         />
                         <span
-                            className={`px-4 py-2 border-2 text-sm md:text-lg border-[#c4c4c4] duration-800 rounded-3xl transition font-semibold ${
+                            className={`px-4 py-2 border-[1px] text-sm md:text-lg border-[#c4c4c4] duration-800 rounded-3xl transition font-normal ${
                                 selectedItems.includes(index)
                                     ? 'bg-[#eef0f0] text-black'
                                     : 'bg-transparent text-white'
@@ -164,7 +164,7 @@ const ContactForm = () => {
                 )}
 </div>
                 <textarea
-                    className="w-full p-2 mx-5 rounded border-2 border-white bg-transparent"
+                    className="w-full p-2 mx-5 rounded-2xl border-[1px] border-white bg-transparent"
                     placeholder="Share Your Thoughts"
                     rows="4"
                     {...register("message")}
