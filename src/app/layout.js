@@ -1,6 +1,6 @@
 
 import "./globals.css";
-import PageWrapper from "./Components/PageWrapper";
+import PageWrapper from "./context/PageWrapper";
 import CustomCursor from "./Components/CustomCursor";
 import WhatsappButtton from "./Components/WhatsappButtton";
 
