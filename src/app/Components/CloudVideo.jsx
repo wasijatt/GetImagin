@@ -2,8 +2,8 @@
 const CloudVideo = ({
     publicId ,
     cloudName = "dgqftl3o8",  
-    width   = 640,
-    height  = 360,
+    width   = 660,
+    height  = 720,
     autoplay =true,
     controls=false,
     loop =true,   
