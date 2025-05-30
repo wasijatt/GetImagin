@@ -80,7 +80,7 @@ const Header = () => {
   }, [isDropdownOpen]);
 
   return (
-    <header className="flex items-center justify-between px-4 md:px-10 md:py-10 pt-4 relative bg-transparent z-20  ">
+    <header className="flex items-center justify-between px-4 md:px-10 md:py-10 pt-4 relative bg-transparent z-50  ">
       <div className="absolute left-[20%] md:left-[10%] -z-30 -top-[550%] md:-top-[450%] w-[250px] md:w-[1200px]  h-[600px]">
         <Image
           alt="Get Imagin Shadow"

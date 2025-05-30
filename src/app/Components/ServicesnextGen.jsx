@@ -65,7 +65,7 @@ const ServicesnextGen = () => {
 
 
 
-            <div
+            {/* <div
                 className=" w-full md:w-[80%] h-auto m-auto text-center -mb-[30%] md:mb-96  bg-black relative"
 
             >

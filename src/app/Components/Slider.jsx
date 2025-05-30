@@ -339,8 +339,8 @@ const Slider = () => {
         </div> </div>
    
         <div className="relative w-full h-[70vh] md:w-[30%] md:left-[47%] md:h-[90vh] border-2 border-[#24CFA6] shadow-lg rounded-tr-[80px] rounded-lg overflow-hidden mb-5">
-          <div className="absolute w-full h-[90vh] overflow-hidden ">
-            <Image
+          <div className="absolute w-full h-[90vh] overflow-hidden  bg-black">
+            {/* <Image
               src={images[previousIndex].image}
               alt={`Background Image ${previousIndex}`}
               width={400}
@@ -349,7 +349,7 @@ const Slider = () => {
               quality={100}
               loading="lazy"
               className="w-full h-full object-cover rounded-tr-[50px]"
-            />
+            /> */}
 
           </div>
 
