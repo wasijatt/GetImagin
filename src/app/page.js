@@ -10,7 +10,6 @@ const Header = dynamic(() => import('./Components/Header'));
 const Footer = dynamic(() => import('./Components/Footer'));
 import Seo from "./Components/Seo";
 
-
 import { getSortedPostsData } from "./lib/api";
 
 
@@ -29,6 +28,7 @@ export default function Home() {
     />
   <main>
     <Header />
+   
     <HeroSection fhead={"We Do What We're "} span={"Best"} head={" At—Creating "} chfont={"good"} Last={" Design."} HerosectionPara={"We are creative designing and development agency based in Pakistan that craft beautiful work for brands wo"} herop={" refuse to blend in."} HerosectionButton={"See Designs—Make an Impact"} />
     <ScrollSection />
 

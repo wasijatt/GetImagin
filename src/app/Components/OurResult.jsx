@@ -17,7 +17,7 @@ const AnimatedLink = dynamic(() => import('./AnimatedLink'), {
 });
 
 // Constants
-const ANIMATION_DURATION = 0.8;
+const ANIMATION_DURATION = 1.2;
 const ANIMATION_STAGGER = 0.2;
 const SCALE_LARGE = 1;
 const SCALE_SMALL = 0.8;

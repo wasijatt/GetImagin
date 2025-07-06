@@ -50,8 +50,8 @@ const CustomCursor = ({ cursorContent }) => {
     >
       {cursorContent ? (
         <Image
-        width={500}
-        height={500}
+        width={600}
+        height={600}
           src={cursorContent}
           alt="GetImagin-Impact Inner Images"
           loading='lazy'

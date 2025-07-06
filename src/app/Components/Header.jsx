@@ -105,8 +105,8 @@ const Header = () => {
       </nav>
       <div className="relative z-50" ref={toggleRef} onClick={toggleDropdown}>
         <div className="dropdown flex flex-col items-center justify-center rounded-full border-[3px] border-[#24CFA6] w-[40px] md:w-[50px] 2xl:w-[50px]  h-[40px] md:h-[50px] 2xl:h-[50px] ">
-          <div className={`${style.Logo} upper  `}></div>
-          <div className={`${style.Logo} lower mt-2`}></div>
+          <div className={`${style.navLogo} upper  `}></div>
+          <div className={`${style.navLogo} lower mt-2`}></div>
         </div>
         <div
           ref={dropdownRef}

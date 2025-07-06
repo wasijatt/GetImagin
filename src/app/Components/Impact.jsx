@@ -3,10 +3,14 @@ import dynamic from 'next/dynamic';
 const CustomCursor = dynamic(() => import('./CustomCursor'), { ssr: false });
 import { useState } from 'react';
 import Image from 'next/image';
+import { useEffect ,useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
+gsap.registerPlugin(ScrollTrigger);
 const Impact = () => {
   const [cursorContent, setCursorContent] = useState(null);
+  const titleRefs = useRef([]);
 
   const thingsData = [
     {
@@ -38,7 +42,28 @@ const Impact = () => {
       highlightedText: 'act',
     },
   ];
-
+  useEffect(() => {
+    titleRefs.current.forEach((ref) => {
+      if (ref) {
+        gsap.fromTo(
+          ref,
+          { y: 100,  },
+          {
+            y: 0,
+            
+            duration: 1.2,
+            ease: 'easeinout',
+            scrollTrigger: {
+              trigger: ref,
+              start: 'top 83%',
+              once: true,
+              
+            },
+          }
+        );
+      }
+    });
+  }, []);
   return (
     <section className="py-8 md:py-20 px-1 md:px-12 bg-black md:mt-[50%] relative">
 
@@ -54,7 +79,7 @@ const Impact = () => {
       <div className="radialshadow  w-[300px] overflow-hidden"></div>
 
       <div>
-        {thingsData.map((thing) => (
+        {thingsData.map((thing ,index) => (
           <div
             key={thing.id}
             onMouseEnter={() => setCursorContent(  thing.innerImg )} 
@@ -64,7 +89,9 @@ const Impact = () => {
             <div className="flex flex-col w-full z-20">
               <h2 className=" text-sm md:text-xl font-bold text-gray-500">{thing.id}/</h2>
               <div>
-                <h1 className=" text-3xl md:text-8xl">{thing.title}</h1>
+                <h1 
+               ref={(el) => (titleRefs.current[index] = el)}
+                className=" text-3xl md:text-8xl">{thing.title}</h1>
             <Image src={thing.innerImg} alt="Get Imagin Shadow"
               className="w-full rounded-xl my-7 md:hidden"
              width={500}
@@ -76,7 +103,8 @@ const Impact = () => {
               </div>
             </div>
             <div className="md:w-1/2 z-20">
-              <p className="text-gray-300 text-left">
+              <p className="text-gray-300 text-left"
+              >
                 {thing.description.split(thing.highlightedText)[0]}
                 <i className="text-teal-400 font-bold">{thing.highlightedText}</i>
                 {thing.description.split(thing.highlightedText)[1]}
