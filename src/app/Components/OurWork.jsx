@@ -22,30 +22,44 @@ const OurWork = () => {
   const imageRefs = useRef([]);
 
   useEffect(() => {
-    imageRefs.current.forEach((imgEl) => {
-      if (!imgEl) return;
+  const triggers = [];
 
-      gsap.fromTo(imgEl,
-        { scale: 1 , opacity:1 ,transformOrigin: "top center" },
-        {
-          scale: 0,
-          opacity:0,
-          transformOrigin: "bottom center",
-          ease: "power4.out",
-          scrollTrigger: {
-            trigger: imgEl,
-            start: "top top",  // when image hits the middle of viewport
-            end: "bottom top",       // when image reaches top of viewport
-            scrub: 4,          // smooth scroll-based animation
-          },
-        }
-      );
-    });
+  imageRefs.current.forEach((imgEl) => {
+    if (!imgEl) return;
 
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
+    const trigger = gsap.fromTo(
+      imgEl,
+      { scale: 1, opacity: 1, transformOrigin: "top center" },
+      {
+        scale: 0,
+        opacity: 0,
+        transformOrigin: "bottom center",
+        ease: "power4.out",
+        scrollTrigger: {
+          trigger: imgEl,
+          start: "top top",
+          end: "bottom top",
+          scrub: 4,
+        },
+      }
+    );
+
+    triggers.push(trigger);
+  });
+
+  // Refresh ScrollTrigger after all images are loaded
+  const refreshScrollTrigger = () => {
+    ScrollTrigger.refresh();
+  };
+
+  window.addEventListener("load", refreshScrollTrigger);
+
+  return () => {
+    window.removeEventListener("load", refreshScrollTrigger);
+    ScrollTrigger.getAll().forEach(t => t.kill());
+  };
+}, []);
+
 
   const {
     isHovered,
