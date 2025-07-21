@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPlus,FaMinus } from "react-icons/fa";
 import Image from "next/image";
-
+import { useRef } from "react";
 const Faqs = () => {
   const [faqs, setFaqs] = useState([
     {
@@ -49,7 +49,6 @@ const Faqs = () => {
 
   const FaqItem = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
-
     const toggle = () => {
       setIsOpen(!isOpen);
     };
@@ -70,12 +69,12 @@ const Faqs = () => {
           )}
         </div>
         <div
-          className={`transition-opacity duration-800 ${
-            isOpen ? "opacity-100 max-h-full" : "opacity-0 max-h-0 overflow-hidden"
+          className={` transition-all duration-[1.2s]  ease-out ${
+            isOpen ? "opacity-100 max-h-full transition-all duration-1000 ease-out" : "opacity-0 max-h-0  overflow-hidden"
           }`}
         >
           {isOpen && (
-            <p className="text-gray-400 text-sm md:text-base lg:text-lg mxl:text-xl py-2 px-4 md:px-6 duration-1000">
+            <p className="text-gray-400 text-sm md:text-base lg:text-lg mxl:text-xl py-2 px-4 md:px-6 transition-all  duration-1000 ease-out">
               {answer}
             </p>
           )}

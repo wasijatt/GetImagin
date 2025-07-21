@@ -1,36 +1,52 @@
 "use client";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
-import useAnimatedLink from "../hooks/useAnimatedLink";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import useAnimatedLink from "../hooks/useAnimatedLink";
 import AnimatedLink from './AnimatedLink';
 import Heading from './Heading';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const OurWork = () => {
   const workgallery = [
-    { img :  "/OurWork/Branding-getimagin services.webp",
-      year: "2024",
-      brandname:"Kotto"
-    },
-   { img :  "/OurWork/Branding.webp",
-    year: "2023",
-    brandname:"Cloud"
-   },
-    {img :  "/OurWork/Get Imagin Illustration.webp",
-      year: "2023",
-      brandname:"Schaeffler"
-    },
-    {img :  "/OurWork/GetImagin Branding.webp",
-      year: "2023",
-      brandname:"Owo"
-    },
-   { img :  "/OurWork/Web Design .webp",
-    year: "2023",
-    brandname:"Shingfong"
-   },
+    { img: "/OurWork/Branding-getimagin services.webp", year: "2024", brandname: "Kotto" },
+    { img: "/OurWork/Branding.webp", year: "2023", brandname: "Cloud" },
+    { img: "/OurWork/Get Imagin Illustration.webp", year: "2023", brandname: "Schaeffler" },
+    { img: "/OurWork/GetImagin Branding.webp", year: "2023", brandname: "Owo" },
+    { img: "/OurWork/Web Design .webp", year: "2023", brandname: "Shingfong" },
   ];
-  
-  // Using the animated link hook
+
+  const imageRefs = useRef([]);
+
+  useEffect(() => {
+    imageRefs.current.forEach((imgEl) => {
+      if (!imgEl) return;
+
+      gsap.fromTo(imgEl,
+        { scale: 1 , opacity:1 ,transformOrigin: "bottom center" },
+        {
+          scale: 0,
+          opacity:0,
+          transformOrigin: "top center",
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: imgEl,
+            start: "top top",  // when image hits the middle of viewport
+            end: "bottom top",       // when image reaches top of viewport
+            scrub: 4,          // smooth scroll-based animation
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
+  }, []);
+
   const {
     isHovered,
     translateX,
@@ -40,19 +56,15 @@ const OurWork = () => {
     handleMouseLeave,
   } = useAnimatedLink();
 
-  const borderRef = useRef(null); // Reference for animated border
+  const borderRef = useRef(null);
 
   useEffect(() => {
-    // Set initial width to 100%
     gsap.set(borderRef.current, { width: "100%" });
   }, []);
 
-  // Merge your mouse enter logic with GSAP animation
   const handleMouseEnter = (e) => {
-    setIsHovered(true); // Call hook's logic for hover state
-    handleMouseMove(e); // Call hook's mouse move handler
-
-    // GSAP animation for reducing border width
+    setIsHovered(true);
+    handleMouseMove(e);
     gsap.to(borderRef.current, {
       width: "25%",
       duration: 0.3,
@@ -60,12 +72,9 @@ const OurWork = () => {
     });
   };
 
-  // Merge your mouse leave logic with GSAP animation
   const handleMouseLeaveMerged = (e) => {
-    setIsHovered(false); // Call hook's logic for leaving hover state
-    handleMouseLeave(e); // Call hook's mouse leave handler
-
-    // GSAP animation for reverting border width
+    setIsHovered(false);
+    handleMouseLeave(e);
     gsap.to(borderRef.current, {
       width: "100%",
       duration: 0.5,
@@ -75,6 +84,7 @@ const OurWork = () => {
 
   return (
     <div>
+      {/* Heading */}
       <div className="flex flex-col-reverse md:flex-row px-[10%] justify-between md:items-center md:py-[7vh] my-8">
         <Heading mainText="Our" subText="Work" />
         <div className="md:w-1/2">
@@ -82,10 +92,7 @@ const OurWork = () => {
             Making brands a damn site better.
           </h1>
           <p className="text-[14px] mt-4 md:w-3/4">
-            Let’s face it, first impressions matter. Your website’s an
-            opportunity to wow your audience, so why choose bad design? Brands
-            win over fans when they’re brave enough to go beyond their creative
-            <strong className="main-color"> comfort </strong> zone.
+            Let’s face it, first impressions matter. Your website’s an opportunity to wow your audience, so why choose bad design? Brands win over fans when they’re brave enough to go beyond their creative <strong className="main-color"> comfort </strong> zone.
           </p>
         </div>
       </div>
@@ -93,33 +100,39 @@ const OurWork = () => {
       {/* Work Gallery */}
       <div className="flex flex-wrap justify-center items-center w-full overflow-hidden gap-4 md:py-5 px-[5%]">
         {workgallery.map((item, index) => (
-          <div key={index} className={`  border-[2px] rounded-xl border-[#383838] relative group ${index === 0 ? "w-[95%]" : " w-[95%] md:w-[47%]"} `} >
-            <div className="w-full px-4 py-2 flex justify-between"> 
-              <h4 className="flex "> <Image
-              className='rounded-xl mr-2'
-              style={{ width: "45%" }}
-              src={"/OurWork/arooow.svg"}
-              alt={`Gallery image ${index}`}
-              loading="lazy"
-              layout="responsive"
-              width={100}
-              height={100}
-              // objectFit="cover"
-            />{ item.brandname}</h4>
+          <div
+              ref={(el) => (imageRefs.current[index] = el)}
+
+            key={index}
+            className={`border-[2px] rounded-xl border-[#383838] relative group ${index === 0 ? "w-[95%]" : "w-[95%] md:w-[47%]"}`}
+          >
+            <div className="w-full px-4 py-2 flex justify-between">
+              <h4 className="flex">
+                <Image
+                  className="rounded-xl mr-2"
+                  style={{ width: "45%" }}
+                  src={"/OurWork/arooow.svg"}
+                  alt={`Gallery image ${index}`}
+                  loading="lazy"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                />
+                {item.brandname}
+              </h4>
               <h4>{item.year}</h4>
             </div>
+
             <Image
-              className='rounded-xl '
-              style={{ width: "100%" }}
+              className="rounded-xl"
+              style={{ width: "100%", transition: "transform 0.8s ease-out" }}
               src={item.img}
               alt={`Gallery image ${index}`}
               loading="lazy"
-              // layout="responsive"
               width={1200}
               height={800}
-              objectFit="cover"
+              // objectFit="cover"
             />
-
           </div>
         ))}
       </div>

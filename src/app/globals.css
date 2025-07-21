@@ -12,6 +12,7 @@
 
 .main-color{
   color: #24CFA6;
+  
 }
 
 body {
@@ -286,4 +287,27 @@ main {
 html, body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+
+
+html, body {
+  overscroll-behavior: none;
+  /* height: 100%; */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  --webkit-font-smoothing:antialiased;
+  
+  
+  scroll-behavior: auto !important; /* override native smooth scroll */
+  /* overflow: hidden;  */
+}
+img canvas video{
+  will-change: auto !important;
+  image-rendering: crisp-edges;
+}
+body {
+  
+  will-change: scroll-position;
 }
