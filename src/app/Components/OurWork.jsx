@@ -26,11 +26,11 @@ const OurWork = () => {
       if (!imgEl) return;
 
       gsap.fromTo(imgEl,
-        { scale: 1 , opacity:1 ,transformOrigin: "bottom center" },
+        { scale: 1 , opacity:1 ,transformOrigin: "top center" },
         {
           scale: 0,
           opacity:0,
-          transformOrigin: "top center",
+          transformOrigin: "bottom center",
           ease: "power4.out",
           scrollTrigger: {
             trigger: imgEl,

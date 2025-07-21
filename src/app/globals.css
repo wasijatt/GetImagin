@@ -308,6 +308,10 @@ img canvas video{
   image-rendering: crisp-edges;
 }
 body {
-  
+  scrollbar-width: none;
+  overflow-y: scroll;
   will-change: scroll-position;
+}
+body::-webkit-scrollbar{
+  display: none;
 }
