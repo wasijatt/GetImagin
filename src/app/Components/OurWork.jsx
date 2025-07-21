@@ -129,7 +129,7 @@ const OurWork = () => {
               src={item.img}
               alt={`Gallery image ${index}`}
               loading="lazy"
-              width={1200}
+              width={800}
               height={800}
               // objectFit="cover"
             />
