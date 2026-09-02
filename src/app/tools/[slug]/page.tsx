@@ -1,53 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { notFound } from 'next/navigation';
 import Header from '../../Components/Header';
+import ToolClientContainer from '../../Components/tools/ToolClientContainer';
 
-// ─── Dynamic imports with ssr:false ────────────────────────────────────────
-// Keeping tool components out of the server bundle prevents webpack from
-// trying to resolve their vendor chunks server-side (react-icons, etc.)
-// and eliminates the "Cannot find module './vendor-chunks/…'" errors.
-
-const Spinner = () => (
-    <div className="w-full flex justify-center py-20">
-        <div className="w-10 h-10 rounded-full border-2 border-[#24CFA6]/30 border-t-[#24CFA6] animate-spin" />
-    </div>
-);
-
-const ImageCompressor = dynamic(
-    () => import('../../Components/tools/ImageCompressor').then((m) => m.default ?? m),
-    { ssr: true, loading: () => <Spinner /> }
-);
-
-const ImageConverter = dynamic(
-    () => import('../../Components/tools/ImageConverter').then((m) => m.default ?? m),
-    { ssr: true, loading: () => <Spinner /> }
-);
-
-const VideoCompressor = dynamic(
-    () => import('../../Components/tools/VideoCompressor').then((m) => m.default ?? m),
-    { ssr: true, loading: () => <Spinner /> }
-);
-
-const ImageEnhancer = dynamic(
-    () => import('../../Components/tools/ImageEnhancer').then((m) => m.default ?? m),
-    { ssr: true, loading: () => <Spinner /> }
-);
-
-const VideoEnhancer = dynamic(
-    () => import('../../Components/tools/VideoEnhancer').then((m) => m.default ?? m),
-    { ssr: true, loading: () => <Spinner /> }
-);
-
-// ─── Registry ───────────────────────────────────────────────────────────────
-// Store metadata + a component reference — NOT pre-instantiated JSX.
-// The component is rendered inside the page function body, not at module scope.
+// ─── Metadata & Static Tool Registry ─────────────────────────────────────────
 
 interface ToolConfig {
     title: string;
     description: string;
-    Component: React.ComponentType;
 }
 
 const TOOL_REGISTRY: Record<string, ToolConfig> = {
@@ -55,33 +15,34 @@ const TOOL_REGISTRY: Record<string, ToolConfig> = {
         title: 'Image Compressor',
         description:
             'Compress JPEG, PNG, and WebP images locally in your browser with zero quality loss. Fast, private, and offline-capable.',
-        Component: ImageCompressor,
     },
     'image-converter': {
         title: 'Image Format Converter',
         description:
             'Convert images between JPEG, PNG, WebP, BMP, and AVIF formats seamlessly directly in your browser.',
-        Component: ImageConverter,
     },
     'video-compressor': {
         title: 'Video Compressor',
         description:
             'Compress MP4, MOV, WebM and other video formats directly in your browser — no uploads, 100% private.',
-        Component: VideoCompressor,
     },
     'image-enhancer': {
         title: 'Image Enhancer',
         description:
             'Enhance photo clarity, brightness, contrast, and sharpness instantly in your browser with real-time before/after comparison.',
-        Component: ImageEnhancer,
     },
     'video-enhancer': {
         title: 'Video Enhancer',
         description:
             'Enhance video lighting, contrast, and color vibrancy directly in your browser using hardware acceleration.',
-        Component: VideoEnhancer,
     },
 };
+
+// ─── Static Params for Vercel Deployment Prerendering ──────────────────────
+
+export async function generateStaticParams() {
+    return Object.keys(TOOL_REGISTRY).map((slug) => ({ slug }));
+}
 
 // ─── Metadata ───────────────────────────────────────────────────────────────
 
@@ -95,7 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
 }
 
-// ─── Page ───────────────────────────────────────────────────────────────────
+// ─── Page Component ─────────────────────────────────────────────────────────
 
 export default async function DynamicToolPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -118,8 +79,6 @@ export default async function DynamicToolPage({ params }: { params: Promise<{ sl
             </>
         );
     }
-
-    const { Component } = tool;
 
     return (
         <>
@@ -147,9 +106,9 @@ export default async function DynamicToolPage({ params }: { params: Promise<{ sl
                     </div>
                 </div>
 
-                {/* Tool Component — rendered client-side */}
+                {/* Tool Component Container — rendered client-side without SSR */}
                 <div className="w-full max-w-5xl">
-                    <Component />
+                    <ToolClientContainer slug={slug} />
                 </div>
             </main>
         </>
