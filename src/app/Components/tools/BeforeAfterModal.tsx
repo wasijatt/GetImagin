@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { formatBytes } from '../../lib/tools/image-compression';
+import Image from 'next/image';
 
 interface BeforeAfterModalProps {
     isOpen: boolean;
@@ -116,14 +117,14 @@ export function BeforeAfterModal({
                             <div className="flex flex-col items-center space-y-2">
                                 <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-full">Original (Before)</span>
                                 <div className="relative border border-zinc-800 rounded-2xl overflow-hidden bg-zinc-900/50 max-h-[50vh] flex items-center justify-center p-2">
-                                    <img src={originalUrl} alt="Original" className="max-h-[45vh] w-auto object-contain rounded-lg" />
+                                    <Image src={originalUrl} alt="Original" className="max-h-[45vh] w-auto object-contain rounded-lg" />
                                 </div>
                             </div>
 
                             <div className="flex flex-col items-center space-y-2">
                                 <span className="text-xs font-semibold uppercase tracking-wider text-[#24CFA6] bg-[#24CFA6]/10 border border-[#24CFA6]/30 px-3 py-1 rounded-full">Processed (After)</span>
                                 <div className="relative border border-[#24CFA6]/30 rounded-2xl overflow-hidden bg-zinc-900/50 max-h-[50vh] flex items-center justify-center p-2">
-                                    <img src={processedUrl || originalUrl} alt="Processed" className="max-h-[45vh] w-auto object-contain rounded-lg" />
+                                    <Image src={processedUrl || originalUrl} alt="Processed" className="max-h-[45vh] w-auto object-contain rounded-lg" />
                                 </div>
                             </div>
                         </div>
@@ -152,7 +153,7 @@ export function BeforeAfterModal({
                             </div>
 
                             <div className="relative border border-zinc-800 rounded-2xl overflow-hidden max-h-[55vh] flex items-center justify-center p-2 bg-zinc-900/50">
-                                <img
+                                <Image
                                     src={activeTab === 'original' ? originalUrl : (processedUrl || originalUrl)}
                                     alt="Preview"
                                     className="max-h-[50vh] w-auto object-contain rounded-lg"
@@ -165,7 +166,7 @@ export function BeforeAfterModal({
                     {viewMode === 'slider' && (
                         <div className="relative w-full max-w-2xl h-[50vh] overflow-hidden rounded-2xl border border-zinc-800 select-none bg-zinc-900/50 flex items-center justify-center">
                             {/* Processed (After) Image */}
-                            <img
+                            <Image
                                 src={processedUrl || originalUrl}
                                 alt="After"
                                 className="absolute inset-0 w-full h-full object-contain pointer-events-none"
@@ -176,7 +177,7 @@ export function BeforeAfterModal({
                                 className="absolute inset-0 overflow-hidden pointer-events-none"
                                 style={{ width: `${sliderPos}%` }}
                             >
-                                <img
+                                <Image
                                     src={originalUrl}
                                     alt="Before"
                                     className="absolute inset-0 w-full h-full object-contain pointer-events-none max-w-none"
