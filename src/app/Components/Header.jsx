@@ -35,7 +35,7 @@ const Header = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [handleClickOutside]); 
+  }, [handleClickOutside]);
 
   useEffect(() => {
     if (isDropdownOpen) {
@@ -93,7 +93,7 @@ const Header = () => {
       <nav>
         <Link href={"/"}>
           <Image
-          className="w-[40px] md:w-[50px] 2xl:w-[50px]"
+            className="w-[40px] md:w-[50px] 2xl:w-[50px]"
             alt="Get Imagin"
             width={70}
             height={70}
@@ -113,36 +113,41 @@ const Header = () => {
           className={`absolute -top-[45%] -right-[40%] bg-white h-[420px] py-10 w-[280px] my-2 -z-10 p-4 rounded-3xl ${isDropdownOpen ? 'block opacity-100' : 'hidden opacity-0'}`}
         >
           <nav>
-          <ul className="flex flex-col px-10 text-[#000000]  pt-10  fontneue text-2xl gap-3 cursor-pointer">
-            <li >
-              <Link href="/works" >
-                Works
-              </Link>
-            </li>
-            <li>
-              <Link href="/Services" >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/blogs" >
-                Blogs
-              </Link>
-            </li>
-            <li>
-              <Link href="/AboutUs" >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/ContactUs" >
-                Contact
-              </Link>
-            </li>
-          </ul>
+            <ul className="flex flex-col px-10 text-[#000000]  pt-10  fontneue text-2xl gap-3 cursor-pointer">
+              <li >
+                <Link href="/works" >
+                  Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/Services" >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/tools" >
+                  Tools
+                </Link>
+              </li>
+              <li>
+                <Link href="/blogs" >
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link href="/AboutUs" >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="/ContactUs" >
+                  Contact
+                </Link>
+              </li>
+            </ul>
           </nav>
-              <AnimatedLink className="text-black  text-[18px] ml-5 md:mt-6 my-4 font-semibold" content={`Let's start Projects`} href={'/ContactUs'} style={{ borderColor: "#303030" }} />
-            
+          <AnimatedLink className="text-black  text-[18px] ml-5 md:mt-6 my-4 font-semibold" content={`Let's start Projects`} href={'/ContactUs'} style={{ borderColor: "#303030" }} />
+
         </div>
       </div>
     </header>
