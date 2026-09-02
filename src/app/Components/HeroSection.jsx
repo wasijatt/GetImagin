@@ -45,6 +45,7 @@ const HeroSection = ({ fhead, span, head, HerosectionPara, HerosectionButton, ch
           },
         }
       );
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
