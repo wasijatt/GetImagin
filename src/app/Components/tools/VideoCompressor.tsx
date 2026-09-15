@@ -35,7 +35,7 @@ const FORMAT_OPTIONS = [
     { id: 'webm' as const, label: 'WebM', desc: 'Smaller on web' },
 ];
 
-export function VideoCompressor() {
+export function VideoCompressor({ slug }: { slug?: string }) {
     const [file, setFile] = useState<File | null>(null);
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [status, setStatus] = useState<VideoStatus>('idle');
@@ -45,8 +45,8 @@ export function VideoCompressor() {
     const [error, setError] = useState<string | null>(null);
     const [isDragging, setIsDragging] = useState(false);
 
-    const [qualityPct, setQualityPct] = useState(60); // 1–100
-    const [scale, setScale] = useState(1.0);
+    const [qualityPct, setQualityPct] = useState(slug === 'mp4-compressor' ? 50 : 60); // 1–100
+    const [scale, setScale] = useState(slug === 'mp4-compressor' ? 0.75 : 1.0);
     const [outputFormat, setOutputFormat] = useState<'mp4' | 'webm'>('mp4');
     const [videoDuration, setVideoDuration] = useState<number>(0);
 
@@ -61,7 +61,8 @@ export function VideoCompressor() {
     }, []);
 
     const handleFile = useCallback((incoming: File) => {
-        if (!incoming.type.startsWith('video/')) {
+        const isVideo = incoming.type.startsWith('video/') || /\.(mp4|mov|webm|mkv|avi|m4v|flv|wmv|3gp|ts)$/i.test(incoming.name);
+        if (!isVideo) {
             setError('Please upload a valid video file (MP4, MOV, WebM, MKV, AVI).');
             return;
         }
@@ -159,7 +160,7 @@ export function VideoCompressor() {
                     <input
                         ref={fileInputRef}
                         type="file"
-                        accept="video/*"
+                        accept="video/*,.mp4,.mov,.webm,.mkv,.avi,.m4v,.flv,.wmv,.3gp"
                         className="hidden"
                         onChange={handleInputChange}
                     />

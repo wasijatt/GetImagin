@@ -9,20 +9,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 const useLenis = () => {
   useEffect(() => {
+    // Only run smooth Lenis proxy on non-touch desktop devices
+    // On mobile / touch devices, native momentum scrolling provides the smoothest UX and prevents gesture locking
+    const isTouch =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.innerWidth < 768);
+
+    if (isTouch) {
+      return;
+    }
+
     const lenis = new Lenis({
       smooth: true,
-      // duration: 2.0,
-    lerp:0.05,
+      lerp: 0.08,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -12 * t)),
       smoothTouch: false,
-      touchMultiplier: 1.5,
     });
 
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     // 🔁 Sync GSAP ScrollTrigger with Lenis
     lenis.on("scroll", ScrollTrigger.update);
@@ -42,18 +53,17 @@ const useLenis = () => {
           height: window.innerHeight,
         };
       },
-      // Pin works properly on mobile
       pinType: document.body.style.transform ? "transform" : "fixed",
     });
 
-    // Refresh ScrollTrigger on resize or scroll update
-   ScrollTrigger.addEventListener("refresh", () => lenis.raf(performance.now()));
-
+    const handleRefresh = () => lenis.raf(performance.now());
+    ScrollTrigger.addEventListener("refresh", handleRefresh);
     ScrollTrigger.refresh();
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
-      ScrollTrigger.removeEventListener("refresh", () => lenis.update());
+      ScrollTrigger.removeEventListener("refresh", handleRefresh);
     };
   }, []);
 };

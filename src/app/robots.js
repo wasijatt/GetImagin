@@ -1,12 +1,13 @@
 export default function robots() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://getimagin.com';
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        disallow: '/private/',
+        disallow: ['/api/', '/private/'],
       },
     ],
-    sitemap: `${process.env.NEXT_PUBLIC_SITE_URL}/sitemap.xml`,
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 } 

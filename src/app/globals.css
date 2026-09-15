@@ -240,6 +240,7 @@ input:focus{
 
 html {
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -249,69 +250,31 @@ body {
   padding: 0;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Optional: Hide scrollbar but keep functionality */
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* For Firefox */
-body {
-  scrollbar-width: none;
-}
-
-/* Improve performance for transformed elements */
-* {
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Force footer to bottom */
 main {
-  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100vh - var(--header-height, 0px) - var(--footer-height, 0px));
 }
-@media only  screen and (max-width : 768px){
-  input{
+
+@media only screen and (max-width: 768px) {
+  input {
     font-size: large;
     padding: 6px 10px;
     margin: 8px 15px;
-  
     border-bottom: 1px solid white;
   }
 }
 
-
-
-/* globals.css */
-html, body {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-
-
-html, body {
-  overscroll-behavior: none;
-  /* height: 100%; */
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  --webkit-font-smoothing:antialiased;
-  
-  
-  scroll-behavior: auto !important; /* override native smooth scroll */
-  /* overflow: hidden;  */
-}
-img canvas video{
-  will-change: auto !important;
+img, canvas, video {
   image-rendering: crisp-edges;
+}
+
+/* Hide scrollbar while preserving full scrollability */
+body::-webkit-scrollbar {
+  display: none;
 }
 body {
   scrollbar-width: none;
-  overflow-y: scroll;
-  will-change: scroll-position;
-}
-body::-webkit-scrollbar{
-  display: none;
 }

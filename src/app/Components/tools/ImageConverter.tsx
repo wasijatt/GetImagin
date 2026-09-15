@@ -44,15 +44,33 @@ function swapExtension(name: string, ext: string): string {
     return `${base}-converted.${ext}`;
 }
 
-export function ImageConverter() {
+export function ImageConverter({ slug }: { slug?: string }) {
+    const defaultFormat = useMemo(() => {
+        if (slug === 'webp-to-png' || slug === 'jpg-to-png') {
+            return BASE_FORMATS.find((f) => f.mimeType === 'image/png') || BASE_FORMATS[1];
+        }
+        if (slug === 'png-to-webp') {
+            return BASE_FORMATS.find((f) => f.mimeType === 'image/webp') || BASE_FORMATS[2];
+        }
+        if (slug === 'png-to-jpg') {
+            return BASE_FORMATS.find((f) => f.mimeType === 'image/jpeg') || BASE_FORMATS[0];
+        }
+        return BASE_FORMATS[0];
+    }, [slug]);
+
     const [images, setImages] = useState<QueuedImage[]>([]);
-    const [targetFormat, setTargetFormat] = useState<FormatOption>(BASE_FORMATS[0]); // JPEG default
+    const [targetFormat, setTargetFormat] = useState<FormatOption>(defaultFormat);
     const [availableFormats, setAvailableFormats] = useState<FormatOption[]>(BASE_FORMATS);
     const [quality, setQuality] = useState<number>(85);
     const [converted, setConverted] = useState<Record<string, ConvertedState>>({});
     const [isDragging, setIsDragging] = useState(false);
     const [previewItem, setPreviewItem] = useState<{ img: QueuedImage; c: ConvertedState } | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
+
+    // Sync targetFormat when slug changes
+    useEffect(() => {
+        setTargetFormat(defaultFormat);
+    }, [defaultFormat]);
 
     // Check for AVIF browser encoding support on mount
     useEffect(() => {
