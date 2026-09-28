@@ -1,5 +1,13 @@
 import BrandingPageComponent from "@/app/Components/BrandingPageComponent";
 
+export const metadata = {
+  title: "Transcend — Digital Product & Modern Brand Identity | Get Imagin",
+  description: "Discover the Transcend modern product design and brand identity case study by Get Imagin.",
+  alternates: {
+    canonical: "/works/Transcend",
+  },
+};
+
 const page = () => {
 
 

@@ -1,5 +1,13 @@
 import BrandingPageComponent from "@/app/Components/BrandingPageComponent";
 
+export const metadata = {
+  title: "Pasco Pastry — Artisan Bakery Brand & Packaging Case Study | Get Imagin",
+  description: "Discover the Pasco Pastry artisan bakery branding and visual packaging design case study by Get Imagin.",
+  alternates: {
+    canonical: "/works/PascoPastry",
+  },
+};
+
 const page = () => {
 
 

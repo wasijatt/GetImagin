@@ -1,5 +1,13 @@
 import BrandingPageComponent from "@/app/Components/BrandingPageComponent";
 
+export const metadata = {
+  title: "Likhon.Net — Web3 & SaaS Design Templates Case Study | Get Imagin",
+  description: "Discover the Likhon.Net Web3 design and brand identity case study crafted by Get Imagin.",
+  alternates: {
+    canonical: "/works/Likhon",
+  },
+};
+
 const page = () => {
 
 

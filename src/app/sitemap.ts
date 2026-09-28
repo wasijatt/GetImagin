@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}`,
             lastModified: currentDate,
-            changeFrequency: 'weekly',
+            changeFrequency: 'daily',
             priority: 1.0,
         },
         {
@@ -24,19 +24,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/works`,
             lastModified: currentDate,
             changeFrequency: 'weekly',
-            priority: 0.8,
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/Services`,
             lastModified: currentDate,
-            changeFrequency: 'monthly',
-            priority: 0.8,
+            changeFrequency: 'weekly',
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/blogs`,
             lastModified: currentDate,
             changeFrequency: 'daily',
-            priority: 0.8,
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/AboutUs`,
@@ -58,7 +58,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
-    // 2. Dynamic Tool Pages (High SEO Priority)
+    // 2. Case Studies & Portfolio Works
+    const workSlugs = [
+        'Cynetic',
+        'Likhon',
+        'MrFranky',
+        'PascoPastry',
+        'Pokruszone',
+        'Transcend',
+    ];
+    const workPages: MetadataRoute.Sitemap = workSlugs.map((slug) => ({
+        url: `${baseUrl}/works/${slug}`,
+        lastModified: currentDate,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    }));
+
+    // 3. Dynamic Tool Pages (High Search Volume & SEO Priority)
     const toolPages: MetadataRoute.Sitemap = Object.keys(TOOL_SEO_DATA).map((slug) => ({
         url: `${baseUrl}/tools/${slug}`,
         lastModified: currentDate,
@@ -66,7 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9,
     }));
 
-    // 3. Dynamic Blog Pages
+    // 4. Dynamic Blog Pages
     let blogPages: MetadataRoute.Sitemap = [];
     try {
         const blogSlugs = getAllPostSlugs();
@@ -77,9 +93,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.75,
         }));
     } catch {
-        // Fallback gracefully if directory is empty during certain build steps
         blogPages = [];
     }
 
-    return [...staticPages, ...toolPages, ...blogPages];
+    return [...staticPages, ...workPages, ...toolPages, ...blogPages];
 }

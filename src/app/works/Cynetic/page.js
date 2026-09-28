@@ -1,5 +1,13 @@
 import BrandingPageComponent from "@/app/Components/BrandingPageComponent";
 
+export const metadata = {
+  title: "Cynetic Solutions — eCommerce & Digital Tech Branding Case Study | Get Imagin",
+  description: "Explore the Cynetic Solutions brand identity and digital design case study crafted by Get Imagin.",
+  alternates: {
+    canonical: "/works/Cynetic",
+  },
+};
+
 const page = () => {
 
 

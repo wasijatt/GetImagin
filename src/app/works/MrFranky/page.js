@@ -1,5 +1,13 @@
 import BrandingPageComponent from "@/app/Components/BrandingPageComponent";
 
+export const metadata = {
+  title: "Mr. Franky's — Vintage Diner & Fast Food Brand Identity | Get Imagin",
+  description: "Explore the Mr. Franky's fast food branding, packaging, and visual identity case study by Get Imagin.",
+  alternates: {
+    canonical: "/works/MrFranky",
+  },
+};
+
 const page = () => {
 
 

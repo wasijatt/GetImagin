@@ -1,81 +1,103 @@
-import Link from "next/link"
-import Header from "../Components/Header"
-import SecondHero from "../Components/SecondHero"
-import ContactForm from "../Components/ContactForm"
-import Footer from "../Components/Footer"
-// import ChatWidget from "../Components/ChatWidget"
-import styles from "@/app/Styles/chat.module.css"
-const page = () => {
+import Link from "next/link";
+import Header from "../Components/Header";
+import SecondHero from "../Components/SecondHero";
+import ContactForm from "../Components/ContactForm";
+import Footer from "../Components/Footer";
 
+export const metadata = {
+  title: "Contact Us — Let's Build Something Exceptional | Get Imagin",
+  description:
+    "Ready to scale your brand? Contact Get Imagin today for bespoke web design, Web3 development, branding, or digital product consulting.",
+  alternates: {
+    canonical: "/ContactUs",
+  },
+  openGraph: {
+    title: "Contact Us — Let's Build Something Exceptional | Get Imagin",
+    description:
+      "Get in touch with the Get Imagin team for project inquiries, partnerships, and custom design & development solutions.",
+    url: "https://getimagin.com/ContactUs",
+    siteName: "Get Imagin",
+    type: "website",
+  },
+};
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  mainEntity: {
+    "@type": "Organization",
+    name: "Get Imagin",
+    url: "https://getimagin.com",
+    email: "getimagin@gmail.com",
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "getimagin@gmail.com",
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "new business",
+        email: "quranspirits@gmail.com",
+      },
+    ],
+  },
+};
+
+const Page = () => {
   const mailsarray = [
     {
-
-
       text: "General",
-      mail: "getimagin@gmail.com"
-    }, {
-
-
+      mail: "getimagin@gmail.com",
+    },
+    {
       text: "New business",
-      mail: "quranspirits@gmail.com"
-    }, {
-
-
+      mail: "quranspirits@gmail.com",
+    },
+    {
       text: "Work with us",
-      mail: "Imaginthreads@gmail.com"
-    }
-  ]
+      mail: "Imaginthreads@gmail.com",
+    },
+  ];
+
   return (
     <>
-    
-    <main>
-      <Header/>
-      <SecondHero sfhead={"Get thing happen when you say hey."} />
-      <ContactForm />
-      {/* <div className={styles.container}>
-      <h1>Agency AI Assistant</h1> */}
-      {/* <ChatWidget /> */}   
-       {/* </div> */}
-<div className="flex flex-col md:flex-row justify-around opacity-60 space-y-8 md:space-y-0 md:space-x-8 p-4 md:p-8">
-  <div className="bg-[#e7e7e7] 2xl:w-[35%] md:w-[40%] rounded-tr-[150px] text-black p-6 md:p-10">
-    <div className="flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 mb-6">
-      <div className="w-full md:w-[45%] ">
-        <h2 className="text-lg font-bold md:text-2xl">Mutan</h2>
-        <Link href={"https://getimagin.com"} className="cursor-pointer text-sm md:text-base">Getimagin</Link>
-        <p className="cursor-pointer text-sm md:text-base">Gulgasht Kalooni Multan</p>
-      </div>
-      <div className="w-full md:w-[45%]">
-        <h2 className="text-lg font-bold md:text-2xl">M.Garh</h2>
-        <Link href={"https://getimagin.com"} className="cursor-pointer text-sm md:text-base">Getimagin</Link>
-        <p className="cursor-pointer text-sm md:text-base">Railway Road M.Garh</p>
-      </div>
-    </div>
-    <Link href={"tell:+923401438235"} className="text-base md:text-2xl font-semibold fontneue block mb-2">+923401438235</Link>
-    <Link href={"tell:+4407506592977"} className="text-base md:text-2xl font-semibold fontneue block mb-6">+4407506592977</Link>
-    <p className="text-sm md:text-base">{`Have a quick question you need answering? Check out - FAQ's : Working with Get Imagin`}</p>
-  </div>
-  <div className="md:w-[40%] text-white">
-    {mailsarray.map((item, index) => (
-      <div key={index} className="mb-4">
-        <p className="text-sm md:text-base">{item.text}</p>
-        <h1 className="text-lg md:text-2xl">{item.mail}</h1>
-      </div>
-    ))}
-    <div className="flex flex-col md:flex-row md:items-center mt-8 text-lg md:text-xl space-y-4 md:space-y-0 md:space-x-6">
-      <h2 className="md:text-2xl">Follow us</h2>
-      <Link href="https://www.instagram.com/getimagin/" className="text-sm md:text-base">Instagram</Link>
-      <Link href="https://web.facebook.com/profile.php?id=61565487723248" className="text-sm md:text-base">Facebook</Link>
-      <Link href="https://www.linkedin.com/company/get-imagin/" className="text-sm md:text-base">LinkedIn</Link>
-    </div>
-  </div>
-</div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <main>
+        <Header />
+        <SecondHero sfhead={"Great things happen when you say hey."} />
+        <ContactForm />
+        <div className="flex flex-col md:flex-row justify-around opacity-60 space-y-8 md:space-y-0 md:space-x-8 p-4 md:p-8">
+          <div className="bg-[#e7e7e7] 2xl:w-[35%] md:w-[40%] rounded-tr-[150px] text-black p-6 md:p-10">
+            <h2 className="text-xl md:text-3xl font-bold font-neueMachina text-[#1F1F1F]">
+              Have a Project in Mind?
+            </h2>
+            <div className="w-[100%] my-3 md:my-6 h-[2px] bg-[#1f1f1f21]" />
+            <div>
+              {mailsarray.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex font-neueMachina justify-between items-center my-4"
+                >
+                  <span className="text-sm md:text-lg text-[#1F1F1F]">{item.text}</span>
+                  <Link
+                    className="underline text-sm md:text-lg text-[#1F1F1F]"
+                    href={`mailto:${item.mail}`}
+                  >
+                    {item.mail}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </main>
+    </>
+  );
+};
 
-
-
-    </main >
-    <Footer/>
-   </>
-  )
-}
-
-export default page
+export default Page;

@@ -1,5 +1,13 @@
 import BrandingPageComponent from "@/app/Components/BrandingPageComponent";
 
+export const metadata = {
+  title: "Pokruszone — Artisanal Cafe & Confectionery Branding | Get Imagin",
+  description: "Explore the Pokruszone cafe brand identity and packaging design case study by Get Imagin.",
+  alternates: {
+    canonical: "/works/Pokruszone",
+  },
+};
+
 const page = () => {
 
 
