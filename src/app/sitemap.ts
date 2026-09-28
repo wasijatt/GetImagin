@@ -2,8 +2,21 @@ import { MetadataRoute } from 'next';
 import { getAllPostSlugs } from './lib/api';
 import { TOOL_SEO_DATA } from './lib/tools/toolSeoData';
 
+function getBaseUrl(): string {
+    if (process.env.NEXT_PUBLIC_SITE_URL) {
+        return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
+    }
+    if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+        return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+    }
+    if (process.env.VERCEL_URL) {
+        return `https://${process.env.VERCEL_URL}`;
+    }
+    return 'https://get-imagin-1j2q.vercel.app';
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://getimagin.com';
+    const baseUrl = getBaseUrl();
     const currentDate = new Date();
 
     // 1. Static Marketing & Landing Pages
