@@ -75,11 +75,10 @@ const BrandingPageComponent = ({ items }) => {
               <Image
                 className={img.imgClasses || " w-full h-[full]   border-y-2 border-white"}
                 alt={img.alt || "Get Imagin"}
-                width={ 2500}
-                height={ 2500}
-          
-                
-                loading="lazy"
+                width={2500}
+                height={2500}
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
                 quality={75}
                 src={img.src}
               />

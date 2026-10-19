@@ -16,81 +16,85 @@ const PinnedText = ({ items }) => {
   useEffect(() => {
     const pinDistance = 2000;
 
-    // Set initial states
-    gsap.set(stepsRef.current, { autoAlpha: 0, y: 20 });
+    const ctx = gsap.context(() => {
+      // Set initial states
+      gsap.set(stepsRef.current, { autoAlpha: 0, y: 20 });
 
-    // Scroll animation for images
-    gsap.to(vectorRef.current, {
-      y: -80, // Scroll up
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=" + pinDistance,
-        scrub: 0.5,
-      },
-    });
+      // Scroll animation for images
+      gsap.to(vectorRef.current, {
+        y: -80, // Scroll up
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=" + pinDistance,
+          scrub: 0.5,
+        },
+      });
 
-    gsap.to(miniVectorRef.current, {
-      y: -80, // Scroll up
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=" + pinDistance,
-        scrub: 0.5,
-      },
-    });
+      gsap.to(miniVectorRef.current, {
+        y: -80, // Scroll up
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=" + pinDistance,
+          scrub: 0.5,
+        },
+      });
 
-    const timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=" + pinDistance,
-        scrub: 1,
-        pin: containerRef.current,
-      },
-    });
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "+=" + pinDistance,
+          scrub: 1,
+          pin: containerRef.current,
+        },
+      });
 
-    // Animation for each service step
-    stepsRef.current.forEach((step, index) => {
-      const heading = step.querySelector("h1");
-      const listItems = listRefs.current[index] || [];
+      // Animation for each service step
+      stepsRef.current.forEach((step, index) => {
+        if (!step) return;
+        const heading = step.querySelector("h1");
+        const listItems = listRefs.current[index] || [];
 
-      const sectionTimeline = gsap.timeline();
-      sectionTimeline
-        .to(step, {
-          autoAlpha: 1,
-          y: 0,
-          scale: 1,
-          duration: 1,
-          ease: "power1.inOut",
-        })
-        .from(heading, {
-          scale: 0.9,
-          opacity: 0,
-          duration: .6,
-          ease: "power1",
-        })
-        .from(
-          listItems,
-          {
-            y: 30,
+        const sectionTimeline = gsap.timeline();
+        sectionTimeline
+          .to(step, {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            ease: "power1.inOut",
+          })
+          .from(heading, {
+            scale: 0.9,
             opacity: 0,
-            duration: 0.7,
-            stagger: 0.1,
+            duration: 0.6,
             ease: "power1",
-            scrub: 1,
-          },
-          "<"
-        )
-        .to(step, {
-          autoAlpha: 0,
-          duration: 0.3,
-          ease: "power1",
-        });
+          })
+          .from(
+            listItems,
+            {
+              y: 30,
+              opacity: 0,
+              duration: 0.7,
+              stagger: 0.1,
+              ease: "power1",
+            },
+            "<"
+          )
+          .to(step, {
+            autoAlpha: 0,
+            duration: 0.3,
+            ease: "power1",
+          });
 
-      timeline.add(sectionTimeline, index * 1.5);
-    });
-  }, []);
+        timeline.add(sectionTimeline, index * 1.5);
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [items]);
 
   return (
     <div

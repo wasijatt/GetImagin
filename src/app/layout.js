@@ -1,5 +1,6 @@
 import "./globals.css";
 import ClientProviders from "./Components/ClientProviders";
+import Script from "next/script";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://getimagin.com";
 
@@ -129,6 +130,22 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <ClientProviders>{children}</ClientProviders>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1K8PGHEEN4"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1K8PGHEEN4');
+            `,
+          }}
+        />
       </body>
     </html>
   );

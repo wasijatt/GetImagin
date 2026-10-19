@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className="lg:p-10 bg-black ">
       <div className="  md:flex w-full lg:w-[90%] justify-around ">
         <div className="  mt-2  p-3 font-neueMachina lg:text-lg">
-          <Image className="w-[218px] lg:w-[250px]" quality={75}  loading="lazy" src="/Footer/GetImagin-footer-logo.svg" alt="Get-Imagin" width={250} height={250} />
+          <Image className="w-[218px] lg:w-[250px] h-auto" quality={75}  loading="lazy" src="/Footer/GetImagin-footer-logo.svg" alt="Get-Imagin" width={250} height={250} />
 
           <div className=" flex  items-center  mt-5 text-[15px] md:text-lg  pl-4  md:pr-20">
             {socialMedia.map((item, index) => (

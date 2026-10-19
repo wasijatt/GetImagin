@@ -124,13 +124,12 @@ const OurWork = () => {
               <h4 className="flex">
                 <Image
                   className="rounded-xl mr-2"
-                  style={{ width: "45%" }}
+                  style={{ width: "45%", height: "auto" }}
                   src={"/OurWork/arooow.svg"}
                   alt={`Gallery image ${index}`}
                   loading="lazy"
                   width={100}
                   height={100}
-                  layout="responsive"
                 />
                 {item.brandname}
               </h4>
