@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { db } from '../firebase/config';
 import { collection, addDoc } from 'firebase/firestore';
 import { toast } from 'react-hot-toast';
+import { trackFormSubmit } from '../lib/analytics';
 
 const ContactForm = () => {
     const [selectedItems, setSelectedItems] = useState([]);
@@ -70,6 +71,9 @@ const ContactForm = () => {
             if (!emailResponse.ok) throw new Error('Failed to send emails');
 
             toast.success('Form submitted successfully!');
+            trackFormSubmit('contact_form', {
+                interests: selectedInterests.join(', '),
+            });
             reset();
             setSelectedItems([]);
             setShowThankYouPopup(true); // Show thank you popup

@@ -36,10 +36,21 @@ const Footer = () => {
             
           </div>
           <div className="my-10 pl-4 md:pr-20 ">
-            <Link className="pr-4 py-2 " href={"ContactUs"}  >Contact Us</Link>
+            <Link className="pr-4 py-2 " href={"/ContactUs"}  >Contact Us</Link>
             <Link className="px-4 py-2 " href={"/ContactUs"}  >FAQs</Link>
-            <Link className="px-4 py-2 " href={"/PrivacyPolicy"}  >Privacy Policy</Link>
-            </div>
+            <Link className="px-4 py-2 " href={"/privacy-policy"}  >Privacy Policy</Link>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(new CustomEvent("getimagin_open_cookie_consent"));
+                }
+              }}
+              className="px-4 py-2 text-neutral-400 hover:text-white transition cursor-pointer text-left"
+            >
+              Cookie Settings
+            </button>
+          </div>
             <div className="my-10 pl-4 md:pr-20 ">
             <h1 className="pr-4 py-2 md:inline-block font-bold md:font-semibold text-sm md:text-2xl block "   >Our Sector:</h1>
             <Link className="md:px-8 px-3 text-[10px] md:text-[20px] py-1 md:py-2 border-2 rounded-3xl border-[#333]" href={"/ContactUs"}  >Relegious and study</Link>
