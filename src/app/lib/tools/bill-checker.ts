@@ -189,9 +189,9 @@ export const UTILITY_COMPANIES: Record<string, UtilityCompany> = {
         refLength: 11,
         refFormat: '11-digit Consumer Number',
         regions: ['Punjab', 'Khyber Pakhtunkhwa', 'Islamabad Capital Territory', 'Azad Kashmir'],
-        portalUrl: 'https://www.sngpl.com.pk/bill',
+        portalUrl: 'https://www.sngpl.com.pk/login.jsp?mdids=85',
         portalMethod: 'GET',
-        queryParam: 'consumerno',
+        queryParam: 'consumer',
         slabRates: [
             { min: 0.1, max: 0.5, rate: 200 },
             { min: 0.51, max: 1.0, rate: 300 },
@@ -354,7 +354,7 @@ export function getOfficialBillUrl(companyId: string, refNumber: string): string
         return `https://bill.pitc.com.pk/pescobill/general?refno=${cleanRef}`;
     }
     if (company.id === 'sngpl') {
-        return `https://www.sngpl.com.pk/viewbill?consumerno=${cleanRef}`;
+        return `https://www.sngpl.com.pk/login.jsp?mdids=85`;
     }
     if (company.id === 'ssgc') {
         return `https://viewbill.ssgc.com.pk/web/?custno=${cleanRef}`;

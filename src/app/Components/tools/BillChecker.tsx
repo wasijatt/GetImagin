@@ -69,7 +69,38 @@ export default function BillChecker({ slug }: BillCheckerProps) {
     const [fetchedBill, setFetchedBill] = useState<FetchedBill | null>(null);
     const [zoomLevel, setZoomLevel] = useState<number>(100);
 
+    // SNGPL Official Live Captcha State
+    const [captchaBase64, setCaptchaBase64] = useState<string>('');
+    const [captchaInput, setCaptchaInput] = useState<string>('');
+    const [sessionCookie, setSessionCookie] = useState<string>('');
+    const [isLoadingCaptcha, setIsLoadingCaptcha] = useState<boolean>(false);
+
     const currentCompany: UtilityCompany = UTILITY_COMPANIES[selectedCompanyId] || UTILITY_COMPANIES.mepco;
+
+    // Fetch official SNGPL captcha image and session
+    const fetchSngplCaptcha = useCallback(async () => {
+        setIsLoadingCaptcha(true);
+        try {
+            const res = await fetch('/api/bills?company=sngpl&action=captcha');
+            const data = await res.json();
+            if (data.success && data.captchaBase64) {
+                setCaptchaBase64(data.captchaBase64);
+                setSessionCookie(data.sessionCookie || '');
+                setCaptchaInput('');
+            }
+        } catch (e) {
+            console.error('Failed to load SNGPL captcha', e);
+        } finally {
+            setIsLoadingCaptcha(false);
+        }
+    }, []);
+
+    // Load captcha when SNGPL is selected
+    useEffect(() => {
+        if (selectedCompanyId === 'sngpl') {
+            fetchSngplCaptcha();
+        }
+    }, [selectedCompanyId, fetchSngplCaptcha]);
 
     // Load saved bills from localStorage on mount
     useEffect(() => {
@@ -136,6 +167,11 @@ export default function BillChecker({ slug }: BillCheckerProps) {
             return;
         }
 
+        if (selectedCompanyId === 'sngpl' && !captchaInput.trim()) {
+            setFetchError('Please enter the 6-character security captcha code shown below.');
+            return;
+        }
+
         setIsLoading(true);
         setFetchError(null);
         setFetchedBill(null);
@@ -143,15 +179,22 @@ export default function BillChecker({ slug }: BillCheckerProps) {
         try {
             saveToHistory(digitsOnly);
 
-            const res = await fetch(
-                `/api/bills?company=${selectedCompanyId}&refno=${digitsOnly}&searchType=${searchType}&ruCode=${ruCode}`
-            );
+            const url = `/api/bills?company=${selectedCompanyId}&refno=${digitsOnly}&searchType=${searchType}&ruCode=${ruCode}${
+                selectedCompanyId === 'sngpl'
+                    ? `&captcha=${encodeURIComponent(captchaInput.trim())}&sessionCookie=${encodeURIComponent(sessionCookie)}`
+                    : ''
+            }`;
+
+            const res = await fetch(url);
             const data = await res.json();
 
             if (data.success && data.billData) {
                 setFetchedBill(data.billData);
             } else {
                 setFetchError(data.error || 'No bill record found for the provided reference number.');
+                if (selectedCompanyId === 'sngpl') {
+                    fetchSngplCaptcha();
+                }
             }
         } catch (err: unknown) {
             console.error('Bill check error:', err);
@@ -306,7 +349,7 @@ export default function BillChecker({ slug }: BillCheckerProps) {
                                             {currentCompany.shortName} Online Bill
                                         </h2>
                                         <span className="px-2.5 py-0.5 rounded text-[11px] font-bold bg-[#24CFA6] text-black">
-                                            Official PITC
+                                            {currentCompany.type === 'gas' ? 'Official OGRA' : currentCompany.id === 'kelectric' ? 'Official NEPRA' : 'Official PITC'}
                                         </span>
                                     </div>
                                     <p className="text-xs sm:text-sm text-gray-400 font-medium">
@@ -430,7 +473,13 @@ export default function BillChecker({ slug }: BillCheckerProps) {
                                         <div className="relative flex-1">
                                             <input
                                                 type="text"
-                                                placeholder={searchType === 'refno' ? 'Enter 14-digit reference no without spaces' : 'Enter 7 to 10-digit customer ID'}
+                                                placeholder={
+                                                    searchType === 'refno'
+                                                        ? currentCompany.type === 'gas'
+                                                            ? `Enter ${currentCompany.refLength}-digit consumer number (e.g. 84138176379)`
+                                                            : 'Enter 14-digit reference no without spaces'
+                                                        : 'Enter 7 to 10-digit customer ID'
+                                                }
                                                 value={refNumber}
                                                 onChange={(e) => setRefNumber(e.target.value)}
                                                 className="w-full bg-[#111111] border border-white/20 rounded-xl px-4 py-3 text-base sm:text-lg font-mono text-white placeholder-gray-500 focus:outline-none focus:border-[#24CFA6] tracking-wider"
@@ -465,6 +514,61 @@ export default function BillChecker({ slug }: BillCheckerProps) {
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Official SNGPL Security Verification Captcha Card */}
+                            {selectedCompanyId === 'sngpl' && (
+                                <div className="bg-[#111111] border border-[#24CFA6]/30 rounded-2xl p-4 sm:p-5 space-y-3 shadow-lg animate-fadeIn">
+                                    <div className="flex items-center justify-between">
+                                        <label className="text-xs font-bold text-gray-200 flex items-center gap-2">
+                                            <span>🛡️ SNGPL Official Security Verification</span>
+                                            <span className="text-[10px] bg-[#24CFA6]/10 text-[#24CFA6] border border-[#24CFA6]/30 px-2 py-0.5 rounded font-mono">
+                                                Required by Official Server
+                                            </span>
+                                        </label>
+                                        <button
+                                            type="button"
+                                            onClick={fetchSngplCaptcha}
+                                            disabled={isLoadingCaptcha}
+                                            className="text-xs text-[#24CFA6] hover:text-[#1fb894] font-semibold transition-colors flex items-center gap-1"
+                                            title="Get a new verification code"
+                                        >
+                                            <span>{isLoadingCaptcha ? 'Loading...' : '🔄 Refresh Code'}</span>
+                                        </button>
+                                    </div>
+
+                                    <div className="flex flex-wrap items-center gap-3">
+                                        <div className="bg-white p-1 rounded-xl border-2 border-white/20 min-w-[140px] h-[48px] flex items-center justify-center shadow-inner overflow-hidden">
+                                            {isLoadingCaptcha ? (
+                                                <span className="text-xs text-gray-500 font-semibold animate-pulse">Loading code...</span>
+                                            ) : captchaBase64 ? (
+                                                <img src={captchaBase64} alt="Official SNGPL Captcha Code" className="h-[40px] object-contain select-none" />
+                                            ) : (
+                                                <button
+                                                    type="button"
+                                                    onClick={fetchSngplCaptcha}
+                                                    className="text-xs text-red-500 hover:underline"
+                                                >
+                                                    Click to load code
+                                                </button>
+                                            )}
+                                        </div>
+
+                                        <div className="flex-1 min-w-[180px]">
+                                            <input
+                                                type="text"
+                                                placeholder="Enter 6-digit code shown above"
+                                                maxLength={6}
+                                                value={captchaInput}
+                                                onChange={(e) => setCaptchaInput(e.target.value)}
+                                                className="w-full bg-[#1a1a1a] border border-white/20 rounded-xl px-4 py-2.5 text-base sm:text-lg font-mono font-bold text-white placeholder-gray-500 focus:outline-none focus:border-[#24CFA6] tracking-widest text-center uppercase"
+                                            />
+                                        </div>
+                                    </div>
+                                    <p className="text-[11px] text-gray-400">
+                                        Type the 6 colored characters shown in the image to fetch your authentic, official government bill copy directly from SNGPL.
+                                    </p>
+                                </div>
+                            )}
 
                             {/* Action Row */}
                             <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
@@ -535,7 +639,7 @@ export default function BillChecker({ slug }: BillCheckerProps) {
                                             {currentCompany.shortName} Official Duplicate Bill
                                         </h3>
                                         <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#24CFA6] text-black">
-                                            Official PITC Verified
+                                            {currentCompany.type === 'gas' ? 'Official OGRA Verified' : currentCompany.id === 'kelectric' ? 'Official NEPRA Verified' : 'Official PITC Verified'}
                                         </span>
                                     </div>
                                     <p className="text-xs text-gray-400 mt-1">
@@ -544,6 +648,17 @@ export default function BillChecker({ slug }: BillCheckerProps) {
                                 </div>
 
                                 <div className="flex flex-wrap items-center gap-2.5">
+                                    {/* Direct Link to Official Portal */}
+                                    <a
+                                        href={currentCompany.portalUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-4 py-2 rounded-xl text-xs font-bold bg-white/10 text-white hover:bg-white/20 border border-white/15 transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+                                        title={`Open official ${currentCompany.shortName} portal in new tab`}
+                                    >
+                                        <span>Official Portal ↗</span>
+                                    </a>
+
                                     {/* SEPARATE DOWNLOAD JPG IMAGE BUTTON */}
                                     <button
                                         onClick={() => handleDownloadBillImage('jpeg')}
